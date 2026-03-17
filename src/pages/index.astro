@@ -1,0 +1,941 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Kubernetes-Native AgentOps</div>
+      <h1 class="hero-title">Everything You Need. Nothing You're Locked Into.</h1>
+      <p class="hero-subtitle">
+        A complete AgentOps platform out of the box — runtime, testing, deployment, observability.
+        Built on Kubernetes, so bring your own tools whenever you want.
+      </p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary btn-lg">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          Get Started Free
+        </a>
+        <a href="#" class="btn btn-secondary btn-lg">See How It Works</a>
+      </div>
+      <div class="hero-code">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-title">terminal</span>
+        </div>
+        <pre class="code-content"><code><span class="code-comment"># Install the complete platform</span>
+helm repo add omnia https://charts.altairalabs.io
+helm install omnia omnia/omnia --namespace omnia-system --create-namespace
+
+<span class="code-comment"># Deploy your agent (any framework)</span>
+kubectl apply -f my-agent.yaml
+
+<span class="code-comment"># Testing, observability, governance — already included</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="problem">
+    <div class="container">
+      <h2 class="problem-title">Complete Out of the Box. Open by Design.</h2>
+      <div class="value-props">
+        <div class="value-prop">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <h3>Everything Included</h3>
+          <p>Runtime, testing, observability, governance — all integrated and ready to go. Ship your first agent in hours, not weeks.</p>
+        </div>
+        <div class="value-prop">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Swap Anything</h3>
+          <p>Already using LangFuse? Prometheus? Your own runtime? Keep them. Kubernetes-native means every component is replaceable.</p>
+        </div>
+        <div class="value-prop">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Kubernetes You Trust</h3>
+          <p>Standard CRDs, Helm charts, GitOps-ready. The same patterns your platform team already knows and trusts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Complete Stack, Ready to Go</h2>
+        <p class="section-subtitle">Everything you need out of the box — use ours or bring your own</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Omnia -->
+        <div class="product-card featured">
+          <div class="product-icon omnia">
+            <svg viewBox="0 0 32 32" fill="none">
+              <polygon points="16,4 26,10 26,22 16,28 6,22 6,10" stroke="#3B82F6" stroke-width="2" fill="none"/>
+              <circle cx="16" cy="16" r="4" fill="#06B6D4"/>
+              <circle cx="16" cy="4" r="2" fill="#3B82F6"/>
+              <circle cx="26" cy="10" r="2" fill="#3B82F6"/>
+              <circle cx="26" cy="22" r="2" fill="#3B82F6"/>
+              <circle cx="16" cy="28" r="2" fill="#3B82F6"/>
+              <circle cx="6" cy="22" r="2" fill="#3B82F6"/>
+              <circle cx="6" cy="10" r="2" fill="#3B82F6"/>
+            </svg>
+          </div>
+          <h3 class="product-name">Omnia</h3>
+          <p class="product-tagline">Deployment & Governance</p>
+          <p class="product-desc">
+            The control plane for your agents. Kubernetes-native deployment with OPA policy engine,
+            OpenTelemetry observability, and cost attribution.
+          </p>
+          <ul class="product-features">
+            <li>K8s Operator with CRDs</li>
+            <li>OPA policy enforcement</li>
+            <li>Integrates with your existing Prometheus/Grafana</li>
+            <li>Per-agent cost tracking</li>
+          </ul>
+        </div>
+
+        <!-- PromptKit -->
+        <div class="product-card">
+          <div class="product-icon promptkit">
+            <svg viewBox="0 0 128 128" fill="none">
+              <defs>
+                <linearGradient id="pk-g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#8b5cf6"/>
+                </linearGradient>
+                <linearGradient id="pk-g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8b5cf6"/>
+                  <stop offset="100%" stop-color="#a855f7"/>
+                </linearGradient>
+              </defs>
+              <path d="M24 32 L48 64 L24 96" stroke="url(#pk-g1)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <rect x="60" y="28" width="44" height="20" rx="4" fill="url(#pk-g1)"/>
+              <rect x="60" y="54" width="44" height="20" rx="4" fill="url(#pk-g2)"/>
+              <rect x="60" y="80" width="44" height="20" rx="4" fill="#a855f7"/>
+            </svg>
+          </div>
+          <h3 class="product-name">PromptKit</h3>
+          <p class="product-tagline">High-Performance Runtime</p>
+          <p class="product-desc">
+            Go-based agent runtime for when you need performance. 500+ concurrent connections,
+            native voice/VAD. Or use LangChain, CrewAI, ADK — we support them all.
+          </p>
+          <ul class="product-features">
+            <li>500+ concurrent streams</li>
+            <li>Voice & multimodal native</li>
+            <li>Or bring your own runtime</li>
+          </ul>
+        </div>
+
+        <!-- PromptArena -->
+        <div class="product-card">
+          <div class="product-icon promptarena">
+            <svg viewBox="0 0 128 128" fill="none">
+              <circle cx="64" cy="64" r="48" stroke="#8B5CF6" stroke-width="6" fill="none"/>
+              <circle cx="64" cy="64" r="32" stroke="#A855F7" stroke-width="5" fill="none"/>
+              <circle cx="64" cy="64" r="16" stroke="#C084FC" stroke-width="4" fill="none"/>
+              <circle cx="64" cy="64" r="6" fill="#8B5CF6"/>
+              <line x1="64" y1="8" x2="64" y2="24" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+              <line x1="64" y1="104" x2="64" y2="120" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+              <line x1="8" y1="64" x2="24" y2="64" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+              <line x1="104" y1="64" x2="120" y2="64" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="product-name">PromptArena</h3>
+          <p class="product-tagline">Testing & Evaluation</p>
+          <p class="product-desc">
+            Load testing at 500+ VUs, synthetic data generation, multi-turn evaluation.
+            Integrates with your CI/CD. Works with any framework.
+          </p>
+          <ul class="product-features">
+            <li>Load test at scale</li>
+            <li>100k conv/hr synthetic data</li>
+            <li>JUnit XML for CI/CD integration</li>
+          </ul>
+        </div>
+
+        <!-- PromptPack -->
+        <div class="product-card">
+          <div class="product-icon promptpack">
+            <svg viewBox="0 0 100 100" fill="none">
+              <g fill="#7045af">
+                <polygon points="50,14 51,12.5 40.3,6.3 18,19.2 18,31.2 6.4,37.9 6.4,63.6 18,70.4 18,80.8 40.3,93.7 52,87 52,57 52,50 52,44.4 52,13 51,12.5 50,14 48,14 48,44.4 48,50 48,57 48,84.8 40.3,89.3 21.9,78.6 21.9,68.2 10.2,61.4 10.2,40.1 21.9,33.4 21.9,21.4 40.3,10.7 49,15.8 50,14 48,14"/>
+                <polygon points="50,14 51,15.8 59.7,10.7 78.1,21.4 78.1,33.4 89.8,40.1 89.8,61.4 78.1,68.2 78.1,78.6 59.7,89.3 52,84.8 52,57 52,50 52,44.4 52,14 50,14 51,15.8 50,14 48,14 48,44.4 48,50 48,57 48,87 59.7,93.7 82,80.8 82,70.4 93.6,63.6 93.6,37.9 82,31.2 82,19.2 59.7,6.3 48,13 48,14"/>
+                <circle cx="26.3" cy="35.8" r="3"/><circle cx="26.2" cy="66.3" r="3"/>
+                <circle cx="34.4" cy="25.7" r="3"/><circle cx="34.1" cy="76.8" r="3"/>
+                <circle cx="15.4" cy="51.4" r="3"/><circle cx="42.7" cy="51.4" r="3"/>
+                <circle cx="73.7" cy="35.8" r="3"/><circle cx="73.8" cy="66.3" r="3"/>
+                <circle cx="65.6" cy="25.7" r="3"/><circle cx="65.9" cy="76.8" r="3"/>
+                <circle cx="84.6" cy="51.4" r="3"/><circle cx="57.3" cy="51.4" r="3"/>
+              </g>
+            </svg>
+          </div>
+          <h3 class="product-name">PromptPack</h3>
+          <p class="product-tagline">Portable Artifacts</p>
+          <p class="product-desc">
+            The Dockerfile for AI agents. Package your agent logic independently of runtime,
+            so you can move between frameworks without rewriting.
+          </p>
+          <ul class="product-features">
+            <li>Runtime-independent packaging</li>
+            <li>OCI registry compatible</li>
+            <li>Version and rollback support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Self-Hosted -->
+  <section id="solutions" class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content">
+          <h2 class="section-title">Built for Platform Engineers</h2>
+          <p class="why-text">
+            Your data science team built an agent that works great in a notebook.
+            Now it's your job to get it to production. We've been there.
+          </p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="why-item-content">
+                <h4>Self-hosted by default</h4>
+                <p>Your data stays in your cluster. Air-gapped, sovereign, compliant.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <div class="why-item-content">
+                <h4>Framework-agnostic</h4>
+                <p>LangChain, CrewAI, AutoGen, custom code. We don't care. You shouldn't have to either.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <div class="why-item-content">
+                <h4>Production-grade ops</h4>
+                <p>Circuit breakers, rate limiting, fallbacks, observability. The stuff that matters at scale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual">
+          <div class="arch-diagram">
+            <div class="arch-layer">
+              <span class="arch-label">Your Applications</span>
+            </div>
+            <div class="arch-connector"></div>
+            <div class="arch-layer omnia-layer">
+              <span class="arch-label">Omnia Platform</span>
+              <div class="arch-components">
+                <span>Gateway</span>
+                <span>Operator</span>
+                <span>Registry</span>
+              </div>
+            </div>
+            <div class="arch-connector"></div>
+            <div class="arch-layer">
+              <span class="arch-label">Kubernetes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="comparison">
+    <div class="container">
+      <h2 class="section-title center">Use Ours or Bring Your Own</h2>
+      <p class="section-subtitle center">Everything works out of the box — and integrates with tools you already use</p>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th class="highlight-col">Included</th>
+              <th>Or Bring Your Own</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Agent Runtime</td>
+              <td class="highlight-col"><span class="check">PromptKit</span></td>
+              <td><span class="check">LangChain, CrewAI, ADK, OpenAI SDK</span></td>
+            </tr>
+            <tr>
+              <td>Testing & Eval</td>
+              <td class="highlight-col"><span class="check">PromptArena</span></td>
+              <td><span class="check">Any CI/CD via JUnit XML</span></td>
+            </tr>
+            <tr>
+              <td>Observability</td>
+              <td class="highlight-col"><span class="check">OTel + Grafana</span></td>
+              <td><span class="check">Your Prometheus, Datadog, etc.</span></td>
+            </tr>
+            <tr>
+              <td>Deployment</td>
+              <td class="highlight-col"><span class="check">K8s Operator</span></td>
+              <td><span class="check">Standard K8s, ArgoCD, Flux</span></td>
+            </tr>
+            <tr>
+              <td>Governance</td>
+              <td class="highlight-col"><span class="check">OPA Policies</span></td>
+              <td><span class="check">Your existing OPA/Gatekeeper</span></td>
+            </tr>
+            <tr>
+              <td>Secrets</td>
+              <td class="highlight-col"><span class="check">K8s Secrets</span></td>
+              <td><span class="check">Vault, External Secrets, SOPS</span></td>
+            </tr>
+            <tr>
+              <td>Service Mesh</td>
+              <td class="highlight-col"><span class="check">Works without</span></td>
+              <td><span class="check">Istio, Linkerd, Cilium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison-note">Standard Kubernetes patterns mean you're never locked in. Every component follows K8s conventions.</p>
+    </div>
+  </section>
+
+  <!-- For Partners Section -->
+  <section class="partners">
+    <div class="container">
+      <div class="partners-content">
+        <div class="partners-badge">For Consultants & System Integrators</div>
+        <h2 class="section-title">Stop Rebuilding the Same Infrastructure</h2>
+        <p class="partners-text">
+          Every AI engagement, you're building deployment pipelines, testing frameworks, and monitoring dashboards from scratch.
+          Omnia is the agent infrastructure you can reuse across engagements.
+        </p>
+        <div class="partners-benefits">
+          <div class="partner-benefit">
+            <strong>Accelerate delivery</strong>
+            <span>Pre-built ops layer for every project</span>
+          </div>
+          <div class="partner-benefit">
+            <strong>Reduce risk</strong>
+            <span>Battle-tested patterns for production</span>
+          </div>
+          <div class="partner-benefit">
+            <strong>Increase margins</strong>
+            <span>Less custom infrastructure work</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary btn-lg">Become a Partner</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ship your first agent in hours, not weeks.</h2>
+        <p class="cta-text">Helm install, kubectl apply, done. Standard Kubernetes — nothing proprietary to learn.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-white btn-lg">Get Started Free</a>
+          <a href="#" class="btn btn-ghost-white btn-lg">See a Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 180px 0 100px;
+    background: var(--gradient-dark);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--nebula-cyan);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: var(--space-lg);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--mist);
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .hero-cta .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+
+  .hero-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Hero Code Block */
+  .hero-code {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .code-header {
+    background: #1a1a2e;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .code-dot.red { background: #ff5f57; }
+  .code-dot.yellow { background: #febc2e; }
+  .code-dot.green { background: #28c840; }
+
+  .code-title {
+    margin-left: auto;
+    color: var(--slate);
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .code-content {
+    background: var(--deep-space);
+    padding: var(--space-lg);
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .code-content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--mist);
+  }
+
+  .code-comment {
+    color: var(--slate);
+  }
+
+  /* Value Props */
+  .problem {
+    padding: var(--space-3xl) 0;
+    background: white;
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .problem-title {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .value-props {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  .value-prop {
+    text-align: center;
+    padding: var(--space-lg);
+  }
+
+  .value-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+  }
+
+  .value-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--altair-blue);
+  }
+
+  .value-prop h3 {
+    margin-bottom: var(--space-sm);
+    color: var(--deep-space);
+  }
+
+  .value-prop p {
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Products */
+  .products {
+    padding: var(--space-4xl) 0;
+    background: var(--cloud-white);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .product-card {
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all 0.2s;
+  }
+
+  .product-card:hover {
+    border-color: var(--altair-blue);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .product-card.featured {
+    border-color: var(--altair-blue);
+    box-shadow: 0 0 0 1px var(--altair-blue);
+  }
+
+  .product-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .product-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product-icon.omnia { background: rgba(59, 130, 246, 0.1); }
+  .product-icon.promptkit { background: rgba(6, 182, 212, 0.1); }
+  .product-icon.promptarena { background: rgba(139, 92, 246, 0.1); }
+  .product-icon.promptpack { background: rgba(112, 69, 175, 0.1); }
+
+  .product-name {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .product-tagline {
+    font-size: 0.875rem;
+    color: var(--slate);
+    margin-bottom: var(--space-md);
+  }
+
+  .product-desc {
+    color: var(--slate);
+    margin-bottom: var(--space-md);
+  }
+
+  .product-features {
+    list-style: none;
+  }
+
+  .product-features li {
+    padding: var(--space-xs) 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.875rem;
+    color: var(--slate);
+  }
+
+  .product-features li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--deploy-green);
+    font-weight: 600;
+  }
+
+  /* Why Section */
+  .why-section {
+    padding: var(--space-4xl) 0;
+    background: white;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  .why-content .section-title {
+    margin-bottom: var(--space-lg);
+  }
+
+  .why-text {
+    font-size: 1.125rem;
+    color: var(--slate);
+    margin-bottom: var(--space-xl);
+  }
+
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .why-item {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .why-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--altair-blue);
+  }
+
+  .why-item-content h4 {
+    margin-bottom: var(--space-xs);
+  }
+
+  .why-item-content p {
+    color: var(--slate);
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  /* Architecture Diagram */
+  .arch-diagram {
+    background: var(--deep-space);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .arch-layer {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    text-align: center;
+  }
+
+  .arch-layer.omnia-layer {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--altair-blue);
+  }
+
+  .arch-label {
+    color: white;
+    font-weight: 600;
+    display: block;
+  }
+
+  .arch-components {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .arch-components span {
+    padding: 6px 12px;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: var(--radius-sm);
+    color: var(--nebula-cyan);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .arch-connector {
+    width: 2px;
+    height: 24px;
+    background: var(--slate);
+    margin: 0 auto;
+  }
+
+  /* Comparison */
+  .comparison {
+    padding: var(--space-4xl) 0;
+    background: var(--cloud-white);
+  }
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    margin-top: var(--space-2xl);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .comparison-table th {
+    font-weight: 600;
+    color: var(--deep-space);
+    background: white;
+  }
+
+  .comparison-table td {
+    color: var(--slate);
+  }
+
+  .comparison-table td:first-child {
+    color: var(--deep-space);
+    font-weight: 500;
+  }
+
+  .highlight-col {
+    background: rgba(59, 130, 246, 0.05) !important;
+  }
+
+  .check {
+    color: var(--deploy-green);
+    font-weight: 500;
+  }
+
+  .comparison-note {
+    text-align: center;
+    color: var(--slate);
+    font-size: 0.9375rem;
+    margin-top: var(--space-xl);
+    margin-bottom: 0;
+  }
+
+  /* Partners */
+  .partners {
+    padding: var(--space-4xl) 0;
+    background: var(--gradient-dark);
+  }
+
+  .partners-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .partners-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--cosmic-violet);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+  }
+
+  .partners .section-title {
+    color: white;
+    margin-bottom: var(--space-lg);
+  }
+
+  .partners-text {
+    font-size: 1.25rem;
+    color: var(--mist);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .partners-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .partner-benefit {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .partner-benefit strong {
+    color: white;
+    font-size: 1.125rem;
+  }
+
+  .partner-benefit span {
+    color: var(--slate);
+    font-size: 0.875rem;
+  }
+
+  /* CTA */
+  .cta {
+    padding: var(--space-4xl) 0;
+    background: var(--altair-blue);
+  }
+
+  .cta-content {
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-text {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-xl);
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-visual {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 140px 0 60px;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .value-props {
+      grid-template-columns: 1fr;
+    }
+
+    .partners-benefits {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
