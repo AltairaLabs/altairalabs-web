@@ -14,13 +14,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Built on Kubernetes, so bring your own tools whenever you want.
       </p>
       <div class="hero-cta">
-        <a href="#" class="btn btn-primary btn-lg">
+        <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
           </svg>
           Get Started Free
         </a>
-        <a href="#" class="btn btn-secondary btn-lg">See How It Works</a>
+        <a href="https://omnia.altairalabs.ai/" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">See How It Works</a>
       </div>
       <div class="hero-code">
         <div class="code-header">
@@ -88,7 +88,7 @@ kubectl apply -f my-agent.yaml
 
       <div class="product-grid">
         <!-- Omnia -->
-        <div class="product-card featured">
+        <a href="https://omnia.altairalabs.ai/" target="_blank" rel="noopener" class="product-card featured">
           <div class="product-icon omnia">
             <svg viewBox="0 0 32 32" fill="none">
               <polygon points="16,4 26,10 26,22 16,28 6,22 6,10" stroke="#3B82F6" stroke-width="2" fill="none"/>
@@ -113,10 +113,10 @@ kubectl apply -f my-agent.yaml
             <li>Integrates with your existing Prometheus/Grafana</li>
             <li>Per-agent cost tracking</li>
           </ul>
-        </div>
+        </a>
 
         <!-- PromptKit -->
-        <div class="product-card">
+        <a href="https://promptkit.altairalabs.ai/" target="_blank" rel="noopener" class="product-card">
           <div class="product-icon promptkit">
             <svg viewBox="0 0 128 128" fill="none">
               <defs>
@@ -146,10 +146,10 @@ kubectl apply -f my-agent.yaml
             <li>Voice & multimodal native</li>
             <li>Or bring your own runtime</li>
           </ul>
-        </div>
+        </a>
 
         <!-- PromptArena -->
-        <div class="product-card">
+        <a href="https://github.com/AltairaLabs/promptarena-deploy-agentcore" target="_blank" rel="noopener" class="product-card">
           <div class="product-icon promptarena">
             <svg viewBox="0 0 128 128" fill="none">
               <circle cx="64" cy="64" r="48" stroke="#8B5CF6" stroke-width="6" fill="none"/>
@@ -173,10 +173,10 @@ kubectl apply -f my-agent.yaml
             <li>100k conv/hr synthetic data</li>
             <li>JUnit XML for CI/CD integration</li>
           </ul>
-        </div>
+        </a>
 
         <!-- PromptPack -->
-        <div class="product-card">
+        <a href="https://promptpack.org/" target="_blank" rel="noopener" class="product-card">
           <div class="product-icon promptpack">
             <svg viewBox="0 0 100 100" fill="none">
               <g fill="#7045af">
@@ -202,7 +202,7 @@ kubectl apply -f my-agent.yaml
             <li>OCI registry compatible</li>
             <li>Version and rollback support</li>
           </ul>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -360,7 +360,7 @@ kubectl apply -f my-agent.yaml
             <span>Less custom infrastructure work</span>
           </div>
         </div>
-        <a href="#" class="btn btn-primary btn-lg">Become a Partner</a>
+        <a href="mailto:partners@altairalabs.io" class="btn btn-primary btn-lg">Become a Partner</a>
       </div>
     </div>
   </section>
@@ -372,8 +372,8 @@ kubectl apply -f my-agent.yaml
         <h2 class="cta-title">Ship your first agent in hours, not weeks.</h2>
         <p class="cta-text">Helm install, kubectl apply, done. Standard Kubernetes — nothing proprietary to learn.</p>
         <div class="cta-actions">
-          <a href="#" class="btn btn-white btn-lg">Get Started Free</a>
-          <a href="#" class="btn btn-ghost-white btn-lg">See a Demo</a>
+          <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-white btn-lg">Get Started Free</a>
+          <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="btn btn-ghost-white btn-lg">View on GitHub</a>
         </div>
       </div>
     </div>
@@ -577,6 +577,9 @@ kubectl apply -f my-agent.yaml
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
 
   .product-card:hover {

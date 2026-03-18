@@ -2,8 +2,12 @@
 const navItems = [
   { href: '#products', label: 'Products' },
   { href: '#solutions', label: 'Solutions' },
-  { href: '#docs', label: 'Docs' },
-  { href: '#pricing', label: 'Pricing' },
+];
+
+const docLinks = [
+  { href: 'https://omnia.altairalabs.ai/', label: 'Omnia Docs' },
+  { href: 'https://promptkit.altairalabs.ai/', label: 'PromptKit Docs' },
+  { href: 'https://promptpack.org/', label: 'PromptPack Docs' },
 ];
 ---
 
@@ -29,10 +33,18 @@ const navItems = [
       {navItems.map((item) => (
         <a href={item.href}>{item.label}</a>
       ))}
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger">Docs</a>
+        <div class="nav-dropdown-menu">
+          {docLinks.map((item) => (
+            <a href={item.href} target="_blank" rel="noopener">{item.label}</a>
+          ))}
+        </div>
+      </div>
     </div>
     <div class="nav-actions">
-      <a href="#" class="btn btn-ghost">Sign In</a>
-      <a href="#" class="btn btn-primary">Get Started</a>
+      <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary">Get Started</a>
     </div>
   </div>
 </nav>
@@ -88,16 +100,65 @@ const navItems = [
   .nav-links {
     display: flex;
     gap: var(--space-xl);
+    align-items: center;
   }
 
-  .nav-links a {
+  .nav-links > a {
     color: var(--mist);
     font-weight: 500;
     font-size: 0.9375rem;
   }
 
-  .nav-links a:hover {
+  .nav-links > a:hover {
     color: white;
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-trigger {
+    color: var(--mist);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    cursor: pointer;
+  }
+
+  .nav-dropdown-trigger:hover {
+    color: white;
+  }
+
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 12px;
+    background: var(--deep-space);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) 0;
+    min-width: 180px;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--mist);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown-menu a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .nav-actions {
