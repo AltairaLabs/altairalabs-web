@@ -43,13 +43,13 @@ const softwareJsonLd = {
     <canvas id="constellation" class="hero-canvas"></canvas>
     <div class="container hero-content">
       <div class="hero-badge">Open-Core AgentOps for Kubernetes</div>
-      <h1 class="hero-title">Your Agents Work in a Notebook. We Make Them Work in Production.</h1>
+      <h1 class="hero-title">Great Demo. Now What?</h1>
       <p class="hero-subtitle">
         Omnia is a complete, self-hosted platform for deploying AI agents at scale.
         Runtime, governance, testing, observability — all built on Kubernetes. Use our stack or bring your own.
       </p>
       <div class="hero-cta">
-        <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+        <a href="https://omnia.altairalabs.ai/tutorials/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
           </svg>
@@ -81,16 +81,16 @@ const softwareJsonLd = {
           <span class="value-source">cite integration as the #1 barrier — McKinsey 2025</span>
         </div>
         <div class="value-prop">
-          <div class="value-stat">7x</div>
-          <h3>Seven Tools. Zero Integration.</h3>
-          <p>Most teams stitch together deployment scripts, ad-hoc testing, and disconnected dashboards. Each layer adds complexity. Omnia replaces the patchwork.</p>
-          <span class="value-source">avg tools stitched together for agent ops</span>
+          <div class="value-stat">79%</div>
+          <h3>Perception vs. Reality.</h3>
+          <p>79% of executives perceive AI productivity gains. Only 29% can actually measure ROI. Without measurement infrastructure, you can't prove it works — and what you can't prove, you can't scale.</p>
+          <span class="value-source">perceive gains they can't measure — MIT Sloan 2025</span>
         </div>
         <div class="value-prop">
-          <div class="value-stat">0</div>
-          <h3>No Lock-In. Full Control.</h3>
-          <p>Self-hosted on your Kubernetes cluster. Standard CRDs, Helm charts, GitOps-ready. Every component is swappable. Your data never leaves your infrastructure.</p>
-          <span class="value-source">proprietary components required</span>
+          <div class="value-stat">43%</div>
+          <h3>Stuck in Experimentation.</h3>
+          <p>Nearly half of enterprises can't operationalize even their successful proofs of concept. The pilot works. The infrastructure to run it in production doesn't exist.</p>
+          <span class="value-source">of enterprises unable to operationalize — McKinsey 2025</span>
         </div>
       </div>
     </div>
@@ -100,8 +100,8 @@ const softwareJsonLd = {
   <section id="products" class="products reveal">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">One Platform. Everything You Need.</h2>
-        <p class="section-subtitle">Runtime, testing, deployment, and observability — integrated and production-ready</p>
+        <h2 class="section-title">Everything You Need. Anywhere You Want It.</h2>
+        <p class="section-subtitle">Runtime, testing, deployment, and observability — on any Kubernetes cluster you already run</p>
       </div>
 
       <div class="product-grid">
@@ -122,14 +122,14 @@ const softwareJsonLd = {
           <h3 class="product-name">Omnia <span class="product-badge oss">OSS</span></h3>
           <p class="product-tagline">The Control Plane</p>
           <p class="product-desc">
-            9 CRDs, 7+ LLM providers, policy enforcement, cost attribution.
-            The operator that turns your K8s cluster into an agent platform.
+            Stop hand-coding deployment pipelines, session storage, and provider failover.
+            Omnia handles the production plumbing so you can focus on agent logic.
           </p>
           <ul class="product-features">
-            <li>K8s Operator with 9 CRDs</li>
-            <li>OPA policy enforcement</li>
-            <li>OpenTelemetry + Prometheus + Grafana</li>
-            <li>Per-agent, per-conversation cost tracking</li>
+            <li>Multi-provider routing and failover</li>
+            <li>Session persistence across restarts</li>
+            <li>Cost tracking per agent, per conversation</li>
+            <li>Policy enforcement and audit logging</li>
           </ul>
         </a>
 
@@ -161,7 +161,7 @@ const softwareJsonLd = {
           </p>
           <ul class="product-features">
             <li>Declarative agent definition</li>
-            <li>7+ LLM providers out of the box</li>
+            <li>All major LLMs incl. Bedrock, Vertex, Azure Foundry</li>
             <li>Voice & multimodal native</li>
             <li>Go concurrency, not Python threads</li>
           </ul>
@@ -226,6 +226,33 @@ const softwareJsonLd = {
         </a>
       </div>
     </div>
+      <div class="platforms-grid">
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/kubernetes.svg`} alt="Kubernetes" />
+          <span>Kubernetes</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/aws.svg`} alt="Amazon Web Services" />
+          <span>AWS EKS</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/gcp.svg`} alt="Google Cloud" />
+          <span>Google GKE</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/azure.svg`} alt="Microsoft Azure" />
+          <span>Azure AKS</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/openshift.svg`} alt="Red Hat OpenShift" />
+          <span>OpenShift</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/rancher.svg`} alt="Rancher" />
+          <span>Rancher</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Screenshots showcase -->
@@ -233,7 +260,7 @@ const softwareJsonLd = {
     <div class="container">
       <div class="showcase-item">
         <div class="showcase-text">
-          <h3>See everything. Control everything.</h3>
+          <h3>Know What Your Agents Are Doing. Prove That It's Working.</h3>
           <p>Every agent, every session, every dollar — in one place. Real-time session counts, per-provider cost attribution, and policy enforcement status. No jumping between dashboards.</p>
         </div>
         <div class="showcase-image">
@@ -338,7 +365,7 @@ const softwareJsonLd = {
   <!-- Comparison Section -->
   <section class="comparison reveal">
     <div class="container">
-      <h2 class="section-title center">Batteries Included. Vendor Lock-In Not.</h2>
+      <h2 class="section-title center">Batteries Included. Ready to Rock in Hours, Not Months.</h2>
       <p class="section-subtitle center">Everything works out of the box. Already have a stack? Swap in what you use.</p>
       <div class="comparison-table-wrapper">
         <table class="comparison-table">
@@ -353,89 +380,56 @@ const softwareJsonLd = {
           <tbody>
             <tr>
               <td>Agent Runtime</td>
-              <td class="highlight-col"><span class="check">PromptKit</span></td>
+              <td class="highlight-col"><span class="capability">PromptKit</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="check">LangChain, CrewAI, ADK, OpenAI SDK</span></td>
+              <td><span class="capability">LangChain, CrewAI, ADK, OpenAI SDK</span></td>
             </tr>
             <tr>
               <td>Deployment</td>
-              <td class="highlight-col"><span class="check">K8s Operator</span></td>
+              <td class="highlight-col"><span class="capability">K8s Operator</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="check">Standard K8s, ArgoCD, Flux</span></td>
+              <td><span class="capability">Standard K8s, ArgoCD, Flux</span></td>
             </tr>
             <tr>
               <td>Observability</td>
-              <td class="highlight-col"><span class="check">OTel + Grafana</span></td>
+              <td class="highlight-col"><span class="capability">OTel + Grafana</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="check">Your Prometheus, Datadog, etc.</span></td>
+              <td><span class="capability">Your Prometheus, Datadog, etc.</span></td>
             </tr>
             <tr>
               <td>Governance</td>
-              <td class="highlight-col"><span class="check">OPA Policies</span></td>
+              <td class="highlight-col"><span class="capability">OPA Policies</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="check">Your existing OPA/Gatekeeper</span></td>
+              <td><span class="capability">Your existing OPA/Gatekeeper</span></td>
             </tr>
             <tr>
               <td>Testing & Eval</td>
-              <td class="highlight-col"><span class="check">PromptArena</span></td>
+              <td class="highlight-col"><span class="capability">PromptArena</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="check">Any CI/CD via JUnit XML</span></td>
+              <td><span class="capability">Any CI/CD via JUnit XML</span></td>
             </tr>
             <tr>
               <td>Audit Logging</td>
-              <td class="highlight-col"><span class="check">Partitioned logs</span></td>
+              <td class="highlight-col"><span class="capability">Partitioned logs</span></td>
               <td><span class="tier-ee">EE</span></td>
-              <td><span class="check">Your SIEM / log aggregator</span></td>
+              <td><span class="capability">Your SIEM / log aggregator</span></td>
             </tr>
             <tr>
               <td>Stream Export</td>
-              <td class="highlight-col"><span class="check">Kafka, Kinesis, NATS</span></td>
+              <td class="highlight-col"><span class="capability">Kafka, Kinesis, NATS</span></td>
               <td><span class="tier-ee">EE</span></td>
-              <td><span class="check">Any event bus</span></td>
+              <td><span class="capability">Any event bus</span></td>
             </tr>
             <tr>
               <td>Analytics Export</td>
-              <td class="highlight-col"><span class="check">Snowflake, BigQuery, ClickHouse</span></td>
+              <td class="highlight-col"><span class="capability">Snowflake, BigQuery, ClickHouse</span></td>
               <td><span class="tier-ee">EE</span></td>
-              <td><span class="check">Your data warehouse</span></td>
+              <td><span class="capability">Your data warehouse</span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <p class="comparison-note"><span class="tier-oss">OSS</span> = open source, Apache 2.0. <span class="tier-ee">EE</span> = enterprise license. All products are fully open source. Enterprise adds audit, encryption, streaming export, and analytics sync to Omnia.</p>
-    </div>
-  </section>
-
-  <!-- Deployment Platforms -->
-  <section class="platforms reveal">
-    <div class="container">
-      <p class="platforms-label">Runs on any Kubernetes. Deploy where you already are.</p>
-      <div class="platforms-grid">
-        <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/kubernetes.svg`} alt="Kubernetes" />
-          <span>Kubernetes</span>
-        </div>
-        <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/aws.svg`} alt="Amazon Web Services" />
-          <span>AWS EKS</span>
-        </div>
-        <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/gcp.svg`} alt="Google Cloud" />
-          <span>Google GKE</span>
-        </div>
-        <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/azure.svg`} alt="Microsoft Azure" />
-          <span>Azure AKS</span>
-        </div>
-        <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/openshift.svg`} alt="Red Hat OpenShift" />
-          <span>OpenShift</span>
-        </div>
-        <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/rancher.svg`} alt="Rancher" />
-          <span>Rancher</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -475,7 +469,7 @@ const softwareJsonLd = {
         <h2 class="cta-title">Your cluster is ready. Your agents should be too.</h2>
         <p class="cta-text">The open-source core gets you to production. Enterprise and consulting get you to scale. Start with a Helm install — we'll meet you where you are.</p>
         <div class="cta-actions">
-          <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-white btn-lg">Get Started Free</a>
+          <a href="https://omnia.altairalabs.ai/tutorials/getting-started/" target="_blank" rel="noopener" class="btn btn-white btn-lg">Get Started Free</a>
           <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="btn btn-ghost-white btn-lg">View on GitHub</a>
         </div>
       </div>
@@ -1015,38 +1009,71 @@ const softwareJsonLd = {
 
   .comparison-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     text-align: left;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--mist);
   }
 
   .comparison-table th,
   .comparison-table td {
     padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--mist);
   }
 
   .comparison-table th {
     font-weight: 600;
-    color: var(--deep-space);
-    background: white;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--slate);
+    background: var(--cloud-white);
+    border-bottom: 2px solid var(--mist);
+  }
+
+  .comparison-table tbody tr {
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .comparison-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .comparison-table tbody tr:nth-child(even) {
+    background: rgba(248, 250, 252, 0.5);
   }
 
   .comparison-table td {
     color: var(--slate);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
   }
 
   .comparison-table td:first-child {
     color: var(--deep-space);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.9375rem;
   }
 
   .highlight-col {
-    background: rgba(59, 130, 246, 0.05) !important;
+    background: rgba(59, 130, 246, 0.04) !important;
+    border-left: 1px solid rgba(59, 130, 246, 0.1);
+    border-right: 1px solid rgba(59, 130, 246, 0.1);
   }
 
-  .check {
-    color: var(--deploy-green);
+  .comparison-table th.highlight-col {
+    background: rgba(59, 130, 246, 0.08) !important;
+    color: var(--altair-blue);
+  }
+
+  .capability {
+    color: var(--onyx);
     font-weight: 500;
+  }
+
+  .highlight-col .capability {
+    color: var(--deep-space);
+    font-weight: 600;
   }
 
   .tier-oss,
@@ -1077,21 +1104,8 @@ const softwareJsonLd = {
   }
 
   /* Platforms */
-  .platforms {
-    padding: var(--space-3xl) 0;
-    background: white;
-    border-top: 1px solid var(--mist);
-  }
-
-  .platforms-label {
-    text-align: center;
-    color: var(--slate);
-    font-size: 0.9375rem;
-    font-weight: 500;
-    margin-bottom: var(--space-xl);
-  }
-
   .platforms-grid {
+    margin-top: var(--space-2xl);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -1438,6 +1452,7 @@ const softwareJsonLd = {
   // --- Typing Effect ---
   const codeLines = [
     { text: '# Install the platform', type: 'comment' },
+    { text: 'helm repo add omnia https://charts.altairalabs.io', type: 'cmd' },
     { text: 'helm install omnia omnia/omnia -n omnia-system --create-namespace', type: 'cmd' },
     { text: '', type: 'blank' },
     { text: '# Deploy an agent — any framework, any model', type: 'comment' },

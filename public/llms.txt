@@ -8,7 +8,7 @@ AltairaLabs builds Omnia, an open-core AgentOps platform for running AI agents o
 
 ## Products
 
-- **Omnia** (OSS): The control plane. Kubernetes operator with 9 CRDs, 7+ LLM providers (Claude, GPT, Gemini, Ollama, Bedrock, Vertex, Azure AI), 3-tier session storage, OpenTelemetry observability, OPA policy enforcement, cost attribution. Enterprise features: audit logging, encryption, session streaming (Kafka/Kinesis/NATS), analytics export (Snowflake/BigQuery/ClickHouse).
+- **Omnia** (OSS): The control plane. Kubernetes operator with 9 CRDs, all major LLM providers including hyperscaler-hosted (Bedrock, Vertex, Azure Foundry) plus Claude, GPT, Gemini, Ollama, 3-tier session storage, OpenTelemetry observability, OPA policy enforcement, cost attribution. Enterprise features: audit logging, encryption, session streaming (Kafka/Kinesis/NATS), analytics export (Snowflake/BigQuery/ClickHouse).
 - **PromptKit** (OSS): Go-native agent runtime. Declarative agent configuration, gRPC streaming, native voice/multimodal, horizontal scale on Kubernetes.
 - **PromptArena** (OSS): Testing and deployment. Distributed load testing, multi-turn evaluation, PromptPack creation and validation, deploy agents to Omnia/AWS AgentCore/other platforms. JUnit XML for CI/CD.
 - **PromptPack** (OSS): Portable agent packaging format. Runtime-independent, OCI registry compatible, version/diff/rollback. Open spec at promptpack.org.
