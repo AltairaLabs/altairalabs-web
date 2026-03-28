@@ -1,8 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AltairaLabs',
+  url: 'https://altairalabs.github.io/altairalabs-web/',
+  logo: 'https://altairalabs.github.io/altairalabs-web/favicon.svg',
+  description: 'Open-core Kubernetes-native platform for deploying, governing, testing, and observing AI agents in production.',
+  sameAs: [
+    'https://github.com/AltairaLabs',
+  ],
+};
+
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Omnia',
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'Kubernetes',
+  description: 'Open-core AgentOps platform — runtime, deployment, governance, testing, and observability for AI agents on Kubernetes.',
+  url: 'https://omnia.altairalabs.ai/',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    description: 'Open source core (Apache 2.0). Enterprise features available.',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'AltairaLabs',
+  },
+};
 ---
 
 <BaseLayout>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(softwareJsonLd)} />
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-bg"></div>

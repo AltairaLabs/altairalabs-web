@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://altairalabs.github.io/altairalabs-web/sitemap-index.xml

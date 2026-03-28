@@ -1,0 +1,44 @@
+# AltairaLabs
+
+> Open-core Kubernetes-native platform for deploying, governing, testing, and observing AI agents in production.
+
+## What is AltairaLabs?
+
+AltairaLabs builds Omnia, an open-core AgentOps platform for running AI agents on Kubernetes. The platform provides a complete production stack: runtime, deployment, governance, testing, observability, and cost attribution — all built on standard Kubernetes patterns (CRDs, Helm, GitOps).
+
+## Products
+
+- **Omnia** (OSS): The control plane. Kubernetes operator with 9 CRDs, 7+ LLM providers (Claude, GPT, Gemini, Ollama, Bedrock, Vertex, Azure AI), 3-tier session storage, OpenTelemetry observability, OPA policy enforcement, cost attribution. Enterprise features: audit logging, encryption, session streaming (Kafka/Kinesis/NATS), analytics export (Snowflake/BigQuery/ClickHouse).
+- **PromptKit** (OSS): Go-native agent runtime. Declarative agent configuration, gRPC streaming, native voice/multimodal, horizontal scale on Kubernetes.
+- **PromptArena** (OSS): Testing and deployment. Distributed load testing, multi-turn evaluation, PromptPack creation and validation, deploy agents to Omnia/AWS AgentCore/other platforms. JUnit XML for CI/CD.
+- **PromptPack** (OSS): Portable agent packaging format. Runtime-independent, OCI registry compatible, version/diff/rollback. Open spec at promptpack.org.
+
+## Key Differentiators
+
+- Self-hosted by default (not an enterprise upsell)
+- Framework-agnostic (LangChain, CrewAI, ADK, custom code)
+- Open-core model: full production platform is OSS (Apache 2.0), enterprise adds compliance/streaming/audit
+- Kubernetes-native: standard CRDs, Helm charts, GitOps-ready, every component swappable
+- Built for customer-facing agents: support, sales, onboarding
+
+## Three Pillars
+
+1. **Talk to Customers** (available now): Support, sales, onboarding agents
+2. **Build Things** (coming soon): Software engineering, content, design agents
+3. **Make Sense of Things** (coming soon): Analytics, reporting, knowledge management agents
+
+## Maturity Model
+
+- **Assist**: Human does the work, AI helps
+- **Execute**: AI does the work, human reviews
+- **Operate**: AI runs the operation, human oversees
+
+## Links
+
+- Website: https://altairalabs.github.io/altairalabs-web/
+- Omnia Docs: https://omnia.altairalabs.ai/
+- PromptKit Docs: https://promptkit.altairalabs.ai/
+- PromptPack Spec: https://promptpack.org/
+- GitHub: https://github.com/AltairaLabs
+- Blog: https://altairalabs.github.io/altairalabs-web/blog/
+- RSS: https://altairalabs.github.io/altairalabs-web/rss.xml
