@@ -8,11 +8,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="hero-bg"></div>
     <canvas id="constellation" class="hero-canvas"></canvas>
     <div class="container hero-content">
-      <div class="hero-badge">Kubernetes-Native AgentOps</div>
-      <h1 class="hero-title">Everything You Need. Nothing You're Locked Into.</h1>
+      <div class="hero-badge">Open-Core AgentOps for Kubernetes</div>
+      <h1 class="hero-title">Your Agents Work in a Notebook. We Make Them Work in Production.</h1>
       <p class="hero-subtitle">
-        A complete AgentOps platform out of the box — runtime, testing, deployment, observability.
-        Built on Kubernetes, so bring your own tools whenever you want.
+        Omnia is a complete, self-hosted platform for deploying AI agents at scale.
+        Runtime, governance, testing, observability — all built on Kubernetes. Use our stack or bring your own.
       </p>
       <div class="hero-cta">
         <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
@@ -38,35 +38,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Value Proposition -->
   <section class="problem reveal">
     <div class="container">
-      <h2 class="problem-title">Complete Out of the Box. Open by Design.</h2>
+      <h2 class="problem-title">95% of AI Pilots Never Reach Production.<br/>Here's Why.</h2>
       <div class="value-props">
         <div class="value-prop">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-            </svg>
-          </div>
-          <h3>Everything Included</h3>
-          <p>Runtime, testing, observability, governance — all integrated and ready to go. Ship your first agent in hours, not weeks.</p>
+          <div class="value-stat">46%</div>
+          <h3>The Demo Works. Deployment Doesn't.</h3>
+          <p>Your AI team builds impressive prototypes. Then they hand it off and nobody knows how to deploy it, scale it, or monitor it. That's the gap we close.</p>
+          <span class="value-source">cite integration as the #1 barrier — McKinsey 2025</span>
         </div>
         <div class="value-prop">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <h3>Swap Anything</h3>
-          <p>Already using LangFuse? Prometheus? Your own runtime? Keep them. Kubernetes-native means every component is replaceable.</p>
+          <div class="value-stat">7x</div>
+          <h3>Seven Tools. Zero Integration.</h3>
+          <p>Most teams stitch together deployment scripts, ad-hoc testing, and disconnected dashboards. Each layer adds complexity. Omnia replaces the patchwork.</p>
+          <span class="value-source">avg tools stitched together for agent ops</span>
         </div>
         <div class="value-prop">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h3>Kubernetes You Trust</h3>
-          <p>Standard CRDs, Helm charts, GitOps-ready. The same patterns your platform team already knows and trusts.</p>
+          <div class="value-stat">0</div>
+          <h3>No Lock-In. Full Control.</h3>
+          <p>Self-hosted on your Kubernetes cluster. Standard CRDs, Helm charts, GitOps-ready. Every component is swappable. Your data never leaves your infrastructure.</p>
+          <span class="value-source">proprietary components required</span>
         </div>
       </div>
     </div>
@@ -76,13 +66,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section id="products" class="products reveal">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">The Complete Stack, Ready to Go</h2>
-        <p class="section-subtitle">Everything you need out of the box — use ours or bring your own</p>
+        <h2 class="section-title">One Platform. Everything You Need.</h2>
+        <p class="section-subtitle">Runtime, testing, deployment, and observability — integrated and production-ready</p>
       </div>
 
       <div class="product-grid">
         <!-- Omnia -->
-        <a href="https://omnia.altairalabs.ai/" target="_blank" rel="noopener" class="product-card featured">
+        <a href="https://omnia.altairalabs.ai/" target="_blank" rel="noopener" class="product-card">
           <div class="product-icon omnia">
             <svg viewBox="0 0 32 32" fill="none">
               <polygon points="16,4 26,10 26,22 16,28 6,22 6,10" stroke="#3B82F6" stroke-width="2" fill="none"/>
@@ -95,17 +85,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <circle cx="6" cy="10" r="2" fill="#3B82F6"/>
             </svg>
           </div>
-          <h3 class="product-name">Omnia</h3>
-          <p class="product-tagline">Deployment & Governance</p>
+          <h3 class="product-name">Omnia <span class="product-badge oss">OSS</span></h3>
+          <p class="product-tagline">The Control Plane</p>
           <p class="product-desc">
-            The control plane for your agents. Kubernetes-native deployment with OPA policy engine,
-            OpenTelemetry observability, and cost attribution.
+            9 CRDs, 7+ LLM providers, policy enforcement, cost attribution.
+            The operator that turns your K8s cluster into an agent platform.
           </p>
           <ul class="product-features">
-            <li>K8s Operator with CRDs</li>
+            <li>K8s Operator with 9 CRDs</li>
             <li>OPA policy enforcement</li>
-            <li>Integrates with your existing Prometheus/Grafana</li>
-            <li>Per-agent cost tracking</li>
+            <li>OpenTelemetry + Prometheus + Grafana</li>
+            <li>Per-agent, per-conversation cost tracking</li>
           </ul>
         </a>
 
@@ -129,16 +119,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <rect x="60" y="80" width="44" height="20" rx="4" fill="#a855f7"/>
             </svg>
           </div>
-          <h3 class="product-name">PromptKit</h3>
-          <p class="product-tagline">High-Performance Runtime</p>
+          <h3 class="product-name">PromptKit <span class="product-badge oss">OSS</span></h3>
+          <p class="product-tagline">High-Performance Agent Runtime</p>
           <p class="product-desc">
-            Go-based agent runtime for when you need performance. 500+ concurrent connections,
-            native voice/VAD. Or use LangChain, CrewAI, ADK — we support them all.
+            Go-native runtime — tiny footprint, real concurrency, no GIL.
+            Declarative agent configuration, gRPC streaming, native voice, and horizontal scale on K8s.
           </p>
           <ul class="product-features">
-            <li>500+ concurrent streams</li>
+            <li>Declarative agent definition</li>
+            <li>7+ LLM providers out of the box</li>
             <li>Voice & multimodal native</li>
-            <li>Or bring your own runtime</li>
+            <li>Go concurrency, not Python threads</li>
           </ul>
         </a>
 
@@ -156,16 +147,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <line x1="104" y1="64" x2="120" y2="64" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="product-name">PromptArena</h3>
-          <p class="product-tagline">Testing & Evaluation</p>
+          <h3 class="product-name">PromptArena <span class="product-badge oss">OSS</span></h3>
+          <p class="product-tagline">Test, Build & Deploy</p>
           <p class="product-desc">
-            Load testing at 500+ VUs, synthetic data generation, multi-turn evaluation.
-            Integrates with your CI/CD. Works with any framework.
+            Test agents before your customers find the edge cases. Build and validate PromptPacks.
+            Then deploy fully functioning agents to Omnia, AWS AgentCore, or other platforms.
           </p>
           <ul class="product-features">
-            <li>Load test at scale</li>
-            <li>100k conv/hr synthetic data</li>
-            <li>JUnit XML for CI/CD integration</li>
+            <li>Distributed load testing & eval</li>
+            <li>PromptPack creation & validation</li>
+            <li>Deploy to Omnia, AgentCore & more</li>
+            <li>JUnit XML for CI/CD quality gates</li>
           </ul>
         </a>
 
@@ -185,18 +177,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </g>
             </svg>
           </div>
-          <h3 class="product-name">PromptPack</h3>
-          <p class="product-tagline">Portable Artifacts</p>
+          <h3 class="product-name">PromptPack <span class="product-badge oss">OSS</span></h3>
+          <p class="product-tagline">Portable Agent Packages</p>
           <p class="product-desc">
-            The Dockerfile for AI agents. Package your agent logic independently of runtime,
-            so you can move between frameworks without rewriting.
+            Dockerfile for AI agents. Package prompts, tools, and config independently of framework,
+            so you can version, share, and redeploy without rewriting.
           </p>
           <ul class="product-features">
             <li>Runtime-independent packaging</li>
             <li>OCI registry compatible</li>
-            <li>Version and rollback support</li>
+            <li>Version, diff, and rollback</li>
+            <li>Open spec at promptpack.org</li>
           </ul>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots showcase -->
+  <section class="showcase reveal">
+    <div class="container">
+      <div class="showcase-item">
+        <div class="showcase-text">
+          <h3>See everything. Control everything.</h3>
+          <p>Every agent, every session, every dollar — in one place. Real-time session counts, per-provider cost attribution, and policy enforcement status. No jumping between dashboards.</p>
+        </div>
+        <div class="showcase-image">
+          <img src={`${import.meta.env.BASE_URL}/screenshots/dashboard.svg`} alt="Omnia Dashboard showing agent runtimes, session metrics, and cost tracking" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="showcase-item reverse">
+        <div class="showcase-text">
+          <h3>Traces that actually make sense.</h3>
+          <p>OpenTelemetry traces across LLM calls, tool invocations, and conversation turns. See exactly why an agent made a decision, which provider served it, and what it cost — down to the token.</p>
+        </div>
+        <div class="showcase-image">
+          <img src={`${import.meta.env.BASE_URL}/screenshots/grafana.svg`} alt="Grafana dashboards showing agent latency, token usage, and distributed traces" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="showcase-item">
+        <div class="showcase-text">
+          <h3>Test before your customers do.</h3>
+          <p>Run hundreds of eval scenarios across models and prompt versions. Arena gives you a quality gate — agents don't ship to production until they pass. CI/CD native via JUnit XML.</p>
+        </div>
+        <div class="showcase-image">
+          <img src={`${import.meta.env.BASE_URL}/screenshots/arena.svg`} alt="PromptArena evaluation results comparing agent versions with quality gate status" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
@@ -206,10 +234,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="why-grid">
         <div class="why-content">
-          <h2 class="section-title">Built for Platform Engineers</h2>
+          <h2 class="section-title">Built for the Teams That Run Production</h2>
           <p class="why-text">
-            Your data science team built an agent that works great in a notebook.
-            Now it's your job to get it to production. We've been there.
+            Your AI team builds the demos. You get the 2am pages.
+            Omnia gives platform engineers the control they need to run AI agents the way they run everything else.
           </p>
           <div class="why-list">
             <div class="why-item">
@@ -219,8 +247,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </svg>
               </div>
               <div class="why-item-content">
-                <h4>Self-hosted by default</h4>
-                <p>Your data stays in your cluster. Air-gapped, sovereign, compliant.</p>
+                <h4>Self-hosted. Full stop.</h4>
+                <p>Not an Enterprise-tier upsell. Self-hosted is the default. Your cluster, your data, your rules.</p>
               </div>
             </div>
             <div class="why-item">
@@ -231,8 +259,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </svg>
               </div>
               <div class="why-item-content">
-                <h4>Framework-agnostic</h4>
-                <p>LangChain, CrewAI, AutoGen, custom code. We don't care. You shouldn't have to either.</p>
+                <h4>Any framework. We don't care.</h4>
+                <p>LangChain today, CrewAI tomorrow, custom Go next quarter. Omnia runs them all. Your agents, your choice.</p>
               </div>
             </div>
             <div class="why-item">
@@ -243,8 +271,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </svg>
               </div>
               <div class="why-item-content">
-                <h4>Production-grade ops</h4>
-                <p>Circuit breakers, rate limiting, fallbacks, observability. The stuff that matters at scale.</p>
+                <h4>Production ops, not demo ops</h4>
+                <p>3-tier session storage, policy enforcement, cost attribution, audit logging. The boring stuff that keeps you out of incident channels.</p>
               </div>
             </div>
           </div>
@@ -276,14 +304,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Comparison Section -->
   <section class="comparison reveal">
     <div class="container">
-      <h2 class="section-title center">Use Ours or Bring Your Own</h2>
-      <p class="section-subtitle center">Everything works out of the box — and integrates with tools you already use</p>
+      <h2 class="section-title center">Batteries Included. Vendor Lock-In Not.</h2>
+      <p class="section-subtitle center">Everything works out of the box. Already have a stack? Swap in what you use.</p>
       <div class="comparison-table-wrapper">
         <table class="comparison-table">
           <thead>
             <tr>
               <th>Capability</th>
               <th class="highlight-col">Included</th>
+              <th>Tier</th>
               <th>Or Bring Your Own</th>
             </tr>
           </thead>
@@ -291,42 +320,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <tr>
               <td>Agent Runtime</td>
               <td class="highlight-col"><span class="check">PromptKit</span></td>
+              <td><span class="tier-oss">OSS</span></td>
               <td><span class="check">LangChain, CrewAI, ADK, OpenAI SDK</span></td>
-            </tr>
-            <tr>
-              <td>Testing & Eval</td>
-              <td class="highlight-col"><span class="check">PromptArena</span></td>
-              <td><span class="check">Any CI/CD via JUnit XML</span></td>
-            </tr>
-            <tr>
-              <td>Observability</td>
-              <td class="highlight-col"><span class="check">OTel + Grafana</span></td>
-              <td><span class="check">Your Prometheus, Datadog, etc.</span></td>
             </tr>
             <tr>
               <td>Deployment</td>
               <td class="highlight-col"><span class="check">K8s Operator</span></td>
+              <td><span class="tier-oss">OSS</span></td>
               <td><span class="check">Standard K8s, ArgoCD, Flux</span></td>
+            </tr>
+            <tr>
+              <td>Observability</td>
+              <td class="highlight-col"><span class="check">OTel + Grafana</span></td>
+              <td><span class="tier-oss">OSS</span></td>
+              <td><span class="check">Your Prometheus, Datadog, etc.</span></td>
             </tr>
             <tr>
               <td>Governance</td>
               <td class="highlight-col"><span class="check">OPA Policies</span></td>
+              <td><span class="tier-oss">OSS</span></td>
               <td><span class="check">Your existing OPA/Gatekeeper</span></td>
             </tr>
             <tr>
-              <td>Secrets</td>
-              <td class="highlight-col"><span class="check">K8s Secrets</span></td>
-              <td><span class="check">Vault, External Secrets, SOPS</span></td>
+              <td>Testing & Eval</td>
+              <td class="highlight-col"><span class="check">PromptArena</span></td>
+              <td><span class="tier-oss">OSS</span></td>
+              <td><span class="check">Any CI/CD via JUnit XML</span></td>
             </tr>
             <tr>
-              <td>Service Mesh</td>
-              <td class="highlight-col"><span class="check">Works without</span></td>
-              <td><span class="check">Istio, Linkerd, Cilium</span></td>
+              <td>Audit Logging</td>
+              <td class="highlight-col"><span class="check">Partitioned logs</span></td>
+              <td><span class="tier-ee">EE</span></td>
+              <td><span class="check">Your SIEM / log aggregator</span></td>
+            </tr>
+            <tr>
+              <td>Stream Export</td>
+              <td class="highlight-col"><span class="check">Kafka, Kinesis, NATS</span></td>
+              <td><span class="tier-ee">EE</span></td>
+              <td><span class="check">Any event bus</span></td>
+            </tr>
+            <tr>
+              <td>Analytics Export</td>
+              <td class="highlight-col"><span class="check">Snowflake, BigQuery, ClickHouse</span></td>
+              <td><span class="tier-ee">EE</span></td>
+              <td><span class="check">Your data warehouse</span></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="comparison-note">Standard Kubernetes patterns mean you're never locked in. Every component follows K8s conventions.</p>
+      <p class="comparison-note"><span class="tier-oss">OSS</span> = open source, Apache 2.0. <span class="tier-ee">EE</span> = enterprise license. All products are fully open source. Enterprise adds audit, encryption, streaming export, and analytics sync to Omnia.</p>
+    </div>
+  </section>
+
+  <!-- Deployment Platforms -->
+  <section class="platforms reveal">
+    <div class="container">
+      <p class="platforms-label">Runs on any Kubernetes. Deploy where you already are.</p>
+      <div class="platforms-grid">
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/kubernetes.svg`} alt="Kubernetes" />
+          <span>Kubernetes</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/aws.svg`} alt="Amazon Web Services" />
+          <span>AWS EKS</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/gcp.svg`} alt="Google Cloud" />
+          <span>Google GKE</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/azure.svg`} alt="Microsoft Azure" />
+          <span>Azure AKS</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/openshift.svg`} alt="Red Hat OpenShift" />
+          <span>OpenShift</span>
+        </div>
+        <div class="platform-item">
+          <img src={`${import.meta.env.BASE_URL}/logos/rancher.svg`} alt="Rancher" />
+          <span>Rancher</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -334,27 +409,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="partners reveal">
     <div class="container">
       <div class="partners-content">
-        <div class="partners-badge">For Consultants & System Integrators</div>
-        <h2 class="section-title">Stop Rebuilding the Same Infrastructure</h2>
+        <div class="partners-badge">Enterprise & Partners</div>
+        <h2 class="section-title">Enterprise Support. Partner Programs. Hands-On Consulting.</h2>
         <p class="partners-text">
-          Every AI engagement, you're building deployment pipelines, testing frameworks, and monitoring dashboards from scratch.
-          Omnia is the agent infrastructure you can reuse across engagements.
+          The open-source platform gets you to production. Enterprise licensing adds the compliance, streaming, and evaluation features regulated industries need.
+          And if you want help getting there — or you're an SI building on Omnia for clients — we work with you directly.
         </p>
         <div class="partners-benefits">
           <div class="partner-benefit">
-            <strong>Accelerate delivery</strong>
-            <span>Pre-built ops layer for every project</span>
+            <strong>Enterprise licensing</strong>
+            <span>Arena, audit, streaming, encryption</span>
           </div>
           <div class="partner-benefit">
-            <strong>Reduce risk</strong>
-            <span>Battle-tested patterns for production</span>
+            <strong>Consulting & support</strong>
+            <span>Architecture review to production rollout</span>
           </div>
           <div class="partner-benefit">
-            <strong>Increase margins</strong>
-            <span>Less custom infrastructure work</span>
+            <strong>SI partner program</strong>
+            <span>Reusable platform across client engagements</span>
           </div>
         </div>
-        <a href="mailto:partners@altairalabs.io" class="btn btn-primary btn-lg">Become a Partner</a>
+        <a href="mailto:hello@altairalabs.io" class="btn btn-primary btn-lg">Talk to Us</a>
       </div>
     </div>
   </section>
@@ -363,8 +438,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="cta reveal">
     <div class="container">
       <div class="cta-content">
-        <h2 class="cta-title">Ship your first agent in hours, not weeks.</h2>
-        <p class="cta-text">Helm install, kubectl apply, done. Standard Kubernetes — nothing proprietary to learn.</p>
+        <h2 class="cta-title">Your cluster is ready. Your agents should be too.</h2>
+        <p class="cta-text">The open-source core gets you to production. Enterprise and consulting get you to scale. Start with a Helm install — we'll meet you where you are.</p>
         <div class="cta-actions">
           <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-white btn-lg">Get Started Free</a>
           <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="btn btn-ghost-white btn-lg">View on GitHub</a>
@@ -546,6 +621,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .problem-title {
     text-align: center;
     margin-bottom: var(--space-xl);
+    font-size: 2.75rem;
   }
 
   .value-props {
@@ -560,21 +636,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: var(--space-lg);
   }
 
-  .value-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto var(--space-md);
-  }
-
-  .value-icon svg {
-    width: 32px;
-    height: 32px;
-    color: var(--altair-blue);
+  .value-stat {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .value-prop h3 {
@@ -584,8 +654,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .value-prop p {
     color: var(--slate);
-    margin: 0;
+    margin: 0 0 var(--space-sm);
     line-height: 1.6;
+  }
+
+  .value-source {
+    font-size: 0.75rem;
+    color: var(--slate);
+    opacity: 0.7;
+    font-style: italic;
   }
 
   /* Products */
@@ -644,6 +721,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .product-name {
     font-size: 1.25rem;
     margin-bottom: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .product-badge {
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .product-badge.oss {
+    color: var(--deploy-green);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .product-badge.ee {
+    color: var(--cosmic-violet);
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
   }
 
   .product-tagline {
@@ -675,6 +776,86 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     left: 0;
     color: var(--deploy-green);
     font-weight: 600;
+  }
+
+  /* Showcase */
+  .showcase {
+    padding: var(--space-4xl) 0;
+    background: var(--gradient-dark);
+  }
+
+  .showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    margin-bottom: var(--space-4xl);
+  }
+
+  .showcase-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .showcase-item.reverse {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .showcase-item.reverse .showcase-text {
+    order: 2;
+  }
+
+  .showcase-item.reverse .showcase-image {
+    order: 1;
+  }
+
+  .showcase-text h3 {
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .showcase-text p {
+    color: var(--slate);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .showcase-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+
+  .showcase-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 1024px) {
+    .showcase-item,
+    .showcase-item.reverse {
+      grid-template-columns: 1fr;
+    }
+
+    .showcase-item.reverse .showcase-text {
+      order: 1;
+    }
+
+    .showcase-item.reverse .showcase-image {
+      order: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .showcase-text h3 {
+      font-size: 1.375rem;
+    }
+
+    .showcase-text p {
+      font-size: 0.9375rem;
+    }
   }
 
   /* Why Section */
@@ -834,12 +1015,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 500;
   }
 
+  .tier-oss,
+  .tier-ee {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+  }
+
+  .tier-oss {
+    color: var(--deploy-green);
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .tier-ee {
+    color: var(--cosmic-violet);
+    background: rgba(139, 92, 246, 0.1);
+  }
+
   .comparison-note {
     text-align: center;
     color: var(--slate);
     font-size: 0.9375rem;
     margin-top: var(--space-xl);
     margin-bottom: 0;
+  }
+
+  /* Platforms */
+  .platforms {
+    padding: var(--space-3xl) 0;
+    background: white;
+    border-top: 1px solid var(--mist);
+  }
+
+  .platforms-label {
+    text-align: center;
+    color: var(--slate);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-bottom: var(--space-xl);
+  }
+
+  .platforms-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+  }
+
+  .platform-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    min-width: 80px;
+  }
+
+  .platform-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    filter: grayscale(100%);
+  }
+
+  .platform-item:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
+  .platform-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--slate);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .platforms-grid {
+      gap: var(--space-lg);
+    }
   }
 
   /* Partners */
@@ -1041,7 +1298,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .problem-title {
-      font-size: 1.5rem;
+      font-size: 1.625rem;
     }
 
     .section-title {
@@ -1146,14 +1403,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   // --- Typing Effect ---
   const codeLines = [
-    { text: '# Install the complete platform', type: 'comment' },
-    { text: 'helm repo add omnia https://charts.altairalabs.io', type: 'cmd' },
-    { text: 'helm install omnia omnia/omnia --namespace omnia-system --create-namespace', type: 'cmd' },
+    { text: '# Install the platform', type: 'comment' },
+    { text: 'helm install omnia omnia/omnia -n omnia-system --create-namespace', type: 'cmd' },
     { text: '', type: 'blank' },
-    { text: '# Deploy your agent (any framework)', type: 'comment' },
+    { text: '# Deploy an agent — any framework, any model', type: 'comment' },
     { text: 'kubectl apply -f my-agent.yaml', type: 'cmd' },
     { text: '', type: 'blank' },
-    { text: '# Testing, observability, governance — already included', type: 'comment' },
+    { text: '# Scale it. K8s handles the rest.', type: 'comment' },
+    { text: 'kubectl scale agentruntime my-agent --replicas=20', type: 'cmd' },
   ];
 
   const codeEl = document.getElementById('typed-code')!;

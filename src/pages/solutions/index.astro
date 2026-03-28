@@ -1,0 +1,710 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="AI Agent Solutions — Talk, Build, Sense | AltairaLabs"
+  description="Every business uses AI in three ways: talking to customers, building things, and making sense of data. Omnia provides the infrastructure for all three — starting with customer-facing agents. Assist, Execute, Operate."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Solutions</div>
+      <h1 class="hero-title">Three Pillars. One Platform.</h1>
+      <p class="hero-subtitle">
+        Every business uses AI in three ways: talking to customers, building things, and making sense of data.
+        Omnia provides the infrastructure for all three — starting with the one that matters most.
+      </p>
+    </div>
+  </section>
+
+  <!-- Three Pillars -->
+  <article class="page-content">
+    <div class="content-container">
+      <section class="content-section">
+        <div class="section-intro">
+          <h2>The Three Pillars</h2>
+          <p>
+            Strip away the hype and every enterprise AI use case falls into one of three categories.
+            The models are interchangeable. The frameworks are commoditized. What matters is
+            <strong>codifying your institutional knowledge</strong> — the unwritten rules, judgment calls,
+            and domain expertise that make your organization work — into a form that agents can execute.
+          </p>
+          <p>
+            That knowledge is different for every business and every category. How your best support agent
+            handles an angry customer is not the same as how your top SDR qualifies a lead.
+            A one-size-fits-all agent can't encode either. That's why the three pillars exist:
+            each demands its own knowledge, its own guardrails, and its own measurement.
+          </p>
+        </div>
+
+        <div class="pillar-grid">
+          <!-- Talk to Customers -->
+          <div class="pillar-card pillar-featured">
+            <div class="pillar-badge badge-active">Available Now</div>
+            <div class="pillar-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="6" width="40" height="28" rx="4" stroke="#3B82F6" stroke-width="2.5" fill="none"/>
+                <path d="M16 38L12 44" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M32 38L36 44" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="16" cy="20" r="3" fill="#06B6D4"/>
+                <circle cx="32" cy="20" r="3" fill="#3B82F6"/>
+                <path d="M20 22C20 22 22 26 24 26C26 26 28 22 28 22" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <h3>Talk to Customers</h3>
+            <p class="pillar-tagline">Support. Sales. Onboarding.</p>
+            <p class="pillar-desc">
+              Customer-facing agents that resolve tickets, qualify leads, and guide new users through onboarding.
+              This is where Omnia is focused today — because it is the most constrained, most measurable,
+              and highest urgency use case for every enterprise.
+            </p>
+            <p class="pillar-honest">
+              We are starting here because it is where the data is clearest. Conversations have defined inputs,
+              outputs, and outcomes. You can measure resolution rate, CSAT, and cost per interaction from day one.
+              That measurement is what tells you when you are ready to expand autonomy.
+            </p>
+            <div class="pillar-links">
+              <a href={`${base}/solutions/customer-support/`}>Customer Support</a>
+              <a href={`${base}/solutions/sales/`}>Sales</a>
+              <a href={`${base}/solutions/onboarding/`}>Onboarding</a>
+            </div>
+          </div>
+
+          <!-- Build Things -->
+          <div class="pillar-card pillar-muted">
+            <div class="pillar-badge badge-soon">Coming Soon</div>
+            <div class="pillar-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="4" width="32" height="40" rx="3" stroke="#64748B" stroke-width="2.5" fill="none"/>
+                <path d="M16 16L22 22L16 28" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="24" y1="28" x2="34" y2="28" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Build Things</h3>
+            <p class="pillar-tagline">Software engineering. Content. Design.</p>
+            <p class="pillar-desc">
+              Agents that assist development workflows — coding, testing, CI/CD orchestration,
+              content creation, and design iteration. Where individual productivity gains are
+              most visible, but hardest to measure at the organizational level.
+            </p>
+            <p class="pillar-honest">
+              Most Build use cases today live in IDEs and CLIs. Omnia's role is in agentic workflows
+              that orchestrate multi-step build processes — not in replacing Copilot. This pillar
+              activates when the bundle abstraction is proven in Talk.
+            </p>
+          </div>
+
+          <!-- Make Sense of Things -->
+          <div class="pillar-card pillar-muted">
+            <div class="pillar-badge badge-soon">Coming Soon</div>
+            <div class="pillar-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="18" stroke="#64748B" stroke-width="2.5" fill="none"/>
+                <path d="M12 30L18 22L24 26L30 16L36 20" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="18" cy="22" r="2" fill="#64748B"/>
+                <circle cx="24" cy="26" r="2" fill="#64748B"/>
+                <circle cx="30" cy="16" r="2" fill="#64748B"/>
+              </svg>
+            </div>
+            <h3>Make Sense of Things</h3>
+            <p class="pillar-tagline">Analytics. Reporting. Knowledge management.</p>
+            <p class="pillar-desc">
+              Agents that surface insights from data — anomaly detection, report generation,
+              knowledge synthesis, and decision support. The broadest pillar, where the
+              hard problem is defining what "good" looks like.
+            </p>
+            <p class="pillar-honest">
+              Sense is where most companies start their AI experiments — a chatbot on top of
+              their data warehouse. The challenge is measurement: how do you know an insight
+              is valuable? This pillar benefits most from the KPI infrastructure we are building
+              for Talk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maturity Model -->
+      <section class="content-section">
+        <div class="section-intro">
+          <h2>Assist. Execute. Operate.</h2>
+          <p>
+            Knowledge codification doesn't happen overnight. You can't go from "we have a chatbot" to
+            "AI runs our support team" in a single sprint. Every previous automation wave — from
+            Taylorism to ERP systems to expert systems — required a preceding phase of encoding
+            institutional knowledge before the technology could deliver on its promise.
+          </p>
+          <p>
+            AI is no different. <a href="https://www.nber.org/papers/w31161" target="_blank" rel="noopener">Brynjolfsson's Productivity J-Curve research</a>
+            shows that general-purpose technologies require significant complementary investment
+            before they pay off. Organizations that simply layer AI on top of existing workflows see
+            the smallest effects. The ones that invest in codifying their knowledge — how they handle
+            exceptions, what "good" looks like, when to escalate — see transformative results. But that
+            investment takes time and must be done in stages.
+          </p>
+        </div>
+
+        <div class="maturity-steps">
+          <div class="maturity-step">
+            <div class="maturity-step-box" style="border-color: var(--altair-blue); background: rgba(59,130,246,0.08);">
+              <span class="maturity-level" style="color: var(--altair-blue);">Level 1</span>
+              <h3 style="color: var(--altair-blue);">Assist</h3>
+            </div>
+            <div class="maturity-step-detail">
+              <p><strong>Human does the work, AI helps.</strong> The agent drafts replies, suggests
+              knowledge base articles, pre-fills forms. The human reviews, edits, and sends.</p>
+              <p>This isn't glamorous — but it's where the real work happens. Every time a human edits
+              an AI draft, you learn where the agent gets it right and where it fails. Every overridden
+              suggestion is a data point about your domain that no model ships with. Assist is how you
+              <em>build</em> the institutional knowledge that makes the next stages possible.</p>
+            </div>
+          </div>
+          <div class="maturity-arrow">
+            <svg width="24" height="32" viewBox="0 0 24 32"><path d="M12 0v24M6 18l6 8 6-8" stroke="#64748B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="maturity-step">
+            <div class="maturity-step-box" style="border-color: var(--cosmic-violet); background: rgba(139,92,246,0.08);">
+              <span class="maturity-level" style="color: var(--cosmic-violet);">Level 2</span>
+              <h3 style="color: var(--cosmic-violet);">Execute</h3>
+            </div>
+            <div class="maturity-step-detail">
+              <p><strong>AI does the work, human reviews.</strong> The agent handles defined task types
+              autonomously — but only the ones where Assist-stage data proves it performs at or above
+              human quality. Everything else stays in Assist.</p>
+              <p>This is where measurement becomes critical. You need quality gates that automatically
+              pull back autonomy when performance degrades. If CSAT for AI-handled refunds drops below
+              your baseline, refunds go back to Assist. Not a manual decision — a platform-level guardrail.</p>
+            </div>
+          </div>
+          <div class="maturity-arrow">
+            <svg width="24" height="32" viewBox="0 0 24 32"><path d="M12 0v24M6 18l6 8 6-8" stroke="#64748B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="maturity-step">
+            <div class="maturity-step-box" style="border-color: var(--deploy-green); background: rgba(16,185,129,0.08);">
+              <span class="maturity-level" style="color: var(--deploy-green);">Level 3</span>
+              <h3 style="color: var(--deploy-green);">Operate</h3>
+            </div>
+            <div class="maturity-step-detail">
+              <p><strong>AI runs the operation, human oversees.</strong> The agent manages end-to-end —
+              routing, resolution, escalation, follow-up. Humans focus on complex cases, relationship
+              management, and the exceptions the AI surfaces.</p>
+              <p>An organization that reaches Operate through Assist and Execute arrives with proven
+              metrics, automated guardrails, trained escalation paths, and a measurement infrastructure
+              that catches problems in hours, not months. An organization that tries to start here arrives
+              with <a href="https://www.bbc.com/news/articles/c4gep52j9n4o" target="_blank" rel="noopener">Klarna's outcome</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="maturity-note">
+          The progression is the point. 79% of executives perceive AI productivity gains, but only 29%
+          can measure ROI. The gap is not intelligence — it's codification. Each stage builds the
+          knowledge, data, and guardrails that make the next stage safe. There are no shortcuts.
+        </p>
+      </section>
+
+      <!-- Why This Matters -->
+      <section class="content-section">
+        <h2>Why This Matters</h2>
+
+        <p>
+          The models are good enough.
+          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener">McKinsey's State of AI</a>
+          reports that 65% of organizations now regularly use generative AI — nearly double from ten months prior.
+          The frameworks are interchangeable. What is missing is the operational layer — deployment, testing,
+          governance, and measurement — that turns experiments into production systems.
+        </p>
+
+        <p>
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-07-14-gartner-predicts-over-50-percent-of-organizations-that-replaced-customer-service-reps-with-genai-will-reverse-course-by-2028" target="_blank" rel="noopener">Gartner predicts</a>
+          that over 50% of organizations that replaced customer service reps with GenAI will reverse course by 2028.
+          The gap is not intelligence — it is infrastructure.
+          79% of executives perceive AI productivity gains, but only 29% can measure ROI.
+          You cannot improve what you cannot measure, and you cannot trust what you cannot verify.
+        </p>
+
+        <p>
+          The three pillars are not a product roadmap. They are a recognition that every business AI use case
+          falls into Talk, Build, or Sense — and each one requires the same operational foundation:
+          guardrails, observability, measurement, and a clear maturity path.
+          <a href={`${base}/#products`}>Omnia</a> provides that foundation.
+        </p>
+      </section>
+
+      <!-- Related Reading -->
+      <section class="content-section">
+        <h2>Go Deeper</h2>
+
+        <div class="reading-list">
+          <a href={`${base}/solutions/customer-support/`} class="reading-card">
+            <span class="reading-label">Solution</span>
+            <h4>Customer Support Agents</h4>
+            <p>Why most AI support deployments fail, and the maturity path from assisted drafts to autonomous resolution.</p>
+          </a>
+
+          <a href={`${base}/blog/the-klarna-effect/`} class="reading-card">
+            <span class="reading-label">Blog</span>
+            <h4>The Klarna Effect</h4>
+            <p>Why the biggest AI customer service story of 2024 became the biggest cautionary tale of 2025.</p>
+          </a>
+
+          <a href={`${base}/blog/why-95-percent-of-ai-pilots-fail/`} class="reading-card">
+            <span class="reading-label">Blog</span>
+            <h4>Why 95% of AI Pilots Fail</h4>
+            <p>The gap between prototype and production, and how infrastructure closes it.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section">
+        <h2>Start with Talk. Start with Assist.</h2>
+        <p>
+          You do not need to automate everything on day one. Pick the pillar with the clearest ROI,
+          start at the maturity level where measurement is possible, and expand when the data tells you to.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Get Started
+          </a>
+          <a href="mailto:hello@altairalabs.ai" class="btn btn-ghost-white btn-lg">
+            Talk to Us
+          </a>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    background: var(--gradient-dark);
+    padding: calc(72px + var(--space-2xl)) 0 var(--space-3xl);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--nebula-cyan);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--space-lg);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--slate);
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* Page Content */
+  .page-content {
+    padding: var(--space-3xl) 0 var(--space-4xl);
+  }
+
+  .content-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .content-section {
+    margin-bottom: var(--space-4xl);
+  }
+
+  .section-intro {
+    margin-bottom: var(--space-xl);
+  }
+
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+    color: var(--deep-space);
+  }
+
+  .content-section p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--onyx);
+    margin-bottom: 1.5rem;
+  }
+
+  .content-section a {
+    color: var(--altair-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .content-section a:hover {
+    color: var(--altair-blue-dark);
+  }
+
+  /* Pillar Grid */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .pillar-card {
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .pillar-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .pillar-featured {
+    border-color: var(--altair-blue);
+    border-width: 2px;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1), var(--shadow-md);
+  }
+
+  .pillar-muted {
+    opacity: 0.85;
+  }
+
+  .pillar-muted .pillar-icon svg {
+    opacity: 0.6;
+  }
+
+  .pillar-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 12px;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+  }
+
+  .badge-active {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--altair-blue);
+  }
+
+  .badge-soon {
+    background: rgba(100, 116, 139, 0.1);
+    color: var(--slate);
+  }
+
+  .pillar-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-md);
+  }
+
+  .pillar-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pillar-card h3 {
+    font-size: 1.5rem;
+    color: var(--deep-space);
+    margin-bottom: var(--space-xs);
+  }
+
+  .pillar-tagline {
+    font-size: 1rem;
+    color: var(--slate);
+    margin-bottom: var(--space-md) !important;
+    font-style: italic;
+  }
+
+  .pillar-desc {
+    font-size: 0.975rem !important;
+    line-height: 1.7 !important;
+    color: var(--onyx);
+    margin-bottom: 1rem !important;
+  }
+
+  .pillar-honest {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+    color: var(--slate);
+    margin-bottom: var(--space-md) !important;
+  }
+
+  .pillar-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--mist);
+  }
+
+  .pillar-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--altair-blue);
+    text-decoration: none;
+  }
+
+  .pillar-links a:hover {
+    color: var(--altair-blue-dark);
+    text-decoration: underline;
+  }
+
+  .pillar-links a::before {
+    content: "\2192 ";
+  }
+
+  /* Maturity Steps */
+  .maturity-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: var(--space-xl) 0;
+  }
+
+  .maturity-step {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .maturity-step-box {
+    border: 2px solid;
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+  }
+
+  .maturity-level {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .maturity-step-box h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .maturity-step-detail p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--slate);
+    margin: 0;
+  }
+
+  .maturity-step-detail strong {
+    color: var(--deep-space);
+  }
+
+  .maturity-arrow {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-sm) 0;
+    /* Offset to align with the box column */
+    max-width: 700px;
+    width: 100%;
+    padding-left: 100px;
+  }
+
+  @media (max-width: 768px) {
+    .maturity-step {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .maturity-arrow {
+      padding-left: 0;
+    }
+  }
+
+  .maturity-note {
+    font-size: 1.05rem !important;
+    line-height: 1.75 !important;
+    color: var(--onyx);
+    margin-top: var(--space-lg);
+    padding: var(--space-lg);
+    background: rgba(59, 130, 246, 0.04);
+    border-left: 3px solid var(--altair-blue);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  /* Reading List */
+  .reading-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+  }
+
+  .reading-card {
+    display: block;
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-decoration: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .reading-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--altair-blue);
+  }
+
+  .reading-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--altair-blue);
+  }
+
+  .reading-card h4 {
+    font-size: 1.0625rem;
+    color: var(--deep-space);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+
+  .reading-card p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--gradient-dark);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl) var(--space-xl);
+    text-align: center;
+    margin-top: var(--space-2xl);
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    color: var(--slate);
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .pillar-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .pillar-muted {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.625rem;
+    }
+
+    .content-section p {
+      font-size: 1rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .cta-section {
+      padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .cta-section h2 {
+      font-size: 1.625rem;
+    }
+
+    .reading-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.375rem;
+    }
+  }
+</style>

@@ -1,0 +1,696 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Customer Support AI Agents — Deploy, Measure, Scale | AltairaLabs"
+  description="Deploy AI customer support agents that actually resolve tickets. Move from AI-assisted drafts to autonomous resolution with measurable KPIs, guardrails, and full observability. Built on Kubernetes with Omnia."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Solutions / Customer Support</div>
+      <h1 class="hero-title">Customer Support Agents That Actually Resolve Tickets</h1>
+      <p class="hero-subtitle">
+        Most AI support deployments start with a press release and end with a rollback.
+        The gap between "demo works" and "customers are happy" is where careers go to die.
+        You need a path from assisted drafts to autonomous resolution — with measurement at every step.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <article class="page-content">
+    <div class="content-container">
+      <section class="content-section">
+        <h2>The Problem: Why Most AI Support Deployments Fail</h2>
+
+        <p>
+          In 2024, Klarna made headlines claiming their AI assistant was
+          <a href="https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/" target="_blank" rel="noopener">doing the work of 700 agents</a>.
+          By 2025, they were
+          <a href="https://www.bbc.com/news/articles/c4gep52j9n4o" target="_blank" rel="noopener">rehiring humans</a>
+          after customer satisfaction cratered. They are not alone.
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-07-14-gartner-predicts-over-50-percent-of-organizations-that-replaced-customer-service-reps-with-genai-will-reverse-course-by-2028" target="_blank" rel="noopener">Gartner predicts that over 50% of organizations that replaced customer service reps with GenAI will reverse course by 2028</a>.
+        </p>
+
+        <p>
+          The pattern is predictable. A team launches an AI chatbot. It handles the easy questions well.
+          Then it hallucinates a refund policy. Fabricates a shipping status. Tells a customer to
+          ship their laptop to a truck stop. The Air Canada chatbot
+          <a href="https://www.theguardian.com/world/2024/feb/16/air-canada-chatbot-fake-bereavement-policy" target="_blank" rel="noopener">invented a bereavement discount</a>
+          and the company was held legally liable for it.
+        </p>
+
+        <p>
+          Meanwhile,
+          <a href="https://www.pwc.com/gx/en/issues/data-and-analytics/publications/artificial-intelligence-study.html" target="_blank" rel="noopener">PwC research</a>
+          shows that 71% of consumers will abandon a brand after one bad AI interaction.
+          The stakes are not hypothetical.
+        </p>
+
+        <p>
+          The failure is not in the AI models. The failure is in how teams deploy them: no guardrails,
+          no measurement, no escalation path, and no way to debug what went wrong after the fact.
+          You would never ship a web service without monitoring and alerting. Why would you ship
+          a customer-facing AI agent without them?
+        </p>
+      </section>
+
+      <!-- The Maturity Path -->
+      <section class="content-section">
+        <h2>The Maturity Path: Assist, Execute, Operate</h2>
+
+        <p>
+          The organizations that succeed with AI support do not flip a switch. They progress through
+          maturity levels, expanding AI autonomy as they build confidence and measurement.
+          Here is what that looks like for customer support.
+        </p>
+
+        <div class="maturity-grid">
+          <div class="maturity-card">
+            <div class="maturity-level">Level 1</div>
+            <h3>Assist</h3>
+            <p class="maturity-tagline">AI suggests. Humans act.</p>
+            <ul>
+              <li>AI drafts replies for your agents to review and send</li>
+              <li>AI surfaces relevant knowledge base articles during live conversations</li>
+              <li>AI pre-fills ticket forms with intent classification and priority</li>
+              <li>AI provides real-time sentiment analysis and escalation recommendations</li>
+            </ul>
+            <div class="maturity-outcome">
+              <strong>What you get:</strong> 30-40% faster agent response times.
+              Agents stay in control. You start collecting data on where AI helps and where it does not.
+            </div>
+            <div class="maturity-timeline">Typical deployment: 4-8 weeks</div>
+          </div>
+
+          <div class="maturity-card">
+            <div class="maturity-level">Level 2</div>
+            <h3>Execute</h3>
+            <p class="maturity-tagline">AI resolves tier-1. Humans oversee quality.</p>
+            <ul>
+              <li>AI autonomously handles password resets, order status inquiries, return initiation</li>
+              <li>Guardrails enforce topic boundaries, factual grounding, and brand voice</li>
+              <li>Confidence scoring routes uncertain conversations to humans</li>
+              <li>Human QA team reviews a sample of AI conversations daily</li>
+            </ul>
+            <div class="maturity-outcome">
+              <strong>What you get:</strong> 40-65% of inbound volume handled autonomously.
+              Measurable cost reduction. Clear escalation path for everything the AI cannot handle.
+            </div>
+            <div class="maturity-timeline">Typical deployment: 3-6 months after Assist</div>
+          </div>
+
+          <div class="maturity-card">
+            <div class="maturity-level">Level 3</div>
+            <h3>Operate</h3>
+            <p class="maturity-tagline">AI manages the queue. Humans handle exceptions.</p>
+            <ul>
+              <li>AI handles 80%+ of customer interactions end-to-end</li>
+              <li>AI executes multi-step workflows: refunds, account changes, billing disputes</li>
+              <li>AI proactively reaches out about shipping delays, renewal reminders</li>
+              <li>AI identifies systemic issues (product defects, policy confusion) and alerts your team</li>
+            </ul>
+            <div class="maturity-outcome">
+              <strong>What you get:</strong> Support that scales without linear headcount growth.
+              Human agents focus on high-value, complex, and relationship-critical interactions.
+            </div>
+            <div class="maturity-timeline">Typical deployment: 12-24 months after Execute</div>
+          </div>
+        </div>
+
+        <p>
+          No vendor can drop you at Level 3 overnight. Anyone who claims otherwise is selling you
+          the next Klarna headline. The path is sequential, and each level requires measurement
+          infrastructure that most platforms do not provide.
+        </p>
+      </section>
+
+      <!-- What You Can Measure -->
+      <section class="content-section">
+        <h2>What You Can Measure (And Why It Matters)</h2>
+
+        <p>
+          Vanity metrics like "number of conversations handled" tell you nothing about whether
+          your AI is actually helping customers. Here are the KPIs that matter, and why.
+        </p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <h4>Resolution Rate</h4>
+            <p>
+              The percentage of conversations where the customer's problem was actually solved —
+              not just where the conversation ended. This is the most gamed metric in AI support.
+              A customer who gives up is not a resolution.
+            </p>
+          </div>
+
+          <div class="kpi-card">
+            <h4>CSAT (Customer Satisfaction)</h4>
+            <p>
+              Post-interaction satisfaction scores, segmented by AI-handled vs. human-handled.
+              If your AI CSAT is significantly lower than human CSAT, you have a quality problem.
+              Track the trend, not a single number.
+            </p>
+          </div>
+
+          <div class="kpi-card">
+            <h4>Cost Per Conversation</h4>
+            <p>
+              Total cost including LLM inference, guardrail overhead, infrastructure, and
+              the human time spent on escalations and QA review. Per-resolution pricing
+              ($0.99/conversation) sounds cheap until you factor in the full picture.
+            </p>
+          </div>
+
+          <div class="kpi-card">
+            <h4>Escalation Quality</h4>
+            <p>
+              When the AI escalates, does the human agent have the context they need?
+              One in three agents
+              <a href="https://www.bucher-suter.com/escalation-design-why-ai-fails-at-the-handoff-not-the-automation/" target="_blank" rel="noopener">lack the customer context</a>
+              needed to resolve the issue. Bad handoffs compound the problem.
+            </p>
+          </div>
+
+          <div class="kpi-card">
+            <h4>Time to Resolve</h4>
+            <p>
+              End-to-end time from first contact to confirmed resolution. AI should reduce this,
+              but only if it resolves correctly on the first attempt. Faster wrong answers
+              make things worse, not better.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          If your AI support platform cannot break these metrics down by conversation type,
+          by maturity level, and by time period, you are flying blind. You cannot improve
+          what you cannot measure, and you cannot trust what you cannot verify.
+        </p>
+      </section>
+
+      <!-- How Omnia Helps -->
+      <section class="content-section">
+        <h2>How Omnia Helps</h2>
+
+        <p>
+          <a href={`${base}/#products`}>Omnia</a> is an open-core AgentOps platform built on Kubernetes.
+          It is not a customer support product — it is the infrastructure that makes customer support
+          agents reliable, observable, and governable. Here is how its capabilities map to support needs.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <h4>Session Management for Conversation Continuity</h4>
+            <p>
+              Omnia's three-tier session storage (Redis hot, Postgres warm, S3/GCS/Azure cold)
+              keeps conversation state durable across channel switches and agent restarts.
+              A customer who starts on chat and moves to phone does not repeat themselves.
+              Session retention policies let you control how long data lives and where.
+            </p>
+            <span class="feature-availability">OSS</span>
+          </div>
+
+          <div class="feature-item">
+            <h4>Multi-Provider for Cost Optimization</h4>
+            <p>
+              Route conversations to the right model for the job. Simple FAQ lookups do not need
+              your most expensive model. Complex escalation summaries do. Omnia supports 7+ LLM
+              providers (Claude, OpenAI, Gemini, Ollama, Bedrock, Vertex, AzureAI) and lets you
+              define routing policies per agent, per conversation type.
+            </p>
+            <span class="feature-availability">OSS</span>
+          </div>
+
+          <div class="feature-item">
+            <h4>Policy Enforcement for Guardrails</h4>
+            <p>
+              AgentPolicy CRDs define what your AI can and cannot do — topic boundaries,
+              action permissions, spending limits, data access controls. Policies are declarative,
+              versioned, and auditable. No more "the AI went rogue" incidents because the
+              guardrails are infrastructure, not prompt engineering.
+            </p>
+            <span class="feature-availability">OSS + Enterprise</span>
+          </div>
+
+          <div class="feature-item">
+            <h4>Observability for Debugging Bad Responses</h4>
+            <p>
+              <a href="https://opentelemetry.io/" target="_blank" rel="noopener">OpenTelemetry</a>
+              tracing on every conversation turn. When a customer gets a bad answer, you can trace
+              exactly what happened: which documents were retrieved, what the model saw in context,
+              which guardrail evaluated what, and why the confidence score was what it was.
+              Prometheus metrics and Grafana dashboards give you aggregate health at a glance.
+            </p>
+            <span class="feature-availability">OSS</span>
+          </div>
+
+          <div class="feature-item">
+            <h4>Arena for Comparative Evaluation</h4>
+            <p>
+              Before you promote your support agent from Assist to Execute, test it.
+              Arena lets you run the same conversations through different model configurations,
+              guardrail settings, and prompt versions side by side. Measure which configuration
+              resolves more accurately before it touches a real customer.
+            </p>
+            <span class="feature-availability">Enterprise</span>
+          </div>
+
+          <div class="feature-item">
+            <h4>Analytics Export for Business Intelligence</h4>
+            <p>
+              Stream conversation analytics to Snowflake, BigQuery, or ClickHouse.
+              Build the CSAT dashboards, cost attribution reports, and escalation quality
+              analyses your leadership team actually needs. Your data, your warehouse, your queries.
+            </p>
+            <span class="feature-availability">Enterprise</span>
+          </div>
+        </div>
+
+        <p>
+          Omnia runs on your
+          <a href="https://www.cncf.io/reports/cncf-annual-survey-2023/" target="_blank" rel="noopener">Kubernetes</a>
+          cluster. Your data never leaves your infrastructure. Every component is swappable.
+          For full documentation, see the
+          <a href="https://omnia.altairalabs.ai/" target="_blank" rel="noopener">Omnia docs</a>.
+        </p>
+      </section>
+
+      <!-- Related Reading -->
+      <section class="content-section">
+        <h2>Related Reading</h2>
+
+        <div class="reading-list">
+          <a href={`${base}/blog/the-klarna-effect/`} class="reading-card">
+            <span class="reading-label">Blog</span>
+            <h4>The Klarna Effect</h4>
+            <p>Why the biggest AI customer service story of 2024 became the biggest cautionary tale of 2025.</p>
+          </a>
+
+          <a href={`${base}/blog/why-95-percent-of-ai-pilots-fail/`} class="reading-card">
+            <span class="reading-label">Blog</span>
+            <h4>Why 95% of AI Pilots Fail</h4>
+            <p>The gap between prototype and production, and how infrastructure closes it.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section">
+        <h2>Start with Assist. Scale to Operate.</h2>
+        <p>
+          You do not need to automate everything on day one. Start by giving your agents better tools.
+          Measure what works. Expand autonomy when the data says you are ready.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Get Started
+          </a>
+          <a href="mailto:hello@altairalabs.ai" class="btn btn-ghost-white btn-lg">
+            Talk to Us
+          </a>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    background: var(--gradient-dark);
+    padding: calc(72px + var(--space-2xl)) 0 var(--space-3xl);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--nebula-cyan);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: var(--space-lg);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--slate);
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* Page Content */
+  .page-content {
+    padding: var(--space-3xl) 0 var(--space-4xl);
+  }
+
+  .content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .content-section {
+    margin-bottom: var(--space-4xl);
+  }
+
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+    color: var(--deep-space);
+  }
+
+  .content-section p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--onyx);
+    margin-bottom: 1.5rem;
+  }
+
+  .content-section a {
+    color: var(--altair-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .content-section a:hover {
+    color: var(--altair-blue-dark);
+  }
+
+  /* Maturity Grid */
+  .maturity-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+  }
+
+  .maturity-card {
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: box-shadow 0.2s;
+  }
+
+  .maturity-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .maturity-level {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--altair-blue);
+    margin-bottom: var(--space-sm);
+  }
+
+  .maturity-card h3 {
+    font-size: 1.5rem;
+    color: var(--deep-space);
+    margin-bottom: var(--space-xs);
+  }
+
+  .maturity-tagline {
+    font-size: 1rem;
+    color: var(--slate);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+  }
+
+  .maturity-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--space-md);
+  }
+
+  .maturity-card li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.975rem;
+    line-height: 1.6;
+    color: var(--onyx);
+  }
+
+  .maturity-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--nebula-cyan);
+  }
+
+  .maturity-outcome {
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 3px solid var(--altair-blue);
+    padding: var(--space-md);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--onyx);
+    margin-bottom: var(--space-sm);
+  }
+
+  .maturity-timeline {
+    font-size: 0.8125rem;
+    color: var(--slate);
+    font-weight: 500;
+  }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+
+  .kpi-card {
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .kpi-card h4 {
+    font-size: 1.125rem;
+    color: var(--deep-space);
+    margin-bottom: var(--space-sm);
+  }
+
+  .kpi-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--onyx);
+    margin-bottom: 0;
+  }
+
+  .kpi-card a {
+    color: var(--altair-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Feature List */
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+  }
+
+  .feature-item {
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: relative;
+  }
+
+  .feature-item h4 {
+    font-size: 1.125rem;
+    color: var(--deep-space);
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature-item p {
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--onyx);
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature-availability {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--deploy-green);
+  }
+
+  /* Reading List */
+  .reading-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+  }
+
+  .reading-card {
+    display: block;
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-decoration: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .reading-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--altair-blue);
+  }
+
+  .reading-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--altair-blue);
+  }
+
+  .reading-card h4 {
+    font-size: 1.0625rem;
+    color: var(--deep-space);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+
+  .reading-card p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--gradient-dark);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl) var(--space-xl);
+    text-align: center;
+    margin-top: var(--space-2xl);
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    color: var(--slate);
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.625rem;
+    }
+
+    .content-section p {
+      font-size: 1rem;
+    }
+
+    .maturity-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .kpi-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+      padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .cta-section h2 {
+      font-size: 1.625rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.625rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.375rem;
+    }
+  }
+</style>

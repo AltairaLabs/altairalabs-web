@@ -1,0 +1,182 @@
+---
+interface Props {
+  title: string;
+  tags?: string[];
+}
+
+const { title, tags = [] } = Astro.props;
+
+// Hash function — deterministic values from string
+function hash(str: string): number {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) {
+    h = ((h << 5) - h + str.charCodeAt(i)) | 0;
+  }
+  return Math.abs(h);
+}
+
+function seeded(h: number, i: number): number {
+  return ((h * (i * 2654435761 + 1)) >>> 0) % 1000 / 1000; // 0-1 range
+}
+
+const h = hash(title);
+
+// Pick a palette — more contrast between palettes
+const palettes = [
+  { bg: '#0c1929', c1: '#3B82F6', c2: '#06B6D4', c3: '#8B5CF6' },
+  { bg: '#1a0f2e', c1: '#8B5CF6', c2: '#EC4899', c3: '#3B82F6' },
+  { bg: '#0f1f1a', c1: '#10B981', c2: '#06B6D4', c3: '#3B82F6' },
+  { bg: '#1f1509', c1: '#F59E0B', c2: '#EF4444', c3: '#8B5CF6' },
+  { bg: '#0f172a', c1: '#06B6D4', c2: '#3B82F6', c3: '#10B981' },
+  { bg: '#1a0a1f', c1: '#EC4899', c2: '#8B5CF6', c3: '#06B6D4' },
+  { bg: '#0d1a2d', c1: '#3B82F6', c2: '#F59E0B', c3: '#10B981' },
+];
+
+const p = palettes[h % palettes.length];
+
+// Deterministic randoms
+const s = Array.from({ length: 20 }, (_, i) => seeded(h, i + 1));
+
+// Choose a pattern type (0-4)
+const pattern = h % 5;
+
+// Orb positions and sizes — big and visible
+const orb1x = 100 + s[0] * 600;
+const orb1y = 40 + s[1] * 240;
+const orb1r = 150 + s[2] * 200;
+const orb2x = 200 + s[3] * 500;
+const orb2y = 60 + s[4] * 200;
+const orb2r = 120 + s[5] * 180;
+const orb3x = s[6] * 800;
+const orb3y = s[7] * 320;
+const orb3r = 80 + s[8] * 120;
+
+// Geometric shape positions
+const gx = 300 + s[9] * 300;
+const gy = 60 + s[10] * 200;
+const gsize = 60 + s[11] * 100;
+const grot = s[12] * 360;
+
+// Line positions
+const lx1 = s[13] * 400;
+const ly1 = s[14] * 320;
+const lx2 = 400 + s[15] * 400;
+const ly2 = s[16] * 320;
+
+// Node cluster
+const nodes = Array.from({ length: 6 }, (_, i) => ({
+  x: 100 + seeded(h, 30 + i * 2) * 600,
+  y: 40 + seeded(h, 31 + i * 2) * 240,
+  r: 3 + seeded(h, 50 + i) * 6,
+}));
+---
+
+<div class="post-hero-img">
+  <svg viewBox="0 0 800 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id={`o1-${h}`} cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color={p.c1} stop-opacity="0.6" />
+        <stop offset="100%" stop-color={p.c1} stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id={`o2-${h}`} cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color={p.c2} stop-opacity="0.4" />
+        <stop offset="100%" stop-color={p.c2} stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id={`o3-${h}`} cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color={p.c3} stop-opacity="0.35" />
+        <stop offset="100%" stop-color={p.c3} stop-opacity="0" />
+      </radialGradient>
+      <linearGradient id={`lg-${h}`} x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color={p.c1} />
+        <stop offset="50%" stop-color={p.c2} />
+        <stop offset="100%" stop-color={p.c3} />
+      </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="800" height="320" fill={p.bg} />
+
+    <!-- Large gradient orbs -->
+    <circle cx={orb1x} cy={orb1y} r={orb1r} fill={`url(#o1-${h})`} />
+    <circle cx={orb2x} cy={orb2y} r={orb2r} fill={`url(#o2-${h})`} />
+    <circle cx={orb3x} cy={orb3y} r={orb3r} fill={`url(#o3-${h})`} />
+
+    {/* Pattern 0: Diagonal lines */}
+    {pattern === 0 && (
+      <>
+        <line x1={lx1} y1="0" x2={lx1 + 300} y2="320" stroke={p.c1} stroke-width="1" opacity="0.25" />
+        <line x1={lx1 + 80} y1="0" x2={lx1 + 380} y2="320" stroke={p.c2} stroke-width="0.8" opacity="0.2" />
+        <line x1={lx1 + 160} y1="0" x2={lx1 + 460} y2="320" stroke={p.c3} stroke-width="0.6" opacity="0.15" />
+        <line x1={lx1 + 240} y1="0" x2={lx1 + 540} y2="320" stroke={p.c1} stroke-width="0.4" opacity="0.1" />
+      </>
+    )}
+
+    {/* Pattern 1: Concentric rings */}
+    {pattern === 1 && (
+      <>
+        <circle cx={gx} cy={gy} r={gsize} stroke={p.c1} stroke-width="1.5" opacity="0.3" />
+        <circle cx={gx} cy={gy} r={gsize * 0.7} stroke={p.c2} stroke-width="1.2" opacity="0.25" />
+        <circle cx={gx} cy={gy} r={gsize * 0.4} stroke={p.c3} stroke-width="1" opacity="0.2" />
+        <circle cx={gx} cy={gy} r="4" fill={p.c1} opacity="0.6" />
+      </>
+    )}
+
+    {/* Pattern 2: Grid dots */}
+    {pattern === 2 && (
+      <>
+        {Array.from({ length: 8 }, (_, i) =>
+          Array.from({ length: 4 }, (_, j) => (
+            <circle
+              cx={100 + i * 85 + (j % 2) * 40}
+              cy={40 + j * 80}
+              r={2 + seeded(h, 60 + i * 4 + j) * 3}
+              fill={[p.c1, p.c2, p.c3][(i + j) % 3]}
+              opacity={0.15 + seeded(h, 70 + i * 4 + j) * 0.35}
+            />
+          ))
+        )}
+      </>
+    )}
+
+    {/* Pattern 3: Connected nodes */}
+    {pattern === 3 && (
+      <>
+        {nodes.map((node, i) => (
+          <>
+            <circle cx={node.x} cy={node.y} r={node.r} fill={[p.c1, p.c2, p.c3][i % 3]} opacity="0.5" />
+            {i > 0 && (
+              <line x1={nodes[i-1].x} y1={nodes[i-1].y} x2={node.x} y2={node.y} stroke={[p.c1, p.c2, p.c3][i % 3]} stroke-width="0.8" opacity="0.2" />
+            )}
+          </>
+        ))}
+        <line x1={nodes[0].x} y1={nodes[0].y} x2={nodes[nodes.length-1].x} y2={nodes[nodes.length-1].y} stroke={p.c1} stroke-width="0.5" opacity="0.12" />
+      </>
+    )}
+
+    {/* Pattern 4: Geometric shapes */}
+    {pattern === 4 && (
+      <>
+        <rect x={gx - gsize/2} y={gy - gsize/2} width={gsize} height={gsize} rx="8" stroke={p.c1} stroke-width="1.5" opacity="0.25" transform={`rotate(${grot}, ${gx}, ${gy})`} />
+        <rect x={gx - gsize*0.35} y={gy - gsize*0.35} width={gsize*0.7} height={gsize*0.7} rx="6" stroke={p.c2} stroke-width="1.2" opacity="0.2" transform={`rotate(${grot + 15}, ${gx}, ${gy})`} />
+        <circle cx={200 + s[17] * 200} cy={100 + s[18] * 120} r={30 + s[19] * 40} stroke={p.c3} stroke-width="1" opacity="0.2" />
+      </>
+    )}
+
+    <!-- Bottom accent gradient -->
+    <rect x="0" y="314" width="800" height="6" fill={`url(#lg-${h})`} opacity="0.6" rx="0" />
+  </svg>
+</div>
+
+<style>
+  .post-hero-img {
+    aspect-ratio: 5 / 2;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    overflow: hidden;
+  }
+
+  .post-hero-img svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>

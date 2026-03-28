@@ -1,0 +1,701 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL ?? '/altairalabs-web';
+---
+
+<BaseLayout
+  title="AI Onboarding Agents — Reduce Churn, Scale Customer Success | AltairaLabs"
+  description="Deploy AI agents that onboard customers autonomously. Reduce time to first value, cut early churn by up to 23%, and free your CS team to focus on expansion — not walkthroughs."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Solutions / Onboarding</div>
+      <h1 class="hero-title">Onboarding That Scales Without Scaling Your Team</h1>
+      <p class="hero-subtitle">
+        Every new customer gets the same high-touch experience — guided setup, proactive nudges, real-time answers — without burning CSM hours on the same walkthrough for the hundredth time.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="content-section">
+    <div class="container narrow">
+      <h2 class="section-heading">The Problem</h2>
+      <p>
+        Onboarding is the most expensive, most repetitive, and most consequential stage of the customer lifecycle. Get it wrong and users churn before they see value. Get it right and you unlock retention, expansion, and advocacy.
+      </p>
+      <p>
+        Most companies are stuck between two bad options: throw documentation at new users and hope they figure it out, or burn expensive CSM time walking every account through the same setup steps. Neither scales.
+      </p>
+      <div class="callout">
+        <div class="callout-stat">23%</div>
+        <div class="callout-text">
+          <p>
+            Poor onboarding is responsible for up to <strong>23% of customer churn</strong>, according to
+            <a href="https://www.wyzowl.com/customer-onboarding-statistics/" target="_blank" rel="noopener">Wyzowl's onboarding research</a>.
+            <a href="https://www.gainsight.com/guides/the-essential-guide-to-customer-onboarding/" target="_blank" rel="noopener">Gainsight</a> and
+            <a href="https://www.totango.com/blog/customer-onboarding-best-practices/" target="_blank" rel="noopener">Totango</a>
+            report similar findings: the onboarding window is where most customer relationships are won or lost.
+          </p>
+        </div>
+      </div>
+      <p>
+        The math is brutal. If your average CSM handles 30 accounts and spends 4 hours onboarding each one, that is 120 hours per quarter just on setup — time that could go toward expansion, retention, or strategic work. Multiply that across your CS org and onboarding becomes your biggest operational bottleneck.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Maturity Path -->
+  <section class="content-section alt-bg">
+    <div class="container narrow">
+      <h2 class="section-heading">The Maturity Path</h2>
+      <p class="section-intro">
+        You do not have to automate everything on day one. The path from AI-assisted onboarding to fully autonomous onboarding is a spectrum. Move at the pace your team and customers are comfortable with.
+      </p>
+
+      <div class="maturity-grid">
+        <div class="maturity-card">
+          <div class="maturity-label assist">Assist</div>
+          <h3>AI Guides, CSM Monitors</h3>
+          <p>
+            The AI agent guides users through setup, answers common questions, and links to relevant documentation. Your CSM watches the conversation in real time and steps in for complex accounts or edge cases.
+          </p>
+          <ul class="maturity-details">
+            <li>Interactive setup wizard powered by your product docs</li>
+            <li>Contextual answers to "how do I..." questions</li>
+            <li>CSM gets alerts when users get stuck or go off-script</li>
+            <li>Human handoff for enterprise or strategic accounts</li>
+          </ul>
+        </div>
+
+        <div class="maturity-card">
+          <div class="maturity-label execute">Execute</div>
+          <h3>AI Handles Standard Flows</h3>
+          <p>
+            The agent runs standard onboarding flows autonomously — account configuration, integration setup, first-value milestones. CSMs focus their time on enterprise and strategic accounts where the human touch matters most.
+          </p>
+          <ul class="maturity-details">
+            <li>Autonomous account setup and configuration</li>
+            <li>Automated integration walkthroughs with API calls</li>
+            <li>Progress tracking toward first-value milestones</li>
+            <li>CSM intervention only for high-complexity accounts</li>
+          </ul>
+        </div>
+
+        <div class="maturity-card">
+          <div class="maturity-label operate">Operate</div>
+          <h3>AI Manages the Journey</h3>
+          <p>
+            The agent owns the entire onboarding lifecycle. It tracks progress across sessions, sends nudges when users stall, escalates stuck accounts to a human, and reports on cohort-level onboarding health. CSMs shift entirely to expansion and renewal.
+          </p>
+          <ul class="maturity-details">
+            <li>Multi-day onboarding journeys with persistent context</li>
+            <li>Proactive nudges and re-engagement sequences</li>
+            <li>Automatic escalation based on stuck-point detection</li>
+            <li>Cohort analytics: where users drop off, what works</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Can Measure -->
+  <section class="content-section">
+    <div class="container narrow">
+      <h2 class="section-heading">What You Can Measure</h2>
+      <p>
+        AI onboarding is not a black box. Every interaction is observable, every outcome is measurable. Here are the KPIs that matter.
+      </p>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Time to First Value</h4>
+          <p>How fast new users reach the moment they get real value from your product. The single most predictive metric for long-term retention.</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h4>Onboarding Completion Rate</h4>
+          <p>Percentage of users who finish all onboarding steps. Low completion is a leading indicator of churn — and a signal your flow needs work.</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h4>Support Tickets During Onboarding</h4>
+          <p>Fewer tickets means the onboarding agent is answering questions before they become support requests. Track deflection rate over time.</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 10 10-12h-9l1-10z"/></svg>
+          </div>
+          <h4>Activation Rate</h4>
+          <p>The percentage of signups that complete key activation milestones. AI onboarding targets the exact steps that predict long-term engagement.</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="18" y1="8" x2="18" y2="14"/><line x1="21" y1="11" x2="15" y2="11"/></svg>
+          </div>
+          <h4>Early Churn Rate</h4>
+          <p>Users who leave within the first 30-90 days. This is the metric onboarding exists to move. If it is not dropping, the onboarding is not working.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Omnia Helps -->
+  <section class="content-section alt-bg">
+    <div class="container narrow">
+      <h2 class="section-heading">How Omnia Helps</h2>
+      <p>
+        Omnia is not an onboarding tool. It is the platform you build onboarding agents on. Here is what it gives you that generic chatbot platforms do not.
+      </p>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="feature-content">
+            <h4>Session Management for Multi-Day Journeys</h4>
+            <p>
+              Onboarding does not happen in one sitting. Omnia's 3-tier session storage (hot/warm/cold) means conversations persist across days and weeks. A user who leaves on Tuesday picks up exactly where they stopped on Thursday — with full context.
+            </p>
+            <span class="feature-tier">OSS + Enterprise</span>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="feature-content">
+            <h4>Tool Integration for Product APIs, CRM, and Help Desk</h4>
+            <p>
+              Your onboarding agent needs to do things, not just talk about them. Omnia agents can call your product API to configure accounts, update your CRM to track onboarding status, and create help desk tickets when they hit a wall.
+            </p>
+            <span class="feature-tier">OSS</span>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="feature-content">
+            <h4>Multi-Provider for Cost Optimization</h4>
+            <p>
+              Not every onboarding interaction needs GPT-4. Use cheaper, faster models for routine steps like "where do I find my API key?" and reserve premium models for complex configuration guidance. Omnia's multi-provider routing handles this automatically with policy-based rules.
+            </p>
+            <span class="feature-tier">OSS</span>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="feature-content">
+            <h4>Observability to See Where Users Get Stuck</h4>
+            <p>
+              OpenTelemetry traces across every onboarding conversation. See exactly where users drop off, which questions the agent cannot answer, and which steps take the longest. This is how you improve the flow — with data, not guesswork.
+            </p>
+            <span class="feature-tier">OSS + Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Reading -->
+  <section class="content-section">
+    <div class="container narrow">
+      <h2 class="section-heading">Related Reading</h2>
+      <div class="reading-grid">
+        <a href={`${baseUrl}/blog/the-klarna-effect`} class="reading-card">
+          <span class="reading-label">Blog</span>
+          <h4>The Klarna Effect: What Happens When You Scale AI Agents Without Measurement</h4>
+          <p>Why observability matters before you scale — lessons from one of the most cited AI agent deployments.</p>
+        </a>
+        <a href={`${baseUrl}/blog/why-95-percent-of-ai-pilots-fail`} class="reading-card">
+          <span class="reading-label">Blog</span>
+          <h4>Why 95% of AI Pilots Fail to Reach Production</h4>
+          <p>The gap between demo and production is where most AI projects die. Here is what separates the 5% that make it.</p>
+        </a>
+        <a href={`${baseUrl}/blog/platform-engineers-next-ai-engineers`} class="reading-card">
+          <span class="reading-label">Blog</span>
+          <h4>Why Platform Engineers Are the Next AI Engineers</h4>
+          <p>The skills that got you to production for microservices are the same skills AI agents need now.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container narrow">
+      <div class="cta-box">
+        <h2>Stop choosing between scale and quality.</h2>
+        <p>Build an onboarding experience that gets better with every customer — without adding headcount. Start with the open-source core and scale from there.</p>
+        <div class="cta-actions">
+          <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-white btn-lg">Get Started Free</a>
+          <a href="mailto:hello@altairalabs.io" class="btn btn-ghost-white btn-lg">Talk to Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 140px 0 80px;
+    background: var(--gradient-dark);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--nebula-cyan);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: var(--space-lg);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--mist);
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .hero-cta .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+
+  .hero-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Content Sections */
+  .narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding: var(--space-4xl) 0;
+  }
+
+  .content-section.alt-bg {
+    background: white;
+    border-top: 1px solid var(--mist);
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .section-heading {
+    font-size: 2.25rem;
+    margin-bottom: var(--space-xl);
+    color: var(--deep-space);
+  }
+
+  .section-intro {
+    font-size: 1.125rem;
+    color: var(--slate);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .content-section p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--onyx);
+  }
+
+  .content-section a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Callout */
+  .callout {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 4px solid var(--altair-blue);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: var(--space-xl) 0;
+  }
+
+  .callout-stat {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+  }
+
+  .callout-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Maturity Cards */
+  .maturity-grid {
+    display: grid;
+    gap: var(--space-xl);
+  }
+
+  .maturity-card {
+    padding: var(--space-xl);
+    background: var(--cloud-white);
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+  }
+
+  .maturity-card h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .maturity-card > p {
+    margin-bottom: var(--space-md);
+  }
+
+  .maturity-label {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+  }
+
+  .maturity-label.assist {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--altair-blue);
+  }
+
+  .maturity-label.execute {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--cosmic-violet);
+  }
+
+  .maturity-label.operate {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--deploy-green);
+  }
+
+  .maturity-details {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .maturity-details li {
+    position: relative;
+    padding-left: var(--space-lg);
+    font-size: 0.95rem;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  .maturity-details li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mist);
+  }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  .kpi-card {
+    padding: var(--space-xl);
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+  }
+
+  .kpi-card h4 {
+    margin-bottom: var(--space-sm);
+    color: var(--deep-space);
+  }
+
+  .kpi-card p {
+    font-size: 0.95rem;
+    color: var(--slate);
+    margin: 0;
+  }
+
+  .kpi-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--altair-blue);
+    margin-bottom: var(--space-md);
+  }
+
+  .kpi-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Feature List */
+  .feature-list {
+    display: grid;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  .feature-item {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    padding: var(--space-xl);
+    background: var(--cloud-white);
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--altair-blue);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .feature-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature-content h4 {
+    margin-bottom: var(--space-sm);
+    color: var(--deep-space);
+  }
+
+  .feature-content p {
+    font-size: 0.95rem;
+    color: var(--slate);
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature-tier {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--altair-blue);
+  }
+
+  /* Reading Grid */
+  .reading-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  .reading-card {
+    display: block;
+    padding: var(--space-xl);
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    text-decoration: none !important;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .reading-card:hover {
+    border-color: var(--altair-blue);
+    box-shadow: var(--shadow-md);
+  }
+
+  .reading-card h4 {
+    color: var(--deep-space);
+    margin-bottom: var(--space-sm);
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .reading-card p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    margin: 0;
+  }
+
+  .reading-label {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--cosmic-violet);
+    margin-bottom: var(--space-sm);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: var(--space-4xl) 0;
+  }
+
+  .cta-box {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+    background: var(--gradient-dark);
+    border-radius: var(--radius-xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cta-box h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    position: relative;
+  }
+
+  .cta-box p {
+    color: var(--mist);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    position: relative;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 120px 0 60px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-heading {
+      font-size: 1.75rem;
+    }
+
+    .callout {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .kpi-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+      flex-direction: column;
+    }
+
+    .reading-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

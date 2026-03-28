@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostHero from '../../components/PostHero.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
@@ -42,8 +43,7 @@ const blogJsonLd = {
     <div class="blog-hero-bg"></div>
     <div class="container blog-hero-content">
       <div class="blog-badge">From the Lab</div>
-      <h1>Blog</h1>
-      <p class="section-subtitle">Insights on AgentOps, platform engineering, and shipping AI to production.</p>
+      <h1>Insights on AgentOps, platform engineering, and shipping AI to production.</h1>
     </div>
   </section>
 
@@ -59,20 +59,25 @@ const blogJsonLd = {
       {posts.length === 0 && <p class="no-posts">No posts yet. Check back soon!</p>}
 
       <div class="post-grid">
-        {posts.map((post) => (
-          <a href={`${base}/blog/${post.id}/`} class="post-card" data-tags={JSON.stringify(post.data.tags ?? [])}>
-            <time datetime={post.data.date.toISOString()}>
-              {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </time>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
-            {post.data.tags && (
-              <div class="post-tags">
-                {post.data.tags.map((tag) => (
-                  <span class="tag">{tag}</span>
-                ))}
-              </div>
-            )}
+        {posts.map((post, i) => (
+          <a href={`${base}/blog/${post.id}/`} class:list={['post-card', { featured: i === 0, side: i > 0 }]} data-tags={JSON.stringify(post.data.tags ?? [])}>
+            <div class="post-card-image">
+              <PostHero title={post.data.title} tags={post.data.tags} />
+            </div>
+            <div class="post-card-body">
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              {post.data.tags && (
+                <div class="post-tags">
+                  {post.data.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </div>
           </a>
         ))}
       </div>
@@ -125,17 +130,15 @@ const blogJsonLd = {
 
   .blog-hero h1 {
     color: white;
-    font-size: 2.5rem;
-    margin-bottom: var(--space-sm);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 640px;
+    margin: 0 auto;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  .blog-hero .section-subtitle {
-    color: var(--slate);
-    font-size: 1.05rem;
   }
 
   /* Filter bar */
@@ -189,20 +192,49 @@ const blogJsonLd = {
 
   .post-card {
     display: block;
-    padding: var(--space-lg) var(--space-xl);
     background: white;
     border: 1px solid var(--mist);
     border-radius: var(--radius-lg);
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
+    overflow: hidden;
   }
 
   .post-card:hover {
     border-color: var(--altair-blue);
     box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
     color: inherit;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+  }
+
+  /* Featured (first) card — image on top */
+  .post-card.featured .post-card-image :global(.post-hero-img) {
+    border-radius: 0;
+  }
+
+  /* Side cards — image left, text right */
+  .post-card.side {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .post-card.side .post-card-image {
+    min-height: 100%;
+  }
+
+  .post-card.side .post-card-image :global(.post-hero-img) {
+    border-radius: 0;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .post-card.side .post-card-image :global(.post-hero-img svg) {
+    height: 100%;
+  }
+
+  .post-card-body {
+    padding: var(--space-lg) var(--space-xl);
   }
 
   .post-card time {
@@ -223,11 +255,19 @@ const blogJsonLd = {
     margin-bottom: 6px;
   }
 
+  .post-card.side h2 {
+    font-size: 1.0625rem;
+  }
+
   .post-card p {
     font-size: 0.9375rem;
     line-height: 1.55;
     color: var(--slate);
     margin-bottom: 10px;
+  }
+
+  .post-card.side p {
+    font-size: 0.875rem;
   }
 
   .post-tags {
@@ -285,7 +325,7 @@ const blogJsonLd = {
 
   @media (max-width: 768px) {
     .blog-hero h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     .blog-list {
@@ -297,26 +337,33 @@ const blogJsonLd = {
       font-size: 0.75rem;
     }
 
-    .post-card {
+    .post-card.side {
+      grid-template-columns: 1fr;
+    }
+
+    .post-card.side .post-card-image :global(.post-hero-img) {
+      aspect-ratio: 5 / 2;
+      height: auto;
+    }
+
+    .post-card-body {
       padding: var(--space-md) var(--space-lg);
     }
 
-    .post-card h2 {
+    .post-card h2,
+    .post-card.side h2 {
       font-size: 1.125rem;
     }
 
-    .post-card p {
+    .post-card p,
+    .post-card.side p {
       font-size: 0.875rem;
     }
   }
 
   @media (max-width: 480px) {
     .blog-hero h1 {
-      font-size: 1.75rem;
-    }
-
-    .blog-hero .section-subtitle {
-      font-size: 0.9375rem;
+      font-size: 1.25rem;
     }
 
     .filter-bar {

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostHero from '../../components/PostHero.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -41,13 +42,7 @@ const jsonLd = {
   <section class="post-hero">
     <div class="container">
       <a href={`${base}/blog/`} class="back-link">&larr; Back to Blog</a>
-    </div>
-  </section>
-
-  <article class="post-article">
-    <div class="post-container">
-      <header class="post-header">
-        <h1>{post.data.title}</h1>
+      <h1 class="post-hero-title">{post.data.title}</h1>
         <div class="post-meta">
           <span class="post-author">{post.data.author}</span>
           <span class="meta-sep">&middot;</span>
@@ -87,9 +82,15 @@ const jsonLd = {
             Share
           </button>
         </div>
-      </header>
+    </div>
+  </section>
 
+  <article class="post-article">
+    <div class="post-container">
       <div class="post-content">
+        <div class="post-inline-image">
+          <PostHero title={post.data.title} tags={post.data.tags} />
+        </div>
         <Content />
       </div>
 
@@ -119,10 +120,34 @@ const jsonLd = {
     color: var(--slate);
     font-size: 0.875rem;
     font-weight: 500;
+    display: inline-block;
+    margin-bottom: var(--space-lg);
   }
 
   .post-hero .back-link:hover {
     color: white;
+  }
+
+  .post-hero-title {
+    color: white;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-size: 0.875rem;
+    color: var(--slate);
+    margin-bottom: var(--space-md);
   }
 
   .post-article {
@@ -133,25 +158,6 @@ const jsonLd = {
     max-width: 720px;
     margin: 0 auto;
     padding: 0 var(--space-lg);
-  }
-
-  .post-header {
-    margin-bottom: var(--space-3xl);
-  }
-
-  .post-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-md);
-    color: var(--deep-space);
-  }
-
-  .post-meta {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-size: 0.875rem;
-    color: var(--slate);
-    margin-bottom: var(--space-md);
   }
 
   .post-author {
@@ -170,6 +176,7 @@ const jsonLd = {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
+    justify-content: center;
   }
 
   .tag {
@@ -177,16 +184,44 @@ const jsonLd = {
     padding: 2px 10px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--altair-blue);
-    background: rgba(59, 130, 246, 0.1);
+    color: var(--nebula-cyan);
+    background: rgba(6, 182, 212, 0.1);
     border-radius: var(--radius-full);
     text-transform: lowercase;
+  }
+
+  .post-inline-image {
+    float: left;
+    width: 240px;
+    margin: 0 var(--space-xl) var(--space-md) 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .post-inline-image :global(.post-hero-img) {
+    border-radius: 0;
+    aspect-ratio: 1 / 1;
   }
 
   .post-content {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--onyx);
+  }
+
+  .post-content :global(h2:first-of-type),
+  .post-content :global(p:first-of-type) {
+    /* Ensure first content flows around the float */
+  }
+
+  .post-content :global(p:first-of-type::first-letter) {
+    float: left;
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 800;
+    margin-right: 8px;
+    margin-top: 4px;
+    color: var(--altair-blue);
   }
 
   .post-content :global(h2) {
@@ -266,6 +301,7 @@ const jsonLd = {
     display: flex;
     gap: var(--space-sm);
     margin-top: var(--space-md);
+    justify-content: center;
   }
 
   .share-copy,
@@ -319,8 +355,18 @@ const jsonLd = {
   }
 
   @media (max-width: 768px) {
-    .post-header h1 {
+    .post-hero-title {
       font-size: 1.75rem;
+    }
+
+    .post-inline-image {
+      float: none;
+      width: 100%;
+      margin: 0 0 var(--space-lg) 0;
+    }
+
+    .post-inline-image :global(.post-hero-img) {
+      aspect-ratio: 5 / 2;
     }
 
     .post-content {
@@ -356,7 +402,7 @@ const jsonLd = {
   }
 
   @media (max-width: 480px) {
-    .post-header h1 {
+    .post-hero-title {
       font-size: 1.5rem;
     }
 
