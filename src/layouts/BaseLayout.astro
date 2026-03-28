@@ -1,16 +1,25 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  canonicalUrl?: string;
 }
 
 const {
   title = 'AltairaLabs - The Complete Platform for Agentic AI',
-  description = 'A complete AgentOps platform out of the box — runtime, testing, deployment, observability. Built on Kubernetes, so bring your own tools whenever you want.'
+  description = 'A complete AgentOps platform out of the box — runtime, testing, deployment, observability. Built on Kubernetes, so bring your own tools whenever you want.',
+  image,
+  canonicalUrl,
 } = Astro.props;
+
+const siteUrl = import.meta.env.SITE ?? 'https://altairalabs.github.io';
+const baseUrl = import.meta.env.BASE_URL ?? '/altairalabs-web';
+const currentUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
 ---
 
 <!DOCTYPE html>
@@ -25,6 +34,21 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='16,2 20,12 16,10 12,12' fill='%233B82F6'/><polygon points='16,10 24,16 16,14 8,16' fill='%2306B6D4'/><polygon points='16,14 28,22 16,18 4,22' fill='%238B5CF6'/></svg>" />
     <title>{title}</title>
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:site_name" content="AltairaLabs" />
+    {image && <meta property="og:image" content={image} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
     <style is:global>
       :root {
         /* Primary Colors */

@@ -1,7 +1,10 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const navItems = [
   { href: '#products', label: 'Products' },
   { href: '#solutions', label: 'Solutions' },
+  { href: `${base}/blog/`, label: 'Blog' },
 ];
 
 const docLinks = [
@@ -45,6 +48,28 @@ const docLinks = [
     <div class="nav-actions">
       <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
       <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary">Get Started</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      {navItems.map((item) => (
+        <a href={item.href} class="mobile-link">{item.label}</a>
+      ))}
+      <div class="mobile-docs-section">
+        <span class="mobile-docs-label">Docs</span>
+        {docLinks.map((item) => (
+          <a href={item.href} target="_blank" rel="noopener" class="mobile-link mobile-doc-link">{item.label}</a>
+        ))}
+      </div>
+      <div class="mobile-actions">
+        <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="btn btn-ghost mobile-btn">GitHub</a>
+        <a href="https://omnia.altairalabs.ai/getting-started/" target="_blank" rel="noopener" class="btn btn-primary mobile-btn">Get Started</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -174,13 +199,140 @@ const docLinks = [
     color: white;
   }
 
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+  }
+
+  .hamburger-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    display: none;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 500px;
+  }
+
+  .mobile-menu-inner {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-link {
+    display: block;
+    color: var(--mist);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    padding: 12px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+  }
+
+  .mobile-link:hover {
+    color: white;
+  }
+
+  .mobile-docs-section {
+    padding-top: 8px;
+  }
+
+  .mobile-docs-label {
+    display: block;
+    color: var(--slate);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 0 4px;
+  }
+
+  .mobile-doc-link {
+    padding-left: var(--space-md);
+  }
+
+  .mobile-actions {
+    display: flex;
+    gap: var(--space-md);
+    padding-top: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+
+  .mobile-btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+
   @media (max-width: 768px) {
     .nav-links {
       display: none;
     }
 
-    .nav-actions .btn-ghost {
+    .nav-actions {
       display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .mobile-menu {
+      display: block;
     }
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger?.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!expanded));
+    mobileMenu?.classList.toggle('open');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger?.setAttribute('aria-expanded', 'false');
+      mobileMenu?.classList.remove('open');
+    });
+  });
+</script>
