@@ -1,43 +1,43 @@
-# Astro Starter Kit: Minimal
+# AltairaLabs Website
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Marketing site for [AltairaLabs](https://www.altairalabs.ai) — open-core Kubernetes-native platform for deploying, governing, testing, and observing AI agents in production.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live at:** https://www.altairalabs.ai
 
-## 🚀 Project Structure
+## What's in here
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Homepage** — product overview, mock screenshots, comparison table, platform logos
+- **Blog** — 36 posts on AgentOps, platform engineering, and AI in production. Content collections with tag filtering, infinite scroll, auto-generated OG images
+- **Solutions** — three pillars (Talk to Customers, Build Things, Make Sense of Things) with dedicated pages for customer support, sales, and onboarding
+- **Why page** — founder story
+- **SEO** — JSON-LD, Open Graph, Twitter Cards, sitemap, RSS, robots.txt, llms.txt, IndexNow, canonical URLs
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Tech stack
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- [Astro](https://astro.build) — static site generator
+- [Tailwind CSS](https://tailwindcss.com) — utilities (no preflight, coexists with custom CSS)
+- [Satori](https://github.com/vercel/satori) + [resvg](https://github.com/nicolo-ribaudo/resvg-js) — auto-generated OG images
+- GitHub Pages with custom domain
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Commands
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Command | Action |
+|:--|:--|
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Start dev server at `localhost:4321` |
+| `pnpm build` | Build production site to `./dist/` |
+| `pnpm preview` | Preview production build locally |
+| `pnpm check:links` | Build and check all internal links |
+| `pnpm check:a11y` | Run Lighthouse accessibility audit (needs dev server running) |
 
-## 🧞 Commands
+## Quality
 
-All commands are run from the root of the project, from a terminal:
+- Link checker: 0 broken links across 3,006 links
+- Lighthouse accessibility: 100%
+- IndexNow: pings search engines on every build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Related repos
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [AltairaLabs/charts](https://github.com/AltairaLabs/charts) — Helm chart repository at charts.altairalabs.ai
+- [AltairaLabs/Omnia](https://github.com/AltairaLabs/Omnia) — the platform
+- [AltairaLabs/PromptKit](https://github.com/AltairaLabs/PromptKit) — agent runtime
