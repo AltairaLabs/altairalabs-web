@@ -10,6 +10,7 @@ const orgJsonLd = {
   description: 'Open-core Kubernetes-native platform for deploying, governing, testing, and observing AI agents in production.',
   sameAs: [
     'https://github.com/AltairaLabs',
+    'https://www.linkedin.com/in/chaholl/',
   ],
 };
 
@@ -371,65 +372,66 @@ const softwareJsonLd = {
         <table class="comparison-table">
           <thead>
             <tr>
-              <th>Capability</th>
-              <th class="highlight-col">Included</th>
+              <th>What You Get</th>
+              <th class="highlight-col">How It Works</th>
               <th>Tier</th>
-              <th>Or Bring Your Own</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Agent Runtime</td>
-              <td class="highlight-col"><span class="capability">PromptKit</span></td>
+              <td>Deploy agents to production</td>
+              <td class="highlight-col"><span class="capability">Helm install, kubectl apply — your cluster, your cloud</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="capability">LangChain, CrewAI, ADK, OpenAI SDK</span></td>
             </tr>
             <tr>
-              <td>Deployment</td>
-              <td class="highlight-col"><span class="capability">K8s Operator</span></td>
+              <td>Route between LLM providers</td>
+              <td class="highlight-col"><span class="capability">Automatic failover and cost-based routing across all major providers</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="capability">Standard K8s, ArgoCD, Flux</span></td>
             </tr>
             <tr>
-              <td>Observability</td>
-              <td class="highlight-col"><span class="capability">OTel + Grafana</span></td>
+              <td>Track cost per conversation</td>
+              <td class="highlight-col"><span class="capability">Per-agent, per-session, per-provider cost attribution in real time</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="capability">Your Prometheus, Datadog, etc.</span></td>
             </tr>
             <tr>
-              <td>Governance</td>
-              <td class="highlight-col"><span class="capability">OPA Policies</span></td>
+              <td>Evaluate agent quality</td>
+              <td class="highlight-col"><span class="capability">Real-time performance monitoring and batch analysis against stored conversations</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="capability">Your existing OPA/Gatekeeper</span></td>
             </tr>
             <tr>
-              <td>Testing & Eval</td>
-              <td class="highlight-col"><span class="capability">PromptArena</span></td>
+              <td>Test before customers see it</td>
+              <td class="highlight-col"><span class="capability">Load testing, multi-turn eval scenarios, and quality gates in your CI/CD pipeline</span></td>
               <td><span class="tier-oss">OSS</span></td>
-              <td><span class="capability">Any CI/CD via JUnit XML</span></td>
             </tr>
             <tr>
-              <td>Audit Logging</td>
-              <td class="highlight-col"><span class="capability">Partitioned logs</span></td>
+              <td>Multimodal conversations</td>
+              <td class="highlight-col"><span class="capability">Two-way audio/video streaming, voice, images, and documents — not just text</span></td>
+              <td><span class="tier-oss">OSS</span></td>
+            </tr>
+            <tr>
+              <td>Trace every decision</td>
+              <td class="highlight-col"><span class="capability">Full conversation observability — every LLM call, tool use, and escalation</span></td>
+              <td><span class="tier-oss">OSS</span></td>
+            </tr>
+            <tr>
+              <td>Enforce policies and guardrails</td>
+              <td class="highlight-col"><span class="capability">Control what agents can do, who can deploy them, and what data they touch</span></td>
               <td><span class="tier-ee">EE</span></td>
-              <td><span class="capability">Your SIEM / log aggregator</span></td>
             </tr>
             <tr>
-              <td>Stream Export</td>
-              <td class="highlight-col"><span class="capability">Kafka, Kinesis, NATS</span></td>
+              <td>Audit trail for compliance</td>
+              <td class="highlight-col"><span class="capability">Immutable, partitioned logs for regulated industries</span></td>
               <td><span class="tier-ee">EE</span></td>
-              <td><span class="capability">Any event bus</span></td>
             </tr>
             <tr>
-              <td>Analytics Export</td>
-              <td class="highlight-col"><span class="capability">Snowflake, BigQuery, ClickHouse</span></td>
+              <td>Stream to your data platform</td>
+              <td class="highlight-col"><span class="capability">Real-time export to Snowflake, BigQuery, Kafka, and more</span></td>
               <td><span class="tier-ee">EE</span></td>
-              <td><span class="capability">Your data warehouse</span></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="comparison-note"><span class="tier-oss">OSS</span> = open source, Apache 2.0. <span class="tier-ee">EE</span> = enterprise license. All products are fully open source. Enterprise adds audit, encryption, streaming export, and analytics sync to Omnia.</p>
+      <p class="comparison-note"><span class="tier-oss">OSS</span> = open source, Apache 2.0. <span class="tier-ee">EE</span> = enterprise license. All products are fully open source. Enterprise adds audit, encryption, and data export to Omnia.</p>
     </div>
   </section>
 
@@ -457,7 +459,7 @@ const softwareJsonLd = {
             <span>Reusable platform across client engagements</span>
           </div>
         </div>
-        <a href="mailto:hello@altairalabs.io" class="btn btn-primary btn-lg">Talk to Us</a>
+        <a href="https://calendly.com/charlie-holland-activeware/altairalabs-how-can-i-help" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a Call</a>
       </div>
     </div>
   </section>
@@ -1034,6 +1036,32 @@ const softwareJsonLd = {
 
   .comparison-table tbody tr {
     border-bottom: 1px solid var(--mist);
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: row-slide-in 0.4s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .comparison-table.in-view tbody tr {
+    animation-play-state: running;
+  }
+
+  .comparison-table tbody tr:nth-child(1) { animation-delay: 0s; }
+  .comparison-table tbody tr:nth-child(2) { animation-delay: 0.06s; }
+  .comparison-table tbody tr:nth-child(3) { animation-delay: 0.12s; }
+  .comparison-table tbody tr:nth-child(4) { animation-delay: 0.18s; }
+  .comparison-table tbody tr:nth-child(5) { animation-delay: 0.24s; }
+  .comparison-table tbody tr:nth-child(6) { animation-delay: 0.30s; }
+  .comparison-table tbody tr:nth-child(7) { animation-delay: 0.36s; }
+  .comparison-table tbody tr:nth-child(8) { animation-delay: 0.42s; }
+  .comparison-table tbody tr:nth-child(9) { animation-delay: 0.48s; }
+  .comparison-table tbody tr:nth-child(10) { animation-delay: 0.54s; }
+
+  @keyframes row-slide-in {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   .comparison-table tbody tr:last-child td {
@@ -1047,12 +1075,14 @@ const softwareJsonLd = {
   .comparison-table td {
     color: var(--slate);
     border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    font-size: 0.8125rem;
   }
 
   .comparison-table td:first-child {
     color: var(--deep-space);
     font-weight: 600;
     font-size: 0.9375rem;
+    white-space: nowrap;
   }
 
   .highlight-col {
@@ -1067,13 +1097,8 @@ const softwareJsonLd = {
   }
 
   .capability {
-    color: var(--onyx);
-    font-weight: 500;
-  }
-
-  .highlight-col .capability {
-    color: var(--deep-space);
-    font-weight: 600;
+    color: var(--slate);
+    font-weight: 400;
   }
 
   .tier-oss,
@@ -1452,7 +1477,7 @@ const softwareJsonLd = {
   // --- Typing Effect ---
   const codeLines = [
     { text: '# Install the platform', type: 'comment' },
-    { text: 'helm repo add omnia https://charts.altairalabs.io', type: 'cmd' },
+    { text: 'helm repo add omnia https://charts.altairalabs.ai', type: 'cmd' },
     { text: 'helm install omnia omnia/omnia -n omnia-system --create-namespace', type: 'cmd' },
     { text: '', type: 'blank' },
     { text: '# Deploy an agent — any framework, any model', type: 'comment' },
@@ -1520,4 +1545,19 @@ const softwareJsonLd = {
   );
 
   reveals.forEach((el) => observer.observe(el));
+
+  // --- Table row animation ---
+  const table = document.querySelector('.comparison-table');
+  if (table) {
+    const tableObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          table.classList.add('in-view');
+          tableObserver.unobserve(table);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    tableObserver.observe(table);
+  }
 </script>
