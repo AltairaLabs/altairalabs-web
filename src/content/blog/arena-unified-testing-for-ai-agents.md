@@ -280,6 +280,6 @@ Your customers will test your agent in production. The question is whether you t
 
 ## Related Reading
 
-- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/altairalabs-web/blog/canary-deployments-for-ai-prompts/)
-- [Voice AI Agents: The Three Execution Modes You Need to Understand](/altairalabs-web/blog/voice-ai-agents-in-production/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
+- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/blog/canary-deployments-for-ai-prompts/)
+- [Voice AI Agents: The Three Execution Modes You Need to Understand](/blog/voice-ai-agents-in-production/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)

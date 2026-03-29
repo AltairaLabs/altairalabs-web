@@ -263,6 +263,6 @@ The question isn't whether you need this today. It's whether you'll wish you had
 
 ## Related Reading
 
-- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/altairalabs-web/blog/self-hosted-ai-without-enterprise-contracts/)
-- [AI Guardrails Are Not Optional: A Production Safety Checklist](/altairalabs-web/blog/ai-guardrails-not-optional/)
-- [Data Sovereignty for AI Agents: Where Your Agent Runs Matters](/altairalabs-web/blog/data-sovereignty-where-agent-runs-matters/)
+- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/blog/self-hosted-ai-without-enterprise-contracts/)
+- [AI Guardrails Are Not Optional: A Production Safety Checklist](/blog/ai-guardrails-not-optional/)
+- [Data Sovereignty for AI Agents: Where Your Agent Runs Matters](/blog/data-sovereignty-where-agent-runs-matters/)

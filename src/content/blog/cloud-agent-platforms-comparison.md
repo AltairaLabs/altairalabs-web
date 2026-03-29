@@ -165,6 +165,6 @@ For organizations that need multi-cloud, self-hosted, or framework flexibility, 
 
 ## Related Reading
 
-- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/altairalabs-web/blog/kubernetes-native-ai-agents/)
-- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/altairalabs-web/blog/framework-agnostic-agent-deployment/)
-- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/altairalabs-web/blog/self-hosted-ai-without-enterprise-contracts/)
+- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/blog/kubernetes-native-ai-agents/)
+- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/blog/framework-agnostic-agent-deployment/)
+- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/blog/self-hosted-ai-without-enterprise-contracts/)

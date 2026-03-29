@@ -160,8 +160,8 @@ The skills gap is a tooling gap. Close the tooling gap, and the skills gap disap
 ---
 
 **Related reading:**
-- [Why 95% of AI Pilots Fail to Reach Production](/altairalabs-web/blog/why-95-percent-of-ai-pilots-fail/) — the operations gap that kills AI projects
-- [The Klarna Effect](/altairalabs-web/blog/the-klarna-effect/) — what happens when you scale AI without measurement
+- [Why 95% of AI Pilots Fail to Reach Production](/blog/why-95-percent-of-ai-pilots-fail/) — the operations gap that kills AI projects
+- [The Klarna Effect](/blog/the-klarna-effect/) — what happens when you scale AI without measurement
 
 ---
 

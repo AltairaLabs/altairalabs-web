@@ -184,8 +184,8 @@ The Klarna story is not a story about AI failure. Klarna's AI assistant genuinel
 ---
 
 **Related reading:**
-- [Why 95% of AI Pilots Fail to Reach Production](/altairalabs-web/blog/why-95-percent-of-ai-pilots-fail/) — the operations gap behind pilot failures
-- [Why Platform Engineers Are the Next AI Engineers](/altairalabs-web/blog/platform-engineers-next-ai-engineers/) — closing the skills gap with existing expertise
+- [Why 95% of AI Pilots Fail to Reach Production](/blog/why-95-percent-of-ai-pilots-fail/) — the operations gap behind pilot failures
+- [Why Platform Engineers Are the Next AI Engineers](/blog/platform-engineers-next-ai-engineers/) — closing the skills gap with existing expertise
 
 ---
 

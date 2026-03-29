@@ -150,6 +150,6 @@ The measurement paradox is not a technology problem. It is an architecture probl
 
 ## Related Reading
 
-- [Why 95% of AI Pilots Fail to Reach Production](/altairalabs-web/blog/why-95-percent-of-ai-pilots-fail/)
-- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/altairalabs-web/blog/cost-intelligence-beyond-cloud-bills/)
-- [The Klarna Effect: When AI Customer Service Goes Wrong](/altairalabs-web/blog/the-klarna-effect/)
+- [Why 95% of AI Pilots Fail to Reach Production](/blog/why-95-percent-of-ai-pilots-fail/)
+- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/blog/cost-intelligence-beyond-cloud-bills/)
+- [The Klarna Effect: When AI Customer Service Goes Wrong](/blog/the-klarna-effect/)

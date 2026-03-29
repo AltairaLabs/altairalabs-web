@@ -70,6 +70,6 @@ Teams that build for Level 1 and try to bolt on Level 2 capabilities hit archite
 
 ## Related Reading
 
-- [The Trust Plateau: Why 79% of Consumers Still Prefer Humans Over AI Agents](/altairalabs-web/blog/trust-plateau/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [Why 95% of AI Pilots Fail to Reach Production](/altairalabs-web/blog/why-95-percent-of-ai-pilots-fail/)
+- [The Trust Plateau: Why 79% of Consumers Still Prefer Humans Over AI Agents](/blog/trust-plateau/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [Why 95% of AI Pilots Fail to Reach Production](/blog/why-95-percent-of-ai-pilots-fail/)

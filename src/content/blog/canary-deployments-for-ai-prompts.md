@@ -341,6 +341,6 @@ The same patterns that made code deployments safer apply to prompts. The questio
 
 ## Related Reading
 
-- [PromptPack: A Portable Standard for AI Agent Configuration](/altairalabs-web/blog/promptpack-docker-for-ai-prompts/)
-- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/altairalabs-web/blog/arena-unified-testing-for-ai-agents/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
+- [PromptPack: A Portable Standard for AI Agent Configuration](/blog/promptpack-docker-for-ai-prompts/)
+- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/blog/arena-unified-testing-for-ai-agents/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)

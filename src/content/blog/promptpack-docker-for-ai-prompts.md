@@ -257,6 +257,6 @@ No more ad-hoc configuration management. No more "works on my machine" for AI ag
 
 ## Related Reading
 
-- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/altairalabs-web/blog/canary-deployments-for-ai-prompts/)
-- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/altairalabs-web/blog/framework-agnostic-agent-deployment/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
+- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/blog/canary-deployments-for-ai-prompts/)
+- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/blog/framework-agnostic-agent-deployment/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)

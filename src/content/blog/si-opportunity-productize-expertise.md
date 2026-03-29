@@ -64,6 +64,6 @@ The firms that will win the AI consulting market are not the ones with the most 
 
 ## Related Reading
 
-- [Reusable AI: Why Every Implementation Should Produce a Product](/altairalabs-web/blog/reusable-ai-implementations/)
-- [The Knowledge Codification Problem: Why Enterprise AI Is Stuck at Assist](/altairalabs-web/blog/knowledge-codification-problem/)
-- [The Integration Tax: Why Enterprises Need Six Tools to Run One AI Agent](/altairalabs-web/blog/integration-tax/)
+- [Reusable AI: Why Every Implementation Should Produce a Product](/blog/reusable-ai-implementations/)
+- [The Knowledge Codification Problem: Why Enterprise AI Is Stuck at Assist](/blog/knowledge-codification-problem/)
+- [The Integration Tax: Why Enterprises Need Six Tools to Run One AI Agent](/blog/integration-tax/)

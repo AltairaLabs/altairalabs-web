@@ -80,6 +80,6 @@ What regulated industries actually need:
 
 ## Related Reading
 
-- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/altairalabs-web/blog/self-hosted-ai-without-enterprise-contracts/)
-- [AI Guardrails Are Not Optional: A Production Safety Checklist](/altairalabs-web/blog/ai-guardrails-not-optional/)
-- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/altairalabs-web/blog/context-based-isolation-for-compliance/)
+- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/blog/self-hosted-ai-without-enterprise-contracts/)
+- [AI Guardrails Are Not Optional: A Production Safety Checklist](/blog/ai-guardrails-not-optional/)
+- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/blog/context-based-isolation-for-compliance/)

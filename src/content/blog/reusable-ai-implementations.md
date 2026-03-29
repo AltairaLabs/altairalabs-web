@@ -63,6 +63,6 @@ The first deployment of a bundle is traditional consulting work. The second depl
 
 ## Related Reading
 
-- [The SI Opportunity: How Consulting Firms Can Turn AI Expertise Into Recurring Revenue](/altairalabs-web/blog/si-opportunity-productize-expertise/)
-- [PromptPack: A Portable Standard for AI Agent Configuration](/altairalabs-web/blog/promptpack-docker-for-ai-prompts/)
-- [The Integration Tax: Why Enterprises Need Six Tools to Run One AI Agent](/altairalabs-web/blog/integration-tax/)
+- [The SI Opportunity: How Consulting Firms Can Turn AI Expertise Into Recurring Revenue](/blog/si-opportunity-productize-expertise/)
+- [PromptPack: A Portable Standard for AI Agent Configuration](/blog/promptpack-docker-for-ai-prompts/)
+- [The Integration Tax: Why Enterprises Need Six Tools to Run One AI Agent](/blog/integration-tax/)

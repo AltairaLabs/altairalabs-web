@@ -73,6 +73,6 @@ We are in the substitution phase. The transformation phase has not yet arrived a
 
 ## Related Reading
 
-- [The Agent Quality Crisis: Why AI-Generated Code Has 1.7x More Issues](/altairalabs-web/blog/agent-quality-crisis/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [Assist, Execute, Operate: A Practical Framework for AI Agent Maturity](/altairalabs-web/blog/assist-execute-operate/)
+- [The Agent Quality Crisis: Why AI-Generated Code Has 1.7x More Issues](/blog/agent-quality-crisis/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [Assist, Execute, Operate: A Practical Framework for AI Agent Maturity](/blog/assist-execute-operate/)

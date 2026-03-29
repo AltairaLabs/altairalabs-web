@@ -84,6 +84,6 @@ Separate stores organized by knowledge domain, with a routing layer that classif
 
 ## Related Reading
 
-- [The Knowledge Codification Problem: Why Enterprise AI Is Stuck at Assist](/altairalabs-web/blog/knowledge-codification-problem/)
-- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/altairalabs-web/blog/arena-unified-testing-for-ai-agents/)
-- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/altairalabs-web/blog/from-connectors-to-capabilities/)
+- [The Knowledge Codification Problem: Why Enterprise AI Is Stuck at Assist](/blog/knowledge-codification-problem/)
+- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/blog/arena-unified-testing-for-ai-agents/)
+- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/blog/from-connectors-to-capabilities/)

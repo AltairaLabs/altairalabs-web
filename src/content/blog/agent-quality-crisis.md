@@ -72,6 +72,6 @@ The pattern is familiar from CI/CD: the first phase was speed (deploy faster), t
 
 ## Related Reading
 
-- [The METR Paradox: When AI Tools Make Experienced Developers 19% Slower](/altairalabs-web/blog/metr-paradox-ai-slower/)
-- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/altairalabs-web/blog/arena-unified-testing-for-ai-agents/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
+- [The METR Paradox: When AI Tools Make Experienced Developers 19% Slower](/blog/metr-paradox-ai-slower/)
+- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/blog/arena-unified-testing-for-ai-agents/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)

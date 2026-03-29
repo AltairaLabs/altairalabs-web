@@ -361,6 +361,6 @@ The protocol is open. The reference implementations are available. The ecosystem
 
 ## Related Reading
 
-- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/altairalabs-web/blog/framework-agnostic-agent-deployment/)
-- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/altairalabs-web/blog/context-based-isolation-for-compliance/)
-- [From Connectors to Capabilities: The Evolution of AI Agent Integrations](/altairalabs-web/blog/from-connectors-to-capabilities/)
+- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/blog/framework-agnostic-agent-deployment/)
+- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/blog/context-based-isolation-for-compliance/)
+- [From Connectors to Capabilities: The Evolution of AI Agent Integrations](/blog/from-connectors-to-capabilities/)

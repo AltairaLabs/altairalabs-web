@@ -95,6 +95,6 @@ Without measurement, you cannot demonstrate trustworthiness. Without demonstrati
 
 ## Related Reading
 
-- [The Klarna Effect: When AI Customer Service Goes Wrong](/altairalabs-web/blog/the-klarna-effect/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [AI Guardrails Are Not Optional: A Production Safety Checklist](/altairalabs-web/blog/ai-guardrails-not-optional/)
+- [The Klarna Effect: When AI Customer Service Goes Wrong](/blog/the-klarna-effect/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [AI Guardrails Are Not Optional: A Production Safety Checklist](/blog/ai-guardrails-not-optional/)

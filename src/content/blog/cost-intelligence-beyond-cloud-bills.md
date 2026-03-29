@@ -293,6 +293,6 @@ The difference is the ability to make decisions.
 
 ## Related Reading
 
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
-- [Multi-Provider LLM Strategy: Why Betting on One Provider Is a Risk](/altairalabs-web/blog/multi-provider-llm-strategy/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)
+- [Multi-Provider LLM Strategy: Why Betting on One Provider Is a Risk](/blog/multi-provider-llm-strategy/)

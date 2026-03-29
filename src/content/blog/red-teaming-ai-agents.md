@@ -341,6 +341,6 @@ The agents that survive in production are the ones that were attacked in testing
 
 ## Related Reading
 
-- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/altairalabs-web/blog/arena-unified-testing-for-ai-agents/)
-- [AI Guardrails Are Not Optional: A Production Safety Checklist](/altairalabs-web/blog/ai-guardrails-not-optional/)
-- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/altairalabs-web/blog/context-based-isolation-for-compliance/)
+- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/blog/arena-unified-testing-for-ai-agents/)
+- [AI Guardrails Are Not Optional: A Production Safety Checklist](/blog/ai-guardrails-not-optional/)
+- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/blog/context-based-isolation-for-compliance/)

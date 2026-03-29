@@ -5,8 +5,8 @@ const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'AltairaLabs',
-  url: 'https://altairalabs.github.io/altairalabs-web/',
-  logo: 'https://altairalabs.github.io/altairalabs-web/favicon.svg',
+  url: 'https://www.altairalabs.ai/',
+  logo: 'https://www.altairalabs.ai/favicon.svg',
   description: 'Open-core Kubernetes-native platform for deploying, governing, testing, and observing AI agents in production.',
   sameAs: [
     'https://github.com/AltairaLabs',
@@ -229,27 +229,27 @@ const softwareJsonLd = {
     </div>
       <div class="platforms-grid">
         <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/kubernetes.svg`} alt="Kubernetes" />
+          <img src={`/logos/kubernetes.svg`} alt="Kubernetes" />
           <span>Kubernetes</span>
         </div>
         <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/aws.svg`} alt="Amazon Web Services" />
+          <img src={`/logos/aws.svg`} alt="Amazon Web Services" />
           <span>AWS EKS</span>
         </div>
         <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/gcp.svg`} alt="Google Cloud" />
+          <img src={`/logos/gcp.svg`} alt="Google Cloud" />
           <span>Google GKE</span>
         </div>
         <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/azure.svg`} alt="Microsoft Azure" />
+          <img src={`/logos/azure.svg`} alt="Microsoft Azure" />
           <span>Azure AKS</span>
         </div>
         <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/openshift.svg`} alt="Red Hat OpenShift" />
+          <img src={`/logos/openshift.svg`} alt="Red Hat OpenShift" />
           <span>OpenShift</span>
         </div>
         <div class="platform-item">
-          <img src={`${import.meta.env.BASE_URL}/logos/rancher.svg`} alt="Rancher" />
+          <img src={`/logos/rancher.svg`} alt="Rancher" />
           <span>Rancher</span>
         </div>
       </div>
@@ -259,13 +259,14 @@ const softwareJsonLd = {
   <!-- Screenshots showcase -->
   <section class="showcase reveal">
     <div class="container">
+      <h2 class="sr-only">Product Screenshots</h2>
       <div class="showcase-item">
         <div class="showcase-text">
           <h3>Know What Your Agents Are Doing. Prove That It's Working.</h3>
           <p>Every agent, every session, every dollar — in one place. Real-time session counts, per-provider cost attribution, and policy enforcement status. No jumping between dashboards.</p>
         </div>
         <div class="showcase-image">
-          <img src={`${import.meta.env.BASE_URL}/screenshots/dashboard.svg`} alt="Omnia Dashboard showing agent runtimes, session metrics, and cost tracking" loading="lazy" />
+          <img src={`/screenshots/dashboard.svg`} alt="Omnia Dashboard showing agent runtimes, session metrics, and cost tracking" loading="lazy" />
         </div>
       </div>
 
@@ -275,7 +276,7 @@ const softwareJsonLd = {
           <p>OpenTelemetry traces across LLM calls, tool invocations, and conversation turns. See exactly why an agent made a decision, which provider served it, and what it cost — down to the token.</p>
         </div>
         <div class="showcase-image">
-          <img src={`${import.meta.env.BASE_URL}/screenshots/grafana.svg`} alt="Grafana dashboards showing agent latency, token usage, and distributed traces" loading="lazy" />
+          <img src={`/screenshots/grafana.svg`} alt="Grafana dashboards showing agent latency, token usage, and distributed traces" loading="lazy" />
         </div>
       </div>
 
@@ -285,7 +286,7 @@ const softwareJsonLd = {
           <p>Run hundreds of eval scenarios across models and prompt versions. Arena gives you a quality gate — agents don't ship to production until they pass. CI/CD native via JUnit XML.</p>
         </div>
         <div class="showcase-image">
-          <img src={`${import.meta.env.BASE_URL}/screenshots/arena.svg`} alt="PromptArena evaluation results comparing agent versions with quality gate status" loading="lazy" />
+          <img src={`/screenshots/arena.svg`} alt="PromptArena evaluation results comparing agent versions with quality gate status" loading="lazy" />
         </div>
       </div>
     </div>
@@ -309,7 +310,7 @@ const softwareJsonLd = {
                 </svg>
               </div>
               <div class="why-item-content">
-                <h4>Self-hosted. Full stop.</h4>
+                <h3>Self-hosted. Full stop.</h3>
                 <p>Not an Enterprise-tier upsell. Self-hosted is the default. Your cluster, your data, your rules.</p>
               </div>
             </div>
@@ -321,7 +322,7 @@ const softwareJsonLd = {
                 </svg>
               </div>
               <div class="why-item-content">
-                <h4>Any framework. We don't care.</h4>
+                <h3>Any framework. We don't care.</h3>
                 <p>LangChain today, CrewAI tomorrow, custom Go next quarter. Omnia runs them all. Your agents, your choice.</p>
               </div>
             </div>
@@ -333,7 +334,7 @@ const softwareJsonLd = {
                 </svg>
               </div>
               <div class="why-item-content">
-                <h4>Production ops, not demo ops</h4>
+                <h3>Production ops, not demo ops</h3>
                 <p>3-tier session storage, policy enforcement, cost attribution, audit logging. The boring stuff that keeps you out of incident channels.</p>
               </div>
             </div>
@@ -939,7 +940,7 @@ const softwareJsonLd = {
     color: var(--altair-blue);
   }
 
-  .why-item-content h4 {
+  .why-item-content h3 {
     margin-bottom: var(--space-xs);
   }
 

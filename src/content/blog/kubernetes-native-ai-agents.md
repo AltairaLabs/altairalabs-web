@@ -250,6 +250,6 @@ The question isn't whether Kubernetes can run AI agents -- it's whether you're u
 
 ## Related Reading
 
-- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/altairalabs-web/blog/self-hosted-ai-without-enterprise-contracts/)
-- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/altairalabs-web/blog/framework-agnostic-agent-deployment/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
+- [Self-Hosted AI Agents: Why You Shouldn't Need an Enterprise Contract](/blog/self-hosted-ai-without-enterprise-contracts/)
+- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/blog/framework-agnostic-agent-deployment/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)

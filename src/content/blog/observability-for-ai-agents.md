@@ -358,6 +358,6 @@ The question isn't whether you need AI observability. It's how quickly you can i
 
 ## Related Reading
 
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/altairalabs-web/blog/cost-intelligence-beyond-cloud-bills/)
-- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/altairalabs-web/blog/canary-deployments-for-ai-prompts/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/blog/cost-intelligence-beyond-cloud-bills/)
+- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/blog/canary-deployments-for-ai-prompts/)

@@ -17,7 +17,7 @@ Here is the state of AI measurement in 2026: 79% of enterprise leaders say they 
 Usage is not value. If 80% of employees use an AI coding assistant, the question is whether they're producing more software, better software, or cheaper software -- not whether they logged in. Usage metrics create perverse incentives: optimize for adoption rather than outcomes.
 
 ### "Y% Time Savings on Task Z"
-Self-reported time savings are systematically unreliable. [The METR study](/altairalabs-web/blog/metr-paradox-ai-slower/) found a 40-percentage-point gap between perceived and actual productivity. Multiple studies document a perception bias of +20-40%.
+Self-reported time savings are systematically unreliable. [The METR study](/blog/metr-paradox-ai-slower/) found a 40-percentage-point gap between perceived and actual productivity. Multiple studies document a perception bias of +20-40%.
 
 ### Token Counts and Infrastructure Metrics
 Latency, uptime, token cost, error rates tell you whether the system is running. They don't tell you whether it is working.
@@ -41,7 +41,7 @@ What percentage of AI-completed tasks require human correction? This is the qual
 
 ## Maturity-Aware KPIs
 
-The metrics that matter change with your [maturity level](/altairalabs-web/blog/assist-execute-operate/):
+The metrics that matter change with your [maturity level](/blog/assist-execute-operate/):
 
 | Level | Primary KPIs |
 |-------|-------------|
@@ -80,6 +80,6 @@ If measuring resolution rate requires a three-month data engineering project, th
 
 ## Related Reading
 
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/altairalabs-web/blog/cost-intelligence-beyond-cloud-bills/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/blog/cost-intelligence-beyond-cloud-bills/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)

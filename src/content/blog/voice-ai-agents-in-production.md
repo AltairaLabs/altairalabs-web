@@ -273,6 +273,6 @@ There's no universal best answer. Evaluate based on:
 
 ## Related Reading
 
-- [Go vs. Python for Production AI Agents: When Runtime Choice Matters](/altairalabs-web/blog/go-vs-python-for-production-ai/)
-- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/altairalabs-web/blog/arena-unified-testing-for-ai-agents/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
+- [Go vs. Python for Production AI Agents: When Runtime Choice Matters](/blog/go-vs-python-for-production-ai/)
+- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/blog/arena-unified-testing-for-ai-agents/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)

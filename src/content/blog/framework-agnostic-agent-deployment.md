@@ -144,6 +144,6 @@ Your infrastructure shouldn't have to change with it.
 
 ## Related Reading
 
-- [Why 95% of AI Pilots Fail to Reach Production](/altairalabs-web/blog/why-95-percent-of-ai-pilots-fail/)
-- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/altairalabs-web/blog/kubernetes-native-ai-agents/)
-- [MCP: The Universal Protocol for AI Agent Tool Integration](/altairalabs-web/blog/mcp-universal-tool-integration/)
+- [Why 95% of AI Pilots Fail to Reach Production](/blog/why-95-percent-of-ai-pilots-fail/)
+- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/blog/kubernetes-native-ai-agents/)
+- [MCP: The Universal Protocol for AI Agent Tool Integration](/blog/mcp-universal-tool-integration/)

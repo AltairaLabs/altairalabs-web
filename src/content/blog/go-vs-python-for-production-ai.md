@@ -293,6 +293,6 @@ The question isn't "Python or Go?" It's "Which parts of my system have which req
 
 ## Related Reading
 
-- [Voice AI Agents: The Three Execution Modes You Need to Understand](/altairalabs-web/blog/voice-ai-agents-in-production/)
-- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/altairalabs-web/blog/kubernetes-native-ai-agents/)
-- [Observability for AI Agents: What Traditional APM Tools Miss](/altairalabs-web/blog/observability-for-ai-agents/)
+- [Voice AI Agents: The Three Execution Modes You Need to Understand](/blog/voice-ai-agents-in-production/)
+- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/blog/kubernetes-native-ai-agents/)
+- [Observability for AI Agents: What Traditional APM Tools Miss](/blog/observability-for-ai-agents/)

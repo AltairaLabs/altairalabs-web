@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://altairalabs.github.io/altairalabs-web/sitemap-index.xml
+Sitemap: https://www.altairalabs.ai/sitemap-index.xml

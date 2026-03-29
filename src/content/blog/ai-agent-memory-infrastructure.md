@@ -75,6 +75,6 @@ Aggregate memory patterns across users produce CDP-grade customer signals that t
 
 ## Related Reading
 
-- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/altairalabs-web/blog/context-based-isolation-for-compliance/)
-- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/altairalabs-web/blog/from-connectors-to-capabilities/)
-- [The Trust Plateau: Why 79% of Consumers Still Prefer Humans Over AI Agents](/altairalabs-web/blog/trust-plateau/)
+- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/blog/context-based-isolation-for-compliance/)
+- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/blog/from-connectors-to-capabilities/)
+- [The Trust Plateau: Why 79% of Consumers Still Prefer Humans Over AI Agents](/blog/trust-plateau/)

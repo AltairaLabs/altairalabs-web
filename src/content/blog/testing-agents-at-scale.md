@@ -62,6 +62,6 @@ The insight you get: "Quality is 95% at 100 users but drops to 70% at 500." You 
 
 ## Related Reading
 
-- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/altairalabs-web/blog/arena-unified-testing-for-ai-agents/)
-- [Red-Teaming AI Agents: Finding Failures Before Your Users Do](/altairalabs-web/blog/red-teaming-ai-agents/)
-- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/altairalabs-web/blog/canary-deployments-for-ai-prompts/)
+- [Arena Fleet: Why AI Agents Need Unified Testing Infrastructure](/blog/arena-unified-testing-for-ai-agents/)
+- [Red-Teaming AI Agents: Finding Failures Before Your Users Do](/blog/red-teaming-ai-agents/)
+- [Canary Deployments for AI Prompts: Reducing the Blast Radius of Prompt Changes](/blog/canary-deployments-for-ai-prompts/)

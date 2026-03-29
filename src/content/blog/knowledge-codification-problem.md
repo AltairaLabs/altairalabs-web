@@ -131,6 +131,6 @@ If your AI deployment is stuck at Assist -- producing value but not transforming
 
 ## Related Reading
 
-- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/altairalabs-web/blog/from-connectors-to-capabilities/)
-- [Why 95% of AI Pilots Fail to Reach Production](/altairalabs-web/blog/why-95-percent-of-ai-pilots-fail/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
+- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/blog/from-connectors-to-capabilities/)
+- [Why 95% of AI Pilots Fail to Reach Production](/blog/why-95-percent-of-ai-pilots-fail/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)

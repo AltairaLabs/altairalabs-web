@@ -100,6 +100,6 @@ A Kubernetes-native AI agent platform fits your existing operational model. A fr
 
 ## Related Reading
 
-- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/altairalabs-web/blog/from-connectors-to-capabilities/)
-- [Cloud Agent Platforms Compared: AWS, Azure, Google, and the Open Alternative](/altairalabs-web/blog/cloud-agent-platforms-comparison/)
-- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/altairalabs-web/blog/kubernetes-native-ai-agents/)
+- [From Connectors to Capabilities: Why Your AI Agent Needs More Than API Access](/blog/from-connectors-to-capabilities/)
+- [Cloud Agent Platforms Compared: AWS, Azure, Google, and the Open Alternative](/blog/cloud-agent-platforms-comparison/)
+- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/blog/kubernetes-native-ai-agents/)

@@ -29,7 +29,7 @@ But the aggregate numbers hide a distribution. The top quartile achieves 70%+ re
 
 **Multi-layer guardrails pipeline.** Infrastructure-level policy enforcement, PII detection, content grounding against approved sources, escalation triggers. Application-level prompt instructions are insufficient -- they can be bypassed by prompt injection.
 
-**Latency-aware architecture.** Customer support has tight latency expectations. Every middleware layer (guardrails, memory retrieval, tool calls) adds latency. Optimized architectures using [Go](/altairalabs-web/blog/go-vs-python-for-production-ai/) for the infrastructure layer and streaming responses maintain sub-second perceived latency.
+**Latency-aware architecture.** Customer support has tight latency expectations. Every middleware layer (guardrails, memory retrieval, tool calls) adds latency. Optimized architectures using [Go](/blog/go-vs-python-for-production-ai/) for the infrastructure layer and streaming responses maintain sub-second perceived latency.
 
 **Intelligent escalation.** Not just "transfer to human" but handoff with full context: conversation summary, attempted resolutions, customer sentiment, relevant account details. [71% of consumers](https://www.salesforce.com/) say they will abandon a brand after a single bad AI interaction -- a bad escalation counts.
 
@@ -45,6 +45,6 @@ Treat your support agent as a knowledge product -- codified domain expertise wit
 
 ## Related Reading
 
-- [The Trust Plateau: Why 79% of Consumers Still Prefer Humans Over AI Agents](/altairalabs-web/blog/trust-plateau/)
-- [The Klarna Effect: When AI Customer Service Goes Wrong](/altairalabs-web/blog/the-klarna-effect/)
-- [AI Guardrails Are Not Optional: A Production Safety Checklist](/altairalabs-web/blog/ai-guardrails-not-optional/)
+- [The Trust Plateau: Why 79% of Consumers Still Prefer Humans Over AI Agents](/blog/trust-plateau/)
+- [The Klarna Effect: When AI Customer Service Goes Wrong](/blog/the-klarna-effect/)
+- [AI Guardrails Are Not Optional: A Production Safety Checklist](/blog/ai-guardrails-not-optional/)

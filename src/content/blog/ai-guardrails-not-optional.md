@@ -106,6 +106,6 @@ Organizations that build robust guardrail infrastructure gain a competitive adva
 
 ## Related Reading
 
-- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/altairalabs-web/blog/context-based-isolation-for-compliance/)
-- [Red-Teaming AI Agents: Finding Failures Before Your Users Do](/altairalabs-web/blog/red-teaming-ai-agents/)
-- [Data Sovereignty for AI Agents: Where Your Agent Runs Matters](/altairalabs-web/blog/data-sovereignty-where-agent-runs-matters/)
+- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/blog/context-based-isolation-for-compliance/)
+- [Red-Teaming AI Agents: Finding Failures Before Your Users Do](/blog/red-teaming-ai-agents/)
+- [Data Sovereignty for AI Agents: Where Your Agent Runs Matters](/blog/data-sovereignty-where-agent-runs-matters/)

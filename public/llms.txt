@@ -35,10 +35,10 @@ AltairaLabs builds Omnia, an open-core AgentOps platform for running AI agents o
 
 ## Links
 
-- Website: https://altairalabs.github.io/altairalabs-web/
+- Website: https://www.altairalabs.ai/
 - Omnia Docs: https://omnia.altairalabs.ai/
 - PromptKit Docs: https://promptkit.altairalabs.ai/
 - PromptPack Spec: https://promptpack.org/
 - GitHub: https://github.com/AltairaLabs
-- Blog: https://altairalabs.github.io/altairalabs-web/blog/
-- RSS: https://altairalabs.github.io/altairalabs-web/rss.xml
+- Blog: https://www.altairalabs.ai/blog/
+- RSS: https://www.altairalabs.ai/rss.xml

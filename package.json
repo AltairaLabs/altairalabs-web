@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:links": "astro build && blcl ./dist -r -e",
+    "check:a11y": "lighthouse http://localhost:4321 --only-categories=accessibility --output=json --chrome-flags='--headless=new' --quiet | node -e \"const r=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));console.log('Accessibility:',Math.round(r.categories.accessibility.score*100)+'%');r.audits&&Object.values(r.audits).filter(a=>a.score===0).forEach(a=>console.log(' FAIL:',a.id,'-',a.title))\""
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
@@ -14,7 +16,12 @@
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^5.15.8",
+    "astro-indexnow": "^2.1.0",
     "satori": "^0.26.0",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "broken-link-checker-local": "^0.2.1",
+    "lighthouse": "^13.0.3"
   }
 }

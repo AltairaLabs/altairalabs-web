@@ -127,8 +127,8 @@ The question isn't whether your AI can do something useful. It's whether you can
 ---
 
 **Related reading:**
-- [Why Platform Engineers Are the Next AI Engineers](/altairalabs-web/blog/platform-engineers-next-ai-engineers/) — the skills your team already has
-- [The Klarna Effect](/altairalabs-web/blog/the-klarna-effect/) — what happens when you scale without measurement
+- [Why Platform Engineers Are the Next AI Engineers](/blog/platform-engineers-next-ai-engineers/) — the skills your team already has
+- [The Klarna Effect](/blog/the-klarna-effect/) — what happens when you scale without measurement
 
 ---
 

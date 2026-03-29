@@ -326,6 +326,6 @@ The cost of multi-provider capability is ongoing: maintaining abstractions, test
 
 ## Related Reading
 
-- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/altairalabs-web/blog/cost-intelligence-beyond-cloud-bills/)
-- [Cloud Agent Platforms Compared: AWS, Azure, Google, and the Open Alternative](/altairalabs-web/blog/cloud-agent-platforms-comparison/)
-- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/altairalabs-web/blog/framework-agnostic-agent-deployment/)
+- [Cost Intelligence for AI Agents: Beyond the Cloud Bill](/blog/cost-intelligence-beyond-cloud-bills/)
+- [Cloud Agent Platforms Compared: AWS, Azure, Google, and the Open Alternative](/blog/cloud-agent-platforms-comparison/)
+- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/blog/framework-agnostic-agent-deployment/)

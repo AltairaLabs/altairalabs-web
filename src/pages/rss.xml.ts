@@ -8,8 +8,6 @@ export async function GET(context: APIContext) {
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   const site = context.site!;
-  const base = import.meta.env.BASE_URL;
-
   return rss({
     title: 'AltairaLabs Blog',
     description: 'Updates, insights, and deep dives from the AltairaLabs team.',
@@ -18,7 +16,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      link: `${base}/blog/${post.id}/`,
+      link: `/blog/${post.id}/`,
       author: post.data.author,
     })),
   });

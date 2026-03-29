@@ -155,6 +155,6 @@ Self-hosted AI infrastructure should be a deployment option, not a premium featu
 
 ## Related Reading
 
-- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/altairalabs-web/blog/context-based-isolation-for-compliance/)
-- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/altairalabs-web/blog/framework-agnostic-agent-deployment/)
-- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/altairalabs-web/blog/kubernetes-native-ai-agents/)
+- [Context-Based Isolation: Solving the Multi-Session AI Compliance Problem](/blog/context-based-isolation-for-compliance/)
+- [The Framework Lock-In Trap: Why Your AI Agent Platform Shouldn't Pick Sides](/blog/framework-agnostic-agent-deployment/)
+- [Kubernetes-Native AI Agents: Why the CNCF Is Betting on K8s for AI](/blog/kubernetes-native-ai-agents/)

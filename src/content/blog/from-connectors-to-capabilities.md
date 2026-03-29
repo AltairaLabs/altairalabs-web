@@ -127,6 +127,6 @@ The connector layer is largely solved. The unsolved problem is the capability la
 
 ## Related Reading
 
-- [The Knowledge Codification Problem: Why Enterprise AI Is Stuck at Assist](/altairalabs-web/blog/knowledge-codification-problem/)
-- [MCP: The Universal Protocol for AI Agent Tool Integration](/altairalabs-web/blog/mcp-universal-tool-integration/)
-- [The Integration Tax: Why Enterprises Need Six Tools to Run One AI Agent](/altairalabs-web/blog/integration-tax/)
+- [The Knowledge Codification Problem: Why Enterprise AI Is Stuck at Assist](/blog/knowledge-codification-problem/)
+- [MCP: The Universal Protocol for AI Agent Tool Integration](/blog/mcp-universal-tool-integration/)
+- [The Integration Tax: Why Enterprises Need Six Tools to Run One AI Agent](/blog/integration-tax/)

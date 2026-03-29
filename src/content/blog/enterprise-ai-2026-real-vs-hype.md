@@ -29,7 +29,7 @@ The fine print: fewer than 10% have scaled AI agents across any single business 
 
 **Single-agent task automation**: Agents handling well-scoped tasks (password resets, order status, FAQ). 40-65% autonomous handling for routine interactions.
 
-**RAG pipelines**: Working at moderate scale, though [72% of enterprise implementations fail](/altairalabs-web/blog/rag-production-failure/) in year one.
+**RAG pipelines**: Working at moderate scale, though [72% of enterprise implementations fail](/blog/rag-production-failure/) in year one.
 
 ## What's Emerging
 
@@ -63,6 +63,6 @@ The fine print: fewer than 10% have scaled AI agents across any single business 
 
 ## Related Reading
 
-- [Assist, Execute, Operate: A Practical Framework for AI Agent Maturity](/altairalabs-web/blog/assist-execute-operate/)
-- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/altairalabs-web/blog/the-measurement-paradox/)
-- [Cloud Agent Platforms Compared: AWS, Azure, Google, and the Open Alternative](/altairalabs-web/blog/cloud-agent-platforms-comparison/)
+- [Assist, Execute, Operate: A Practical Framework for AI Agent Maturity](/blog/assist-execute-operate/)
+- [The Measurement Paradox: Why AI Teams Can't Prove Their Own Value](/blog/the-measurement-paradox/)
+- [Cloud Agent Platforms Compared: AWS, Azure, Google, and the Open Alternative](/blog/cloud-agent-platforms-comparison/)
