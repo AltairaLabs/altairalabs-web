@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">The mental model of retry contrasted with what mid-stream retry actually costs: the KV cache is freed immediately on failure, so resuming requires a full prefill recomputation of the prompt plus all already-emitted tokens, and the fresh sampling produces a different completion.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 11px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Why mid-stream retry is expensive</text>
+
+  <!-- SCENARIO A: What you think retry does -->
+  <text x="24" y="66" class="title" fill="#10B981">The mental model</text>
+  <text x="24" y="84" class="caption">"Pick up where it left off." Cheap. Idempotent. Transparent.</text>
+
+  <!-- Timeline A -->
+  <line x1="40" y1="116" x2="920" y2="116" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="40" y1="110" x2="40" y2="122" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="920" y1="110" x2="920" y2="122" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- attempt 1: partial -->
+  <rect x="60" y="96" width="300" height="20" rx="4" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="210" y="110" class="mono" fill="#0F172A" text-anchor="middle">attempt 1: prompt → 200 tokens emitted</text>
+  <rect x="360" y="96" width="8" height="20" fill="#DC2626"/>
+
+  <!-- Resume (magic) -->
+  <rect x="376" y="96" width="540" height="20" rx="4" fill="#DCFCE7" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="646" y="110" class="mono" fill="#10B981" text-anchor="middle">attempt 2: "resume" → 1,800 more tokens (as if nothing happened)</text>
+
+  <text x="40" y="146" class="caption">Total cost: roughly one full generation. No extra tokens billed. Same answer the user was about to see.</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="174" x2="936" y2="174" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- SCENARIO B: What actually has to happen -->
+  <text x="24" y="206" class="title" fill="#DC2626">What actually has to happen</text>
+  <text x="24" y="224" class="caption">The KV cache is freed the instant the stream dies. The pages get recycled on the next forward pass.</text>
+
+  <!-- Timeline B -->
+  <line x1="40" y1="260" x2="920" y2="260" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="40" y1="254" x2="40" y2="266" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="920" y1="254" x2="920" y2="266" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- attempt 1 with growing KV cache bar -->
+  <rect x="60" y="240" width="300" height="20" rx="4" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="210" y="254" class="mono" fill="#0F172A" text-anchor="middle">attempt 1: prompt → 200 tokens (KV cache grows)</text>
+
+  <!-- death + cache freed -->
+  <rect x="360" y="240" width="8" height="20" fill="#DC2626"/>
+  <text x="372" y="234" class="mono" fill="#DC2626">↓ stream dies · pages freed</text>
+
+  <!-- Phase: prefill recompute -->
+  <rect x="376" y="240" width="280" height="20" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="516" y="254" class="mono" fill="#0F172A" text-anchor="middle">attempt 2a: PREFILL prompt + 200 tokens</text>
+
+  <!-- Phase: decode new tokens -->
+  <rect x="660" y="240" width="256" height="20" rx="4" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="788" y="254" class="mono" fill="#0F172A" text-anchor="middle">attempt 2b: decode 1,800 new tokens</text>
+
+  <!-- Annotation arrows pointing to the prefill phase -->
+  <path d="M 516 290 L 516 266" stroke="#F59E0B" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="516" y="306" class="mono" fill="#F59E0B" text-anchor="middle">full forward pass over everything so far</text>
+  <text x="516" y="322" class="mono" fill="#94A3B8" text-anchor="middle">to rebuild the KV cache from scratch</text>
+
+  <!-- Cost callouts -->
+  <rect x="40" y="352" width="280" height="80" rx="8" fill="#F8FAFC" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="56" y="374" class="title" fill="#DC2626">1 · Recomputation cost</text>
+  <text x="56" y="394" class="mono" fill="#0F172A">Rebuilding the cache means a full</text>
+  <text x="56" y="408" class="mono" fill="#0F172A">prefill over (prompt + emitted tokens).</text>
+  <text x="56" y="422" class="mono" fill="#475569">Prefill is the expensive phase.</text>
+
+  <rect x="340" y="352" width="280" height="80" rx="8" fill="#F8FAFC" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="356" y="374" class="title" fill="#DC2626">2 · Non-determinism</text>
+  <text x="356" y="394" class="mono" fill="#0F172A">Sampling + batch composition +</text>
+  <text x="356" y="408" class="mono" fill="#0F172A">non-associative GPU reductions</text>
+  <text x="356" y="422" class="mono" fill="#475569">= a different completion.</text>
+
+  <rect x="640" y="352" width="280" height="80" rx="8" fill="#F8FAFC" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="656" y="374" class="title" fill="#DC2626">3 · No fail-over</text>
+  <text x="656" y="394" class="mono" fill="#0F172A">KV cache lives in one GPU's VRAM.</text>
+  <text x="656" y="408" class="mono" fill="#0F172A">Other replicas can't pick up the slack.</text>
+  <text x="656" y="422" class="mono" fill="#475569">It has to be the same box or redo.</text>
+
+  <!-- Bottom takeaway -->
+  <text x="480" y="472" class="caption" text-anchor="middle">There is no "resume". You either retry before any tokens have shipped (safe, cheap), or you throw the partial</text>
+  <text x="480" y="488" class="caption" text-anchor="middle">away and run the whole thing again with a Reset signal (expensive, different answer), or you fail the request.</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Token embeddings as vectors in 2-dimensional space. Three words that are conceptually similar — cat, dog, fish — end up as vectors pointing in roughly the same direction. Three action words — sat, run, walk — cluster in a different direction. Three colour words — red, blue, green — cluster in yet another direction. The closer two vectors point, the more similar the model thinks the tokens are.</title>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#F59E0B"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 600; }
+      .label { font-size: 12px; font-weight: 600; }
+      .caption { font-size: 12px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="380" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Every token is a vector. Similar tokens point the same way.</text>
+
+  <!-- Soft axis lines -->
+  <line x1="60" y1="260" x2="700" y2="260" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="380" y1="60" x2="380" y2="440" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Origin -->
+  <circle cx="380" cy="260" r="3.5" fill="#475569"/>
+  <text x="388" y="276" font-size="10.5" fill="#94A3B8">origin</text>
+
+  <!-- Group 1: Animals (blue, upper right) -->
+  <line x1="380" y1="260" x2="593" y2="111" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="601" y="108" class="mono" fill="#2563EB">cat</text>
+
+  <line x1="380" y1="260" x2="564" y2="106" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="544" y="95" class="mono" fill="#2563EB">dog</text>
+
+  <line x1="380" y1="260" x2="571" y2="150" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="579" y="154" class="mono" fill="#2563EB">fish</text>
+
+  <text x="660" y="170" class="label" fill="#2563EB">animals</text>
+
+  <!-- Group 2: Verbs (violet, lower right) -->
+  <line x1="380" y1="260" x2="593" y2="409" stroke="#8B5CF6" stroke-width="2.5" marker-end="url(#arrow-violet)"/>
+  <text x="599" y="418" class="mono" fill="#8B5CF6">sat</text>
+
+  <line x1="380" y1="260" x2="588" y2="380" stroke="#8B5CF6" stroke-width="2.5" marker-end="url(#arrow-violet)"/>
+  <text x="596" y="378" class="mono" fill="#8B5CF6">run</text>
+
+  <line x1="380" y1="260" x2="549" y2="401" stroke="#8B5CF6" stroke-width="2.5" marker-end="url(#arrow-violet)"/>
+  <text x="508" y="420" class="mono" fill="#8B5CF6">walk</text>
+
+  <text x="660" y="360" class="label" fill="#8B5CF6">verbs</text>
+
+  <!-- Group 3: Colours (gold, upper left) -->
+  <line x1="380" y1="260" x2="183" y2="122" stroke="#F59E0B" stroke-width="2.5" marker-end="url(#arrow-gold)"/>
+  <text x="148" y="115" class="mono" fill="#F59E0B">red</text>
+
+  <line x1="380" y1="260" x2="163" y2="135" stroke="#F59E0B" stroke-width="2.5" marker-end="url(#arrow-gold)"/>
+  <text x="112" y="135" class="mono" fill="#F59E0B">blue</text>
+
+  <line x1="380" y1="260" x2="204" y2="112" stroke="#F59E0B" stroke-width="2.5" marker-end="url(#arrow-gold)"/>
+  <text x="180" y="100" class="mono" fill="#F59E0B">green</text>
+
+  <text x="60" y="175" class="label" fill="#F59E0B">colours</text>
+
+  <!-- Caption -->
+  <text x="380" y="472" class="caption" text-anchor="middle">The individual numbers inside the vectors aren't meaningful. What matters is that vectors for</text>
+  <text x="380" y="488" class="caption" text-anchor="middle">"similar" tokens end up clustered by direction — and that's how the model compares them.</text>
+</svg>

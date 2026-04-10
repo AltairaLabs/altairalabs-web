@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">The same token embedding — a fruit-salad of thousands of numbers — is transformed into three different output vectors by multiplying with three different learned weight matrices. The Q vector, K vector, and V vector are each a blend of all the input numbers, not a selection of them.</title>
+  <defs>
+    <marker id="arrow-q" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#06B6D4"/>
+    </marker>
+    <marker id="arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow-v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#F59E0B"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 11px; font-weight: 600; }
+      .label { font-size: 12px; font-weight: 600; }
+      .letter { font-size: 26px; font-weight: 700; }
+      .caption { font-size: 11.5px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="460" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Three recipes, one salad</text>
+
+  <!-- Input bowl -->
+  <rect x="60" y="140" width="220" height="120" rx="16" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+  <text x="170" y="130" class="label" fill="#0F172A" text-anchor="middle">embedding x_i</text>
+  <text x="170" y="278" class="mono" fill="#64748B" text-anchor="middle">~4,096 numbers</text>
+
+  <!-- Fruit pieces scattered in the bowl -->
+  <circle cx="90" cy="165" r="6" fill="#DC2626"/>
+  <circle cx="115" cy="170" r="5" fill="#FBBF24"/>
+  <circle cx="140" cy="158" r="7" fill="#F59E0B"/>
+  <circle cx="165" cy="172" r="4" fill="#10B981"/>
+  <circle cx="190" cy="160" r="6" fill="#7C3AED"/>
+  <circle cx="215" cy="175" r="5" fill="#EC4899"/>
+  <circle cx="240" cy="162" r="6" fill="#DC2626"/>
+  <circle cx="263" cy="172" r="4" fill="#FBBF24"/>
+
+  <circle cx="100" cy="198" r="5" fill="#F59E0B"/>
+  <circle cx="128" cy="202" r="7" fill="#FBBF24"/>
+  <circle cx="158" cy="192" r="4" fill="#DC2626"/>
+  <circle cx="183" cy="200" r="6" fill="#10B981"/>
+  <circle cx="208" cy="196" r="5" fill="#7C3AED"/>
+  <circle cx="233" cy="206" r="6" fill="#EC4899"/>
+  <circle cx="258" cy="196" r="4" fill="#F59E0B"/>
+
+  <circle cx="85" cy="228" r="6" fill="#FBBF24"/>
+  <circle cx="112" cy="222" r="4" fill="#DC2626"/>
+  <circle cx="142" cy="232" r="7" fill="#7C3AED"/>
+  <circle cx="172" cy="226" r="5" fill="#10B981"/>
+  <circle cx="198" cy="234" r="6" fill="#F59E0B"/>
+  <circle cx="225" cy="226" r="5" fill="#DC2626"/>
+  <circle cx="250" cy="232" r="4" fill="#EC4899"/>
+
+  <!-- Three arrows fanning out -->
+  <line x1="286" y1="172" x2="562" y2="108" stroke="#06B6D4" stroke-width="2.5" marker-end="url(#arrow-q)"/>
+  <line x1="286" y1="200" x2="562" y2="200" stroke="#8B5CF6" stroke-width="2.5" marker-end="url(#arrow-k)"/>
+  <line x1="286" y1="228" x2="562" y2="292" stroke="#F59E0B" stroke-width="2.5" marker-end="url(#arrow-v)"/>
+
+  <!-- Arrow labels on white rounded-rect backgrounds -->
+  <rect x="380" y="126" width="82" height="22" rx="4" fill="white" stroke="#06B6D4" stroke-width="1"/>
+  <text x="421" y="142" class="mono" fill="#06B6D4" text-anchor="middle">× W_Q</text>
+
+  <rect x="380" y="188" width="82" height="22" rx="4" fill="white" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="421" y="204" class="mono" fill="#8B5CF6" text-anchor="middle">× W_K</text>
+
+  <rect x="380" y="250" width="82" height="22" rx="4" fill="white" stroke="#F59E0B" stroke-width="1"/>
+  <text x="421" y="266" class="mono" fill="#F59E0B" text-anchor="middle">× W_V</text>
+
+  <!-- Output "smoothies" -->
+  <!-- Q -->
+  <rect x="570" y="80" width="330" height="60" rx="10" fill="#ECFEFF" stroke="#06B6D4" stroke-width="2"/>
+  <text x="595" y="119" class="letter" fill="#06B6D4">Q</text>
+  <text x="628" y="106" class="label" fill="#0F172A">query vector</text>
+  <text x="628" y="126" class="caption">"what am I looking for?"</text>
+
+  <!-- K -->
+  <rect x="570" y="170" width="330" height="60" rx="10" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="595" y="209" class="letter" fill="#8B5CF6">K</text>
+  <text x="628" y="196" class="label" fill="#0F172A">key vector</text>
+  <text x="628" y="216" class="caption">"what am I, so a query can find me?"</text>
+
+  <!-- V -->
+  <rect x="570" y="260" width="330" height="60" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="595" y="299" class="letter" fill="#F59E0B">V</text>
+  <text x="628" y="286" class="label" fill="#0F172A">value vector</text>
+  <text x="628" y="306" class="caption">"what do I contribute when looked at?"</text>
+
+  <!-- Caption -->
+  <text x="460" y="358" class="caption" text-anchor="middle">Each arrow is a linear transformation. Every number in the output vector is a weighted sum</text>
+  <text x="460" y="375" class="caption" text-anchor="middle">of every number in the input, blended according to the weight matrix's own learned recipe.</text>
+  <text x="460" y="392" class="caption" text-anchor="middle">Three recipes. Three different vectors. From one salad.</text>
+</svg>

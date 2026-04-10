@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Inside an LLM API call: the request enters a scheduler, gets assigned to a GPU worker that runs a prefill pass to build the KV cache, then enters the decode loop emitting one token per forward pass. The KV cache grows in GPU VRAM with every token until the request completes.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#06B6D4"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 11px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">The shape of an LLM API call</text>
+
+  <!-- Client -->
+  <rect x="24" y="78" width="140" height="80" rx="10" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="94" y="102" class="title" fill="#2563EB" text-anchor="middle">Client</text>
+  <text x="94" y="124" class="mono" fill="#0F172A" text-anchor="middle">POST /v1/messages</text>
+  <text x="94" y="140" class="mono" fill="#475569" text-anchor="middle">prompt + params</text>
+
+  <line x1="164" y1="118" x2="196" y2="118" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Scheduler -->
+  <rect x="196" y="78" width="180" height="80" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="286" y="102" class="title" fill="#06B6D4" text-anchor="middle">Scheduler</text>
+  <text x="286" y="124" class="mono" fill="#E2E8F0" text-anchor="middle">continuous batching</text>
+  <text x="286" y="140" class="mono" fill="#94A3B8" text-anchor="middle">paged KV cache</text>
+
+  <line x1="376" y1="118" x2="408" y2="118" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- GPU worker box -->
+  <rect x="408" y="64" width="528" height="468" rx="12" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="428" y="88" class="title" fill="#8B5CF6">GPU worker (one slot in the batch)</text>
+  <text x="428" y="104" class="mono" fill="#94A3B8">model weights resident in VRAM · request pages allocated on demand</text>
+
+  <!-- Phase 1: Prefill -->
+  <rect x="428" y="120" width="488" height="98" rx="8" fill="#1E293B" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="446" y="142" class="title" fill="#06B6D4">1 · Prefill pass</text>
+  <text x="446" y="162" class="mono" fill="#E2E8F0">forward pass over entire prompt</text>
+  <text x="446" y="178" class="mono" fill="#E2E8F0">compute Q, K, V for every prompt token · store K, V in KV cache</text>
+  <text x="446" y="196" class="mono" fill="#E2E8F0">sample first output token from logits at last position</text>
+  <text x="446" y="212" class="mono" fill="#94A3B8">expensive · dominates time-to-first-token</text>
+
+  <!-- Arrow down -->
+  <line x1="672" y1="218" x2="672" y2="242" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-violet)"/>
+
+  <!-- Phase 2: Decode loop -->
+  <rect x="428" y="244" width="488" height="150" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="446" y="266" class="title" fill="#8B5CF6">2 · Decode loop · one forward pass per output token</text>
+
+  <!-- Inner loop steps -->
+  <text x="466" y="288" class="mono" fill="#E2E8F0">for each new token:</text>
+  <text x="486" y="306" class="mono" fill="#E2E8F0">a. read KV cache for all prior tokens</text>
+  <text x="486" y="322" class="mono" fill="#E2E8F0">b. compute attention · forward through every layer</text>
+  <text x="486" y="338" class="mono" fill="#E2E8F0">c. sample next token from logits</text>
+  <text x="486" y="354" class="mono" fill="#E2E8F0">d. append K, V for new token to KV cache ← cache grows</text>
+  <text x="486" y="370" class="mono" fill="#E2E8F0">e. emit token on the stream</text>
+  <text x="446" y="388" class="mono" fill="#94A3B8">bandwidth-bound · bottleneck is reading the KV cache from HBM</text>
+
+  <!-- Loop arrow -->
+  <path d="M 900 266 C 940 266, 940 390, 900 390" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#arrow-violet)"/>
+  <text x="946" y="332" class="mono" fill="#8B5CF6" text-anchor="middle">loop</text>
+
+  <!-- KV cache bar -->
+  <rect x="428" y="416" width="488" height="100" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="446" y="438" class="title" fill="#10B981">KV cache in GPU VRAM (grows linearly with tokens)</text>
+
+  <!-- KV cells, growing -->
+  <g>
+    <rect x="446" y="452" width="14" height="24" fill="#10B981"/>
+    <rect x="462" y="452" width="14" height="24" fill="#10B981"/>
+    <rect x="478" y="452" width="14" height="24" fill="#10B981"/>
+    <rect x="494" y="452" width="14" height="24" fill="#10B981"/>
+    <rect x="510" y="452" width="14" height="24" fill="#10B981"/>
+    <rect x="526" y="452" width="14" height="24" fill="#10B981"/>
+    <rect x="542" y="452" width="14" height="24" fill="#10B981" opacity="0.85"/>
+    <rect x="558" y="452" width="14" height="24" fill="#10B981" opacity="0.75"/>
+    <rect x="574" y="452" width="14" height="24" fill="#10B981" opacity="0.65"/>
+    <rect x="590" y="452" width="14" height="24" fill="#10B981" opacity="0.55"/>
+    <rect x="606" y="452" width="14" height="24" fill="#10B981" opacity="0.45"/>
+    <rect x="622" y="452" width="14" height="24" fill="#10B981" opacity="0.35"/>
+    <rect x="638" y="452" width="14" height="24" fill="#10B981" opacity="0.25"/>
+    <rect x="654" y="452" width="14" height="24" fill="none" stroke="#10B981" stroke-width="1" stroke-dasharray="2,2"/>
+    <rect x="670" y="452" width="14" height="24" fill="none" stroke="#10B981" stroke-width="1" stroke-dasharray="2,2"/>
+    <rect x="686" y="452" width="14" height="24" fill="none" stroke="#10B981" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+  <text x="446" y="494" class="mono" fill="#94A3B8">prompt tokens</text>
+  <text x="580" y="494" class="mono" fill="#94A3B8">generated so far</text>
+  <text x="696" y="494" class="mono" fill="#64748B">future tokens (not yet computed)</text>
+  <text x="446" y="510" class="mono" fill="#94A3B8">~160 KB per token for a 70B model · freed the instant the request ends</text>
+
+  <!-- Streamed output arrow from GPU worker back to client -->
+  <path d="M 672 532 C 672 560, 300 560, 94 560 L 94 168" stroke="#06B6D4" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-cyan)"/>
+  <text x="480" y="554" class="mono" fill="#06B6D4" text-anchor="middle">streamed tokens · emitted as each forward pass completes</text>
+
+  <!-- Footer note -->
+  <text x="480" y="598" class="caption" text-anchor="middle">"Streaming" is not a UX choice — the answer literally does not exist until the loop produces it.</text>
+</svg>

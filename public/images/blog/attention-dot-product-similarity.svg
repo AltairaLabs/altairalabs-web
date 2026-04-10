@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Three panels showing how the dot product of two vectors behaves. When two vectors point in the same direction, the dot product is a big positive number and the model reads that as a match. When they are perpendicular, the dot product is zero and the model reads that as unrelated. When they point in opposite directions, the dot product is negative and the model reads that as a mismatch.</title>
+  <defs>
+    <marker id="arrow-q" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#06B6D4"/>
+    </marker>
+    <marker id="arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 600; }
+      .label { font-size: 12px; font-weight: 600; }
+      .caption { font-size: 11.5px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Dot product is how the model measures "match"</text>
+
+  <!-- Panel 1: Big positive dot product (same direction) -->
+  <rect x="30" y="60" width="290" height="260" rx="10" fill="#F8FAFC" stroke="#10B981" stroke-width="2"/>
+
+  <!-- Soft axes -->
+  <line x1="50" y1="190" x2="300" y2="190" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="175" y1="80" x2="175" y2="300" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Q arrow -->
+  <line x1="175" y1="190" x2="272" y2="115" stroke="#06B6D4" stroke-width="3" marker-end="url(#arrow-q)"/>
+  <text x="278" y="111" class="mono" fill="#06B6D4">Q</text>
+
+  <!-- K arrow (slightly different angle, same general direction) -->
+  <line x1="175" y1="190" x2="265" y2="130" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-k)"/>
+  <text x="273" y="146" class="mono" fill="#8B5CF6">K</text>
+
+  <!-- Small angle arc -->
+  <path d="M 215 161 A 48 48 0 0 0 221 175" stroke="#475569" stroke-width="1.5" fill="none"/>
+
+  <!-- Label -->
+  <text x="175" y="255" class="label" fill="#10B981" text-anchor="middle">same direction</text>
+  <text x="175" y="275" class="mono" fill="#0F172A" text-anchor="middle">Q · K = +0.92</text>
+  <text x="175" y="296" class="caption" text-anchor="middle">"big positive — match"</text>
+
+  <!-- Panel 2: Dot product ≈ 0 (perpendicular) -->
+  <rect x="335" y="60" width="290" height="260" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+
+  <line x1="355" y1="190" x2="605" y2="190" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="480" y1="80" x2="480" y2="300" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Q arrow (pointing right) -->
+  <line x1="480" y1="190" x2="590" y2="190" stroke="#06B6D4" stroke-width="3" marker-end="url(#arrow-q)"/>
+  <text x="598" y="195" class="mono" fill="#06B6D4">Q</text>
+
+  <!-- K arrow (pointing up) -->
+  <line x1="480" y1="190" x2="480" y2="90" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-k)"/>
+  <text x="486" y="85" class="mono" fill="#8B5CF6">K</text>
+
+  <!-- Right angle indicator -->
+  <path d="M 495 190 L 495 175 L 480 175" stroke="#475569" stroke-width="1.5" fill="none"/>
+
+  <text x="480" y="255" class="label" fill="#64748B" text-anchor="middle">perpendicular</text>
+  <text x="480" y="275" class="mono" fill="#0F172A" text-anchor="middle">Q · K ≈ 0</text>
+  <text x="480" y="296" class="caption" text-anchor="middle">"zero — unrelated"</text>
+
+  <!-- Panel 3: Negative dot product (opposite directions) -->
+  <rect x="640" y="60" width="290" height="260" rx="10" fill="#F8FAFC" stroke="#DC2626" stroke-width="2"/>
+
+  <line x1="660" y1="190" x2="910" y2="190" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="785" y1="80" x2="785" y2="300" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Q arrow (pointing upper right) -->
+  <line x1="785" y1="190" x2="880" y2="115" stroke="#06B6D4" stroke-width="3" marker-end="url(#arrow-q)"/>
+  <text x="886" y="112" class="mono" fill="#06B6D4">Q</text>
+
+  <!-- K arrow (pointing lower left — opposite) -->
+  <line x1="785" y1="190" x2="690" y2="265" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-k)"/>
+  <text x="672" y="282" class="mono" fill="#8B5CF6">K</text>
+
+  <text x="785" y="255" class="label" fill="#DC2626" text-anchor="middle">opposite directions</text>
+  <text x="785" y="275" class="mono" fill="#0F172A" text-anchor="middle">Q · K = −0.88</text>
+  <text x="785" y="296" class="caption" text-anchor="middle">"negative — mismatch"</text>
+
+  <!-- Bottom caption -->
+  <text x="480" y="360" class="caption" text-anchor="middle">The softmax step turns these dot products into weights. Big positive values become large weights,</text>
+  <text x="480" y="378" class="caption" text-anchor="middle">zero values become small weights, and negative values become tiny ones — which is how attention</text>
+  <text x="480" y="396" class="caption" text-anchor="middle">"picks which prior tokens to look at" without any explicit decision logic.</text>
+</svg>
