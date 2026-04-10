@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Two-column taxonomy of generative model families. On the left, autoregressive models by modality: text, music, some speech, older image models. On the right, iterative refinement (diffusion) models by modality: images, video, some speech. Speech is the only modality that splits across both families.</title>
+  <defs>
+    <style>
+      .family { font-size: 16px; font-weight: 700; }
+      .modality { font-size: 13px; font-weight: 600; fill: #0F172A; }
+      .models { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 11px; fill: #475569; }
+      .caption { font-size: 11.5px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Which generative models live in which family</text>
+
+  <!-- LEFT COLUMN: Autoregressive -->
+  <rect x="40" y="60" width="410" height="430" rx="12" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="245" y="90" class="family" fill="#2563EB" text-anchor="middle">Autoregressive</text>
+  <text x="245" y="110" class="caption" text-anchor="middle">state grows one piece at a time</text>
+
+  <!-- Text -->
+  <rect x="60" y="132" width="370" height="70" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="76" y="154" class="modality">Text</text>
+  <text x="76" y="174" class="models">GPT · Claude · Gemini · Llama</text>
+  <text x="76" y="190" class="models">Mistral · DeepSeek · Qwen</text>
+
+  <!-- Music -->
+  <rect x="60" y="212" width="370" height="70" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="76" y="234" class="modality">Music</text>
+  <text x="76" y="254" class="models">MusicGen · AudioLM · Jukebox</text>
+  <text x="76" y="270" class="models">Suno (partly) · Udio (partly)</text>
+
+  <!-- Some speech -->
+  <rect x="60" y="292" width="370" height="70" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="76" y="314" class="modality">Some speech</text>
+  <text x="76" y="334" class="models">Bark · Tortoise · XTTS</text>
+  <text x="76" y="350" class="models">(expressive / voice-cloning TTS)</text>
+
+  <!-- Older image models -->
+  <rect x="60" y="372" width="370" height="70" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="76" y="394" class="modality">Older image models</text>
+  <text x="76" y="414" class="models">DALL-E 1 · Parti · VideoPoet</text>
+  <text x="76" y="430" class="models">(rare today, but the pattern exists)</text>
+
+  <!-- RIGHT COLUMN: Iterative refinement -->
+  <rect x="510" y="60" width="410" height="430" rx="12" fill="#F8FAFC" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="715" y="90" class="family" fill="#8B5CF6" text-anchor="middle">Iterative refinement</text>
+  <text x="715" y="110" class="caption" text-anchor="middle">fixed-size latent, refined over steps</text>
+
+  <!-- Images -->
+  <rect x="530" y="132" width="370" height="90" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="546" y="154" class="modality">Images</text>
+  <text x="546" y="174" class="models">Stable Diffusion · SDXL · SD3 · Flux</text>
+  <text x="546" y="190" class="models">Midjourney · Imagen · DALL-E 2/3</text>
+  <text x="546" y="210" class="models">(virtually all production image gen)</text>
+
+  <!-- Video -->
+  <rect x="530" y="232" width="370" height="90" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="546" y="254" class="modality">Video</text>
+  <text x="546" y="274" class="models">SORA · Veo · Runway Gen-3</text>
+  <text x="546" y="290" class="models">Kling · Pika · Hailuo</text>
+  <text x="546" y="310" class="models">(all production video gen is diffusion)</text>
+
+  <!-- Some speech -->
+  <rect x="530" y="332" width="370" height="70" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="546" y="354" class="modality">Some speech</text>
+  <text x="546" y="374" class="models">StyleTTS 2 · NaturalSpeech 2</text>
+  <text x="546" y="390" class="models">(diffusion-based TTS systems)</text>
+
+  <!-- Non-autoregressive parallel speech (separate callout) -->
+  <rect x="530" y="412" width="370" height="60" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="546" y="432" class="modality" fill="#B45309">Also: non-autoregressive parallel TTS</text>
+  <text x="546" y="452" class="models" fill="#92400E">VITS · FastSpeech 2 · most real-time TTS</text>
+  <text x="546" y="467" class="models" fill="#92400E">(neither family — one-shot feedforward)</text>
+
+  <!-- Bottom note -->
+  <text x="480" y="517" class="caption" text-anchor="middle" font-style="italic">Speech is the only modality that genuinely splits across both families. Everything else has a clear home.</text>
+</svg>

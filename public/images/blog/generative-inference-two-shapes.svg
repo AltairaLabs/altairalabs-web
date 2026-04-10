@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Side-by-side comparison of state evolution during generation. On the left, autoregressive models grow their KV cache by one entry per token at every step. On the right, iterative refinement (diffusion) models keep a fixed-size latent and refine it through progressively less noise at every step. Same GPU, two completely different shapes of computation.</title>
+  <defs>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 11px; font-weight: 600; }
+      .label { font-size: 11.5px; font-weight: 600; }
+      .caption { font-size: 11.5px; fill: #475569; }
+      .step { font-size: 10.5px; fill: #64748B; }
+    </style>
+    <pattern id="noise-100" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#E2E8F0"/>
+      <circle cx="1" cy="1" r="1" fill="#475569"/>
+      <circle cx="3" cy="3" r="0.8" fill="#64748B"/>
+      <circle cx="2" cy="2" r="0.5" fill="#94A3B8"/>
+    </pattern>
+    <pattern id="noise-75" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+      <rect width="5" height="5" fill="#EDE9FE"/>
+      <circle cx="1" cy="1" r="0.9" fill="#8B5CF6"/>
+      <circle cx="3" cy="3" r="0.6" fill="#A78BFA"/>
+    </pattern>
+    <pattern id="noise-50" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#EDE9FE"/>
+      <circle cx="2" cy="2" r="0.7" fill="#8B5CF6"/>
+    </pattern>
+    <pattern id="noise-25" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#EDE9FE"/>
+      <circle cx="3" cy="3" r="0.5" fill="#A78BFA"/>
+    </pattern>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Two shapes of state evolution during generation</text>
+
+  <!-- LEFT COLUMN: Autoregressive -->
+  <text x="230" y="60" class="title" fill="#2563EB" text-anchor="middle">Autoregressive (LLM)</text>
+  <text x="230" y="78" class="caption" text-anchor="middle">KV cache grows by one entry per step</text>
+
+  <!-- Step 1 -->
+  <text x="60" y="115" class="step">step 1</text>
+  <rect x="110" y="100" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="100" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="170" y="100" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="200" y="100" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="230" y="100" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="260" y="100" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="290" y="100" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Step 2 -->
+  <text x="60" y="155" class="step">step 2</text>
+  <rect x="110" y="140" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="140" width="28" height="22" fill="#2563EB"/>
+  <rect x="170" y="140" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="200" y="140" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="230" y="140" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="260" y="140" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="290" y="140" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Step 3 -->
+  <text x="60" y="195" class="step">step 3</text>
+  <rect x="110" y="180" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="180" width="28" height="22" fill="#2563EB"/>
+  <rect x="170" y="180" width="28" height="22" fill="#2563EB"/>
+  <rect x="200" y="180" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="230" y="180" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="260" y="180" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="290" y="180" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Step 4 -->
+  <text x="60" y="235" class="step">step 4</text>
+  <rect x="110" y="220" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="220" width="28" height="22" fill="#2563EB"/>
+  <rect x="170" y="220" width="28" height="22" fill="#2563EB"/>
+  <rect x="200" y="220" width="28" height="22" fill="#2563EB"/>
+  <rect x="230" y="220" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="260" y="220" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="290" y="220" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Step 5 -->
+  <text x="60" y="275" class="step">step 5</text>
+  <rect x="110" y="260" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="260" width="28" height="22" fill="#2563EB"/>
+  <rect x="170" y="260" width="28" height="22" fill="#2563EB"/>
+  <rect x="200" y="260" width="28" height="22" fill="#2563EB"/>
+  <rect x="230" y="260" width="28" height="22" fill="#2563EB"/>
+  <rect x="260" y="260" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="290" y="260" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Step 6 -->
+  <text x="60" y="315" class="step">step 6</text>
+  <rect x="110" y="300" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="300" width="28" height="22" fill="#2563EB"/>
+  <rect x="170" y="300" width="28" height="22" fill="#2563EB"/>
+  <rect x="200" y="300" width="28" height="22" fill="#2563EB"/>
+  <rect x="230" y="300" width="28" height="22" fill="#2563EB"/>
+  <rect x="260" y="300" width="28" height="22" fill="#2563EB"/>
+  <rect x="290" y="300" width="28" height="22" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Step 7 -->
+  <text x="60" y="355" class="step">step 7</text>
+  <rect x="110" y="340" width="28" height="22" fill="#2563EB"/>
+  <rect x="140" y="340" width="28" height="22" fill="#2563EB"/>
+  <rect x="170" y="340" width="28" height="22" fill="#2563EB"/>
+  <rect x="200" y="340" width="28" height="22" fill="#2563EB"/>
+  <rect x="230" y="340" width="28" height="22" fill="#2563EB"/>
+  <rect x="260" y="340" width="28" height="22" fill="#2563EB"/>
+  <rect x="290" y="340" width="28" height="22" fill="#2563EB"/>
+
+  <text x="230" y="395" class="mono" fill="#0F172A" text-anchor="middle">state grows →</text>
+  <text x="230" y="416" class="caption" text-anchor="middle">Each new token adds one K and one V</text>
+  <text x="230" y="432" class="caption" text-anchor="middle">to the cache. Previous entries are frozen.</text>
+
+  <!-- Divider -->
+  <line x1="480" y1="50" x2="480" y2="450" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- RIGHT COLUMN: Iterative refinement -->
+  <text x="720" y="60" class="title" fill="#8B5CF6" text-anchor="middle">Iterative refinement (diffusion)</text>
+  <text x="720" y="78" class="caption" text-anchor="middle">Fixed-size latent, refined step by step</text>
+
+  <!-- Step 1 - fully noisy -->
+  <text x="550" y="115" class="step">step 1</text>
+  <rect x="600" y="95" width="240" height="30" rx="4" fill="url(#noise-100)" stroke="#475569" stroke-width="1.5"/>
+  <text x="848" y="115" class="caption">pure noise</text>
+
+  <!-- Step 2 - noisy -->
+  <text x="550" y="155" class="step">step 2</text>
+  <rect x="600" y="135" width="240" height="30" rx="4" fill="url(#noise-75)" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- Step 3 -->
+  <text x="550" y="195" class="step">step 3</text>
+  <rect x="600" y="175" width="240" height="30" rx="4" fill="url(#noise-50)" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- Step 4 -->
+  <text x="550" y="235" class="step">step 4</text>
+  <rect x="600" y="215" width="240" height="30" rx="4" fill="url(#noise-25)" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- Step 5 - less noise -->
+  <text x="550" y="275" class="step">step 5</text>
+  <rect x="600" y="255" width="240" height="30" rx="4" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+
+  <!-- Step 6 - even less -->
+  <text x="550" y="315" class="step">step 6</text>
+  <rect x="600" y="295" width="240" height="30" rx="4" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+
+  <!-- Step 7 - clean -->
+  <text x="550" y="355" class="step">step 7</text>
+  <rect x="600" y="335" width="240" height="30" rx="4" fill="#8B5CF6" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="848" y="355" class="caption">clean</text>
+
+  <text x="720" y="395" class="mono" fill="#0F172A" text-anchor="middle">state refined ↓</text>
+  <text x="720" y="416" class="caption" text-anchor="middle">Same-size latent at every step, just</text>
+  <text x="720" y="432" class="caption" text-anchor="middle">a bit less noisy. Nothing is "added."</text>
+
+  <!-- Bottom takeaway -->
+  <text x="480" y="478" class="caption" text-anchor="middle" font-style="italic">The KV cache exists because the state grows. Diffusion has no equivalent, because its state doesn't.</text>
+</svg>
