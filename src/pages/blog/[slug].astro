@@ -155,7 +155,7 @@ const jsonLd = {
   }
 
   .post-container {
-    max-width: 720px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 var(--space-lg);
   }
@@ -297,6 +297,47 @@ const jsonLd = {
     margin: 1.5rem 0;
   }
 
+  .post-content :global(.table-wrap),
+  .post-content :global(table) {
+    margin: 1.5rem 0;
+  }
+
+  .post-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .post-content :global(thead) {
+    background: rgba(37, 99, 235, 0.06);
+  }
+
+  .post-content :global(th),
+  .post-content :global(td) {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--mist);
+    vertical-align: top;
+  }
+
+  .post-content :global(th) {
+    font-weight: 600;
+    color: var(--deep-space);
+    border-bottom: 2px solid var(--altair-blue);
+  }
+
+  .post-content :global(tbody tr:hover) {
+    background: rgba(37, 99, 235, 0.03);
+  }
+
+  .post-content :global(td code),
+  .post-content :global(th code) {
+    font-size: 0.8125rem;
+    background: transparent;
+    padding: 0;
+  }
+
   .share-bar {
     display: flex;
     gap: var(--space-sm);
@@ -398,6 +439,19 @@ const jsonLd = {
 
     .post-content :global(pre code) {
       font-size: 0.8125rem;
+    }
+
+    .post-content :global(table) {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.8125rem;
+    }
+
+    .post-content :global(th),
+    .post-content :global(td) {
+      padding: var(--space-xs) var(--space-sm);
+      white-space: nowrap;
     }
   }
 

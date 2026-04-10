@@ -65,21 +65,30 @@ A proper canary deployment system for prompts includes several components:
 
 ### Version Management
 
-Each prompt version is tracked with semantic versioning:
+The new version is expressed as a sparse override of the running agent — a different PromptPack version, a different model, a different provider, or any combination:
 
 ```yaml
 apiVersion: omnia.altairalabs.ai/v1alpha1
-kind: PromptPack
+kind: AgentRuntime
 metadata:
-  name: support-prompts
+  name: support-agent
 spec:
-  version: "2.4.0"  # New version
+  # ... normal runtime config ...
   rollout:
-    strategy: canary
-    canaryWeight: 10  # Start with 10% traffic
-    stepWeight: 10    # Increase by 10% each step
-    stepInterval: 5m  # Every 5 minutes
+    candidate:
+      promptPackVersion: "2.4.0"     # sparse override — only this changes
+    steps:
+      - setWeight: 10                # start with 10% traffic
+      - pause: { duration: 5m }      # wait and observe
+      - analysis:
+          templateName: quality-gate # automated metric check
+      - setWeight: 50
+      - analysis:
+          templateName: quality-gate
+      - setWeight: 100               # full promotion
 ```
+
+Canary, blue/green, and experiment rollouts are all expressed as different sequences over the same primitive — there's no `strategy` enum to pick from. A blue/green is `setWeight: 100` after an analysis step. An A/B experiment holds at `setWeight: 50` indefinitely while cohort data accumulates.
 
 ### Traffic Splitting
 
@@ -117,23 +126,31 @@ Both versions emit metrics that are compared in real-time:
 
 ### Automatic Rollback
 
-When canary metrics cross thresholds, automatic rollback kicks in:
+Success conditions are expressed as reusable `RolloutAnalysis` templates. Each template runs one or more PromQL queries on an interval and evaluates a success condition against the result:
 
 ```yaml
-rollout:
-  analysis:
-    metrics:
-      - name: success_rate
-        threshold: 90%
-        comparison: ">="
-      - name: latency_p99
-        threshold: 3000ms
-        comparison: "<="
-    failureThreshold: 2  # Two failed checks triggers rollback
-    interval: 1m         # Check every minute
+apiVersion: omnia.altairalabs.ai/v1alpha1
+kind: RolloutAnalysis
+metadata:
+  name: quality-gate
+spec:
+  args:
+    - name: agent
+    - name: threshold
+      value: "0.9"
+  metrics:
+    - name: eval-quality
+      interval: 5m
+      count: 3
+      failureLimit: 1
+      successCondition: "result[0] >= {{args.threshold}}"
+      provider:
+        prometheus:
+          address: http://prometheus:9090
+          query: avg(omnia_eval_score{agent="{{args.agent}}", variant="canary"})
 ```
 
-If the canary fails these checks, traffic automatically returns to the stable version -- without human intervention at 3 AM.
+When `rollback.mode: automatic` is set and an analysis step fails, traffic automatically returns to the stable version -- without human intervention at 3 AM. In manual mode, the rollout pauses with a status message and waits for a human. Either way, automatic rollback also fires immediately if the candidate Deployment itself can't come up — no need to wait for a metric check when the new version is crash-looping.
 
 ## The Rollout Lifecycle
 

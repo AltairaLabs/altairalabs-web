@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 640" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Dual-Deployment model with Istio VirtualService and DestinationRule routing traffic to stable and canary pods</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 11px; }
+      .label { font-size: 12px; }
+      .muted { font-size: 11px; fill: #64748B; }
+    </style>
+  </defs>
+
+  <!-- Request -->
+  <rect x="320" y="16" width="240" height="58" rx="10" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="440" y="39" class="title" fill="#0F172A" text-anchor="middle">User request</text>
+  <text x="440" y="58" class="mono" fill="#475569" text-anchor="middle">x-user-id: alice</text>
+
+  <line x1="440" y1="74" x2="440" y2="104" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- VirtualService -->
+  <rect x="120" y="106" width="640" height="124" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="140" y="132" class="title" fill="#06B6D4">Istio VirtualService</text>
+  <text x="140" y="158" class="mono" fill="#E2E8F0">spec:</text>
+  <text x="158" y="176" class="mono" fill="#E2E8F0">http:</text>
+  <text x="176" y="194" class="mono" fill="#E2E8F0">- route:</text>
+  <text x="194" y="212" class="mono" fill="#E2E8F0">- destination: { host: support, subset: stable }   weight: 90</text>
+  <text x="194" y="228" class="mono" fill="#E2E8F0">- destination: { host: support, subset: canary }   weight: 10</text>
+
+  <line x1="440" y1="230" x2="440" y2="260" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- DestinationRule -->
+  <rect x="120" y="262" width="640" height="138" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="140" y="288" class="title" fill="#8B5CF6">Istio DestinationRule</text>
+  <text x="140" y="314" class="mono" fill="#E2E8F0">trafficPolicy.loadBalancer.consistentHash.httpHeaderName: x-user-id</text>
+  <text x="140" y="334" class="mono" fill="#E2E8F0">subsets:</text>
+  <text x="158" y="352" class="mono" fill="#E2E8F0">- name: stable     labels: { track: stable }</text>
+  <text x="158" y="370" class="mono" fill="#E2E8F0">- name: canary     labels: { track: canary }</text>
+  <text x="140" y="390" class="mono" fill="#94A3B8">(same user always hashes to the same subset for the rollout's lifetime)</text>
+
+  <!-- Branch arrows -->
+  <line x1="320" y1="400" x2="220" y2="440" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="560" y1="400" x2="660" y2="440" stroke="#8B5CF6" stroke-width="2.5" marker-end="url(#arrow-violet)"/>
+
+  <!-- Stable Deployment -->
+  <rect x="40" y="442" width="360" height="170" rx="10" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="60" y="468" class="title" fill="#2563EB">Deployment: support</text>
+  <text x="60" y="486" class="mono" fill="#475569">selector: { app: support, track: stable }</text>
+  <text x="60" y="502" class="mono" fill="#475569">replicas: 3</text>
+
+  <rect x="60" y="518" width="96" height="82" rx="8" fill="#2563EB"/>
+  <text x="108" y="550" class="mono" fill="#F8FAFC" text-anchor="middle">pod</text>
+  <text x="108" y="566" class="mono" fill="#F8FAFC" text-anchor="middle">v1.0.0</text>
+  <text x="108" y="586" class="mono" fill="#DBEAFE" text-anchor="middle">stable</text>
+
+  <rect x="172" y="518" width="96" height="82" rx="8" fill="#2563EB"/>
+  <text x="220" y="550" class="mono" fill="#F8FAFC" text-anchor="middle">pod</text>
+  <text x="220" y="566" class="mono" fill="#F8FAFC" text-anchor="middle">v1.0.0</text>
+  <text x="220" y="586" class="mono" fill="#DBEAFE" text-anchor="middle">stable</text>
+
+  <rect x="284" y="518" width="96" height="82" rx="8" fill="#2563EB"/>
+  <text x="332" y="550" class="mono" fill="#F8FAFC" text-anchor="middle">pod</text>
+  <text x="332" y="566" class="mono" fill="#F8FAFC" text-anchor="middle">v1.0.0</text>
+  <text x="332" y="586" class="mono" fill="#DBEAFE" text-anchor="middle">stable</text>
+
+  <!-- Canary Deployment -->
+  <rect x="480" y="442" width="360" height="170" rx="10" fill="#F8FAFC" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="500" y="468" class="title" fill="#8B5CF6">Deployment: support-canary</text>
+  <text x="500" y="486" class="mono" fill="#475569">selector: { app: support, track: canary }</text>
+  <text x="500" y="502" class="mono" fill="#475569">replicas: 1</text>
+
+  <rect x="500" y="518" width="96" height="82" rx="8" fill="#8B5CF6"/>
+  <text x="548" y="550" class="mono" fill="#F8FAFC" text-anchor="middle">pod</text>
+  <text x="548" y="566" class="mono" fill="#F8FAFC" text-anchor="middle">v2.0.0</text>
+  <text x="548" y="586" class="mono" fill="#EDE9FE" text-anchor="middle">canary</text>
+</svg>

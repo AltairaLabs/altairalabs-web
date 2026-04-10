@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Three-layer back-pressure stack: concurrency semaphore, retry budget, and per-call retry policy gate incoming requests before any HTTP work happens.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#10B981"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="440" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Three-layer back-pressure stack</text>
+
+  <!-- Caller request -->
+  <rect x="300" y="58" width="280" height="54" rx="10" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="440" y="82" class="title" fill="#0F172A" text-anchor="middle">Caller: provider.Predict(ctx, req)</text>
+  <text x="440" y="100" class="mono" fill="#475569" text-anchor="middle">ctx carries deadline + cancellation</text>
+
+  <line x1="440" y1="114" x2="440" y2="142" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 1: semaphore -->
+  <rect x="80" y="144" width="720" height="86" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="100" y="168" class="title" fill="#06B6D4">1 · stream_max_concurrent semaphore</text>
+  <text x="100" y="190" class="mono" fill="#E2E8F0">Acquire(ctx, 1) before any HTTP work · goroutine growth ceiling</text>
+  <text x="100" y="208" class="mono" fill="#94A3B8">reject → context_canceled | deadline_exceeded</text>
+  <text x="100" y="222" class="mono" fill="#94A3B8">metric: promptkit_stream_concurrency_rejections_total{reason}</text>
+
+  <!-- reject arrow right -->
+  <line x1="800" y1="187" x2="852" y2="187" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="826" y="176" class="mono" fill="#DC2626" text-anchor="middle">reject</text>
+
+  <line x1="440" y1="230" x2="440" y2="258" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 2: budget -->
+  <rect x="80" y="260" width="720" height="86" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="100" y="284" class="title" fill="#8B5CF6">2 · RetryBudget (per provider, host)</text>
+  <text x="100" y="306" class="mono" fill="#E2E8F0">token bucket · fresh attempts free · retries consume tokens</text>
+  <text x="100" y="324" class="mono" fill="#94A3B8">empty → fail fast (no blocking)</text>
+  <text x="100" y="338" class="mono" fill="#94A3B8">metric: promptkit_stream_retry_budget_available{provider,host}</text>
+
+  <line x1="800" y1="303" x2="852" y2="303" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="826" y="292" class="mono" fill="#DC2626" text-anchor="middle">reject</text>
+
+  <line x1="440" y1="346" x2="440" y2="374" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 3: retry policy -->
+  <rect x="80" y="376" width="720" height="98" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="2"/>
+  <text x="100" y="400" class="title" fill="#2563EB">3 · StreamRetryPolicy (per call)</text>
+  <text x="100" y="422" class="mono" fill="#E2E8F0">bounded attempts · full-jitter backoff</text>
+  <text x="100" y="438" class="mono" fill="#E2E8F0">pre-first-chunk window: safe retry · mid-stream (opt-in): Reset chunk</text>
+  <text x="100" y="454" class="mono" fill="#94A3B8">classifier: IsTransient(err) via errors.As — ProviderTransportError, ProviderHTTPError</text>
+  <text x="100" y="468" class="mono" fill="#94A3B8">metric: promptkit_stream_retries_total{provider,outcome}</text>
+
+  <line x1="800" y1="419" x2="852" y2="419" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="826" y="408" class="mono" fill="#DC2626" text-anchor="middle">reject</text>
+
+  <line x1="440" y1="474" x2="440" y2="502" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Outcome: provider call -->
+  <rect x="260" y="504" width="360" height="58" rx="10" fill="#F8FAFC" stroke="#10B981" stroke-width="2"/>
+  <text x="440" y="528" class="title" fill="#10B981" text-anchor="middle">HTTP/2 stream to upstream</text>
+  <text x="440" y="548" class="mono" fill="#475569" text-anchor="middle">one goroutine, one frame reader, metrics attached</text>
+
+  <!-- reject fate -->
+  <text x="826" y="592" class="label" fill="#DC2626" text-anchor="middle">saturation surfaces as ctx error</text>
+  <text x="826" y="606" class="label" fill="#DC2626" text-anchor="middle">to the caller — no work wasted</text>
+</svg>

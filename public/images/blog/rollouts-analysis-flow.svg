@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 700" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Analysis step executor: fetch template, substitute args, query Prometheus, evaluate success condition, and advance, rollback, or pause</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#F59E0B"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 11px; }
+      .label { font-size: 12px; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="410" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Analysis step executor</text>
+
+  <!-- Step: rollout step -->
+  <rect x="240" y="56" width="340" height="76" rx="10" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="260" y="80" class="title" fill="#2563EB">rollout step</text>
+  <text x="260" y="102" class="mono" fill="#0F172A">analysis:</text>
+  <text x="278" y="118" class="mono" fill="#0F172A">templateName: eval-quality</text>
+  <line x1="410" y1="134" x2="410" y2="162" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step: fetch template -->
+  <rect x="240" y="164" width="340" height="58" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="260" y="188" class="title" fill="#06B6D4">fetch RolloutAnalysis template</text>
+  <text x="260" y="208" class="mono" fill="#E2E8F0">unstructured client · EE boundary preserved</text>
+  <line x1="410" y1="222" x2="410" y2="250" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step: substitute -->
+  <rect x="240" y="252" width="340" height="58" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="260" y="276" class="title" fill="#8B5CF6">merge args · substitute {{args.name}}</text>
+  <text x="260" y="296" class="mono" fill="#E2E8F0">step args override template defaults</text>
+  <line x1="410" y1="310" x2="410" y2="338" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step: query prometheus -->
+  <rect x="240" y="340" width="340" height="76" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="260" y="364" class="title" fill="#06B6D4">query Prometheus</text>
+  <text x="260" y="386" class="mono" fill="#E2E8F0">avg(omnia_eval_score{agent="support",</text>
+  <text x="260" y="402" class="mono" fill="#E2E8F0">                      variant="canary"})</text>
+  <line x1="410" y1="416" x2="410" y2="444" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step: evaluate -->
+  <rect x="240" y="446" width="340" height="58" rx="10" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="260" y="470" class="title" fill="#2563EB">evaluate successCondition</text>
+  <text x="260" y="490" class="mono" fill="#0F172A">result[0] &gt;= 0.9</text>
+
+  <!-- Branch arrows -->
+  <!-- Pass (green) -->
+  <path d="M 300 504 C 240 540, 170 560, 130 580" stroke="#10B981" stroke-width="2.5" fill="none" marker-end="url(#arrow-green)"/>
+  <!-- Fail + auto (red) -->
+  <path d="M 410 504 C 410 540, 410 560, 410 580" stroke="#DC2626" stroke-width="2.5" fill="none" marker-end="url(#arrow-red)"/>
+  <!-- Fail + manual (gold) -->
+  <path d="M 520 504 C 580 540, 650 560, 690 580" stroke="#F59E0B" stroke-width="2.5" fill="none" marker-end="url(#arrow-gold)"/>
+
+  <!-- Outcome: Pass -->
+  <rect x="20" y="582" width="220" height="90" rx="10" fill="#F8FAFC" stroke="#10B981" stroke-width="2"/>
+  <text x="40" y="606" class="title" fill="#10B981">pass</text>
+  <text x="40" y="626" class="mono" fill="#0F172A">advance to next step</text>
+  <text x="40" y="645" class="label" fill="#475569">continue the rollout</text>
+
+  <!-- Outcome: Fail + auto -->
+  <rect x="300" y="582" width="220" height="90" rx="10" fill="#F8FAFC" stroke="#DC2626" stroke-width="2"/>
+  <text x="320" y="606" class="title" fill="#DC2626">fail · automatic</text>
+  <text x="320" y="626" class="mono" fill="#0F172A">rollback</text>
+  <text x="320" y="645" class="label" fill="#475569">reset spec + traffic</text>
+
+  <!-- Outcome: Fail + manual -->
+  <rect x="580" y="582" width="220" height="90" rx="10" fill="#F8FAFC" stroke="#F59E0B" stroke-width="2"/>
+  <text x="600" y="606" class="title" fill="#F59E0B">fail · manual</text>
+  <text x="600" y="626" class="mono" fill="#0F172A">pause</text>
+  <text x="600" y="645" class="label" fill="#475569">status message, wait for human</text>
+</svg>

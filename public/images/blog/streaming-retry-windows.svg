@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Pre-first-chunk retry window retries safely before any content is forwarded downstream. Mid-stream reset retry window emits a Reset chunk after content has been forwarded, then retries the full request from scratch.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#F59E0B"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 11px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Two retry windows</text>
+
+  <!-- Scenario A: pre-first-chunk -->
+  <text x="24" y="64" class="title" fill="#2563EB">A · pre_first_chunk (default)</text>
+  <text x="24" y="82" class="caption">Upstream dies before any content has been forwarded downstream. Retry is invisible to the caller.</text>
+
+  <!-- Timeline A -->
+  <line x1="40" y1="116" x2="920" y2="116" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="40" y1="110" x2="40" y2="122" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="920" y1="110" x2="920" y2="122" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="40" y="140" class="mono" fill="#64748B">request</text>
+  <text x="920" y="140" class="mono" fill="#64748B" text-anchor="end">stream complete</text>
+
+  <!-- Attempt 1: dies before first frame -->
+  <rect x="60" y="92" width="180" height="20" rx="4" fill="#F8FAFC" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="150" y="106" class="mono" fill="#DC2626" text-anchor="middle">attempt 1 · h2 RST_STREAM</text>
+
+  <!-- Retry arrow -->
+  <path d="M 244 100 C 280 100, 300 100, 328 100" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="286" y="94" class="mono" fill="#10B981" text-anchor="middle">retry (safe)</text>
+
+  <!-- Attempt 2: success -->
+  <rect x="332" y="92" width="560" height="20" rx="4" fill="#F8FAFC" stroke="#10B981" stroke-width="2"/>
+  <text x="612" y="106" class="mono" fill="#10B981" text-anchor="middle">attempt 2 · first frame → content stream → done</text>
+
+  <!-- Downstream view A -->
+  <text x="24" y="176" class="caption">What the caller's consumer sees:</text>
+  <rect x="332" y="186" width="560" height="18" rx="3" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="612" y="199" class="mono" fill="#0F172A" text-anchor="middle">content chunks → stop</text>
+  <text x="24" y="225" class="caption">No duplication · no Reset chunk · no wasted tokens · classified as "succeeded on attempt 2".</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="256" x2="936" y2="256" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Scenario B: mid-stream -->
+  <text x="24" y="288" class="title" fill="#F59E0B">B · retry_window: always (opt-in)</text>
+  <text x="24" y="306" class="caption">Upstream dies after content has already been forwarded. Retry pays for extra tokens in exchange for recovery.</text>
+
+  <!-- Timeline B -->
+  <line x1="40" y1="344" x2="920" y2="344" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="40" y1="338" x2="40" y2="350" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="920" y1="338" x2="920" y2="350" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="40" y="368" class="mono" fill="#64748B">request</text>
+  <text x="920" y="368" class="mono" fill="#64748B" text-anchor="end">stream complete</text>
+
+  <!-- Attempt 1: partial success then dies -->
+  <rect x="60" y="320" width="260" height="20" rx="4" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="190" y="334" class="mono" fill="#0F172A" text-anchor="middle">attempt 1 · 200 tokens forwarded</text>
+  <rect x="320" y="320" width="12" height="20" rx="2" fill="#DC2626"/>
+
+  <!-- Reset chunk marker -->
+  <path d="M 336 330 C 370 330, 380 330, 400 330" stroke="#F59E0B" stroke-width="2.5" fill="none" marker-end="url(#arrow-gold)"/>
+  <text x="368" y="322" class="mono" fill="#F59E0B" text-anchor="middle">Reset</text>
+
+  <!-- Attempt 2: fresh stream -->
+  <rect x="404" y="320" width="488" height="20" rx="4" fill="#F8FAFC" stroke="#10B981" stroke-width="2"/>
+  <text x="648" y="334" class="mono" fill="#10B981" text-anchor="middle">attempt 2 · fresh response → done</text>
+
+  <!-- Downstream view B -->
+  <text x="24" y="404" class="caption">What the caller's consumer sees:</text>
+  <rect x="60" y="414" width="260" height="18" rx="3" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="190" y="427" class="mono" fill="#0F172A" text-anchor="middle">partial content</text>
+
+  <rect x="328" y="414" width="68" height="18" rx="3" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="362" y="427" class="mono" fill="#0F172A" text-anchor="middle">Reset!</text>
+
+  <rect x="404" y="414" width="488" height="18" rx="3" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="648" y="427" class="mono" fill="#0F172A" text-anchor="middle">fresh content → stop</text>
+
+  <text x="24" y="456" class="caption">Consumer clears accumulated content, tool calls, and cost info on Reset, then ingests the fresh stream.</text>
+  <text x="24" y="472" class="caption">Off by default · enable per provider when extra tokens are cheaper than an unrecoverable error.</text>
+</svg>

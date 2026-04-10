@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">Cohort tracking flows from Istio headers through the facade into the session API, Postgres, and OTel spans</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 12px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="30" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Cohort propagation: headers → session store → traces</text>
+
+  <!-- Box 1: Istio -->
+  <rect x="24" y="90" width="170" height="116" rx="10" fill="#F8FAFC" stroke="#06B6D4" stroke-width="2"/>
+  <text x="109" y="116" class="title" fill="#06B6D4" text-anchor="middle">Istio ingress</text>
+  <text x="109" y="144" class="mono" fill="#0F172A" text-anchor="middle">x-omnia-cohort-id</text>
+  <text x="109" y="162" class="mono" fill="#0F172A" text-anchor="middle">x-omnia-variant</text>
+  <text x="109" y="188" class="label" fill="#64748B" text-anchor="middle">HTTP headers</text>
+
+  <line x1="194" y1="148" x2="224" y2="148" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: Facade -->
+  <rect x="224" y="90" width="170" height="116" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="2"/>
+  <text x="309" y="116" class="title" fill="#2563EB" text-anchor="middle">Facade</text>
+  <text x="309" y="144" class="mono" fill="#E2E8F0" text-anchor="middle">WebSocket upgrade</text>
+  <text x="309" y="162" class="mono" fill="#E2E8F0" text-anchor="middle">→ Connection struct</text>
+  <text x="309" y="188" class="label" fill="#94A3B8" text-anchor="middle">internal/facade</text>
+
+  <line x1="394" y1="148" x2="424" y2="148" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: Session API -->
+  <rect x="424" y="90" width="170" height="116" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="509" y="116" class="title" fill="#8B5CF6" text-anchor="middle">Session API</text>
+  <text x="509" y="144" class="mono" fill="#E2E8F0" text-anchor="middle">CreateSessionRequest</text>
+  <text x="509" y="162" class="mono" fill="#E2E8F0" text-anchor="middle">{ cohortId, variant }</text>
+  <text x="509" y="188" class="label" fill="#94A3B8" text-anchor="middle">pkg/sessionapi</text>
+
+  <!-- Fan-out to Postgres and OTel -->
+  <path d="M 594 122 C 640 100, 680 80, 744 80" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 594 176 C 640 198, 680 218, 744 218" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Box 4: Postgres -->
+  <rect x="744" y="46" width="192" height="108" rx="10" fill="#F8FAFC" stroke="#10B981" stroke-width="2"/>
+  <text x="764" y="72" class="title" fill="#10B981">Postgres</text>
+  <text x="764" y="92" class="mono" fill="#0F172A">migration 000025</text>
+  <text x="764" y="108" class="mono" fill="#0F172A">sessions.cohort_id</text>
+  <text x="764" y="124" class="mono" fill="#0F172A">sessions.variant</text>
+  <text x="764" y="144" class="mono" fill="#475569">+ partial indexes</text>
+
+  <!-- Box 5: OTel -->
+  <rect x="744" y="184" width="192" height="108" rx="10" fill="#F8FAFC" stroke="#F59E0B" stroke-width="2"/>
+  <text x="764" y="210" class="title" fill="#F59E0B">OTel spans</text>
+  <text x="764" y="230" class="mono" fill="#0F172A">omnia.cohort.id</text>
+  <text x="764" y="246" class="mono" fill="#0F172A">omnia.variant</text>
+  <text x="764" y="266" class="mono" fill="#475569">span attributes on</text>
+  <text x="764" y="282" class="mono" fill="#475569">every session op</text>
+
+  <!-- Caption -->
+  <text x="480" y="332" class="caption" text-anchor="middle">Every session row and every trace span is now filterable by cohort and variant —</text>
+  <text x="480" y="350" class="caption" text-anchor="middle">the difference between "we ran a canary" and "we ran an experiment."</text>
+</svg>
