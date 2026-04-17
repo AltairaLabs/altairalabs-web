@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">A before-and-after view of a transformer. The base model and the fine-tuned model have identical structure — same layers, same matrix sizes, same vocabulary — but every learnable matrix in the fine-tuned version is marked with a Δ badge indicating the numbers inside have been nudged.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 11px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">What fine-tuning actually changes inside the model</text>
+
+  <!-- LEFT PANEL: Base model -->
+  <rect x="40" y="60" width="400" height="510" rx="12" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="240" y="86" class="title" fill="#2563EB" text-anchor="middle">Base model</text>
+  <text x="240" y="104" class="mono" fill="#475569" text-anchor="middle">what came off the pre-training run</text>
+
+  <!-- Embedding table -->
+  <rect x="80" y="124" width="320" height="46" rx="8" fill="#E2E8F0" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="240" y="144" class="label" fill="#0F172A" text-anchor="middle">embedding table</text>
+  <text x="240" y="160" class="mono" fill="#475569" text-anchor="middle">token ID → few thousand numbers</text>
+  <line x1="240" y1="170" x2="240" y2="186" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer stack (representative) -->
+  <rect x="80" y="188" width="320" height="244" rx="8" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="240" y="208" class="label" fill="#2563EB" text-anchor="middle">transformer layer · repeated N times</text>
+
+  <!-- Attention block -->
+  <rect x="100" y="220" width="280" height="94" rx="6" fill="#F1F5F9" stroke="#2563EB" stroke-width="1"/>
+  <text x="240" y="238" class="label" fill="#0F172A" text-anchor="middle">attention block</text>
+  <rect x="116" y="248" width="76" height="28" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="154" y="266" class="mono" fill="#1E3A8A" text-anchor="middle">W_Q</text>
+  <rect x="202" y="248" width="76" height="28" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="240" y="266" class="mono" fill="#1E3A8A" text-anchor="middle">W_K</text>
+  <rect x="288" y="248" width="76" height="28" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="326" y="266" class="mono" fill="#1E3A8A" text-anchor="middle">W_V</text>
+  <rect x="160" y="284" width="160" height="22" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="240" y="300" class="mono" fill="#1E3A8A" text-anchor="middle">output projection</text>
+
+  <line x1="240" y1="314" x2="240" y2="330" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- MLP block -->
+  <rect x="100" y="332" width="280" height="80" rx="6" fill="#F1F5F9" stroke="#2563EB" stroke-width="1"/>
+  <text x="240" y="350" class="label" fill="#0F172A" text-anchor="middle">MLP block (the bulk of the weights)</text>
+  <rect x="130" y="362" width="100" height="32" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="180" y="382" class="mono" fill="#1E3A8A" text-anchor="middle">W_up</text>
+  <rect x="250" y="362" width="100" height="32" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="300" y="382" class="mono" fill="#1E3A8A" text-anchor="middle">W_down</text>
+
+  <!-- Out of layer -->
+  <line x1="240" y1="432" x2="240" y2="448" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Output head -->
+  <rect x="80" y="450" width="320" height="46" rx="8" fill="#E2E8F0" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="240" y="470" class="label" fill="#0F172A" text-anchor="middle">output projection → vocabulary scores</text>
+  <text x="240" y="486" class="mono" fill="#475569" text-anchor="middle">one score per possible next token</text>
+
+  <text x="240" y="524" class="mono" fill="#475569" text-anchor="middle">tokens in → scores out</text>
+  <text x="240" y="544" class="mono" fill="#475569" text-anchor="middle">every box holds numbers learned during pre-training</text>
+
+  <!-- Big arrow between panels -->
+  <line x1="448" y1="316" x2="512" y2="316" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-violet)"/>
+  <text x="480" y="302" class="mono" fill="#8B5CF6" text-anchor="middle">fine-tune</text>
+
+  <!-- RIGHT PANEL: Fine-tuned model -->
+  <rect x="520" y="60" width="400" height="510" rx="12" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="720" y="86" class="title" fill="#8B5CF6" text-anchor="middle">Fine-tuned model</text>
+  <text x="720" y="104" class="mono" fill="#94A3B8" text-anchor="middle">same shape · slightly different numbers</text>
+
+  <!-- Embedding table -->
+  <rect x="560" y="124" width="320" height="46" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="720" y="144" class="label" fill="#E2E8F0" text-anchor="middle">embedding table</text>
+  <text x="720" y="160" class="mono" fill="#94A3B8" text-anchor="middle">token ID → few thousand numbers</text>
+  <circle cx="866" cy="146" r="10" fill="#8B5CF6"/>
+  <text x="866" y="150" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+  <line x1="720" y1="170" x2="720" y2="186" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer stack -->
+  <rect x="560" y="188" width="320" height="244" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="720" y="208" class="label" fill="#8B5CF6" text-anchor="middle">transformer layer · repeated N times</text>
+
+  <!-- Attention block -->
+  <rect x="580" y="220" width="280" height="94" rx="6" fill="#0F172A" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="720" y="238" class="label" fill="#E2E8F0" text-anchor="middle">attention block</text>
+  <rect x="596" y="248" width="76" height="28" rx="5" fill="#3B0764" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="634" y="266" class="mono" fill="#E9D5FF" text-anchor="middle">W_Q</text>
+  <circle cx="668" cy="252" r="7" fill="#8B5CF6"/>
+  <text x="668" y="256" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+  <rect x="682" y="248" width="76" height="28" rx="5" fill="#3B0764" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="720" y="266" class="mono" fill="#E9D5FF" text-anchor="middle">W_K</text>
+  <circle cx="754" cy="252" r="7" fill="#8B5CF6"/>
+  <text x="754" y="256" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+  <rect x="768" y="248" width="76" height="28" rx="5" fill="#3B0764" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="806" y="266" class="mono" fill="#E9D5FF" text-anchor="middle">W_V</text>
+  <circle cx="840" cy="252" r="7" fill="#8B5CF6"/>
+  <text x="840" y="256" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+  <rect x="640" y="284" width="160" height="22" rx="5" fill="#3B0764" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="720" y="300" class="mono" fill="#E9D5FF" text-anchor="middle">output projection</text>
+  <circle cx="810" cy="295" r="7" fill="#8B5CF6"/>
+  <text x="810" y="299" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+
+  <line x1="720" y1="314" x2="720" y2="330" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- MLP block -->
+  <rect x="580" y="332" width="280" height="80" rx="6" fill="#0F172A" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="720" y="350" class="label" fill="#E2E8F0" text-anchor="middle">MLP block (the bulk of the weights)</text>
+  <rect x="610" y="362" width="100" height="32" rx="5" fill="#3B0764" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="660" y="382" class="mono" fill="#E9D5FF" text-anchor="middle">W_up</text>
+  <circle cx="700" cy="368" r="7" fill="#8B5CF6"/>
+  <text x="700" y="372" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+  <rect x="730" y="362" width="100" height="32" rx="5" fill="#3B0764" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="780" y="382" class="mono" fill="#E9D5FF" text-anchor="middle">W_down</text>
+  <circle cx="820" cy="368" r="7" fill="#8B5CF6"/>
+  <text x="820" y="372" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+
+  <line x1="720" y1="432" x2="720" y2="448" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Output head -->
+  <rect x="560" y="450" width="320" height="46" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="720" y="470" class="label" fill="#E2E8F0" text-anchor="middle">output projection → vocabulary scores</text>
+  <text x="720" y="486" class="mono" fill="#94A3B8" text-anchor="middle">one score per possible next token</text>
+  <circle cx="866" cy="472" r="10" fill="#8B5CF6"/>
+  <text x="866" y="476" class="mono" fill="#FFFFFF" text-anchor="middle" font-weight="700">Δ</text>
+
+  <text x="720" y="524" class="mono" fill="#94A3B8" text-anchor="middle">tokens in → scores out</text>
+  <text x="720" y="544" class="mono" fill="#8B5CF6" text-anchor="middle">every Δ = numbers nudged, box unchanged</text>
+
+  <!-- Footer caption -->
+  <text x="480" y="596" class="caption" text-anchor="middle">Same layers. Same shape. Same forward pass. The only thing that changed is the numbers inside the boxes.</text>
+</svg>

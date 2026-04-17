@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">The fine-tuning data pipeline. Four source options — distillation, self-generation, LLM-as-judge labelling, and rule-based generation — feed into a filter and curate stage, then into a small human-labelled gold seed set, then into a two-stage training pipeline (SFT then DPO) that produces the fine-tuned model. A physically separate locked box off to the right holds the real eval set, which is only ever used to score the fine-tuned model and must never be trained on or judged by an LLM.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#06B6D4"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 11px; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">The datagen pipeline (and the thing you can't shortcut)</text>
+
+  <!-- ============ LEFT COLUMN: Sources ============ -->
+  <text x="100" y="72" class="title" fill="#0F172A" text-anchor="middle">Sources</text>
+
+  <!-- Distillation -->
+  <rect x="24" y="88" width="172" height="54" rx="8" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="110" y="108" class="label" fill="#0F172A" text-anchor="middle">Distillation</text>
+  <text x="110" y="124" class="mono" fill="#475569" text-anchor="middle">from a bigger model</text>
+  <text x="110" y="136" class="mono" fill="#94A3B8" text-anchor="middle">inherits teacher's bugs</text>
+
+  <!-- Self-gen -->
+  <rect x="24" y="150" width="172" height="54" rx="8" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="110" y="170" class="label" fill="#0F172A" text-anchor="middle">Self-generation</text>
+  <text x="110" y="186" class="mono" fill="#475569" text-anchor="middle">model writes its own</text>
+  <text x="110" y="198" class="mono" fill="#94A3B8" text-anchor="middle">mode-collapse risk</text>
+
+  <!-- LLM-judge -->
+  <rect x="24" y="212" width="172" height="54" rx="8" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="110" y="232" class="label" fill="#0F172A" text-anchor="middle">LLM-as-judge labelling</text>
+  <text x="110" y="248" class="mono" fill="#475569" text-anchor="middle">another model scores</text>
+  <text x="110" y="260" class="mono" fill="#94A3B8" text-anchor="middle">signal ↔ eval collusion</text>
+
+  <!-- Rule-based -->
+  <rect x="24" y="274" width="172" height="54" rx="8" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="110" y="294" class="label" fill="#0F172A" text-anchor="middle">Rule-based generation</text>
+  <text x="110" y="310" class="mono" fill="#475569" text-anchor="middle">templates, grammars</text>
+  <text x="110" y="322" class="mono" fill="#94A3B8" text-anchor="middle">as smart as the rules</text>
+
+  <!-- Arrows to filter -->
+  <line x1="196" y1="115" x2="240" y2="196" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="196" y1="177" x2="240" y2="202" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="196" y1="239" x2="240" y2="214" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="196" y1="301" x2="240" y2="220" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============ MIDDLE: Filter & curate → Gold seed ============ -->
+  <rect x="240" y="176" width="180" height="72" rx="8" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="330" y="200" class="title" fill="#8B5CF6" text-anchor="middle">Filter &amp; curate</text>
+  <text x="330" y="220" class="mono" fill="#E2E8F0" text-anchor="middle">dedupe · validate</text>
+  <text x="330" y="236" class="mono" fill="#E2E8F0" text-anchor="middle">rules · quality checks</text>
+
+  <line x1="420" y1="212" x2="452" y2="212" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="452" y="176" width="180" height="72" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+  <text x="542" y="200" class="title" fill="#D97706" text-anchor="middle">Gold seed set</text>
+  <text x="542" y="220" class="mono" fill="#92400E" text-anchor="middle">small · human-labelled</text>
+  <text x="542" y="236" class="mono" fill="#92400E" text-anchor="middle">anchors the whole thing</text>
+
+  <!-- Down to SFT -->
+  <line x1="542" y1="248" x2="542" y2="280" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- SFT -->
+  <rect x="452" y="284" width="180" height="52" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="542" y="306" class="title" fill="#06B6D4" text-anchor="middle">SFT</text>
+  <text x="542" y="324" class="mono" fill="#E2E8F0" text-anchor="middle">(prompt, good_response)</text>
+
+  <line x1="542" y1="336" x2="542" y2="356" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- DPO -->
+  <rect x="452" y="360" width="180" height="52" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+  <text x="542" y="382" class="title" fill="#06B6D4" text-anchor="middle">DPO</text>
+  <text x="542" y="400" class="mono" fill="#E2E8F0" text-anchor="middle">(prompt, chosen, rejected)</text>
+
+  <line x1="542" y1="412" x2="542" y2="432" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Fine-tuned model output -->
+  <rect x="432" y="436" width="220" height="56" rx="10" fill="#F8FAFC" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="542" y="460" class="title" fill="#8B5CF6" text-anchor="middle">Fine-tuned model</text>
+  <text x="542" y="478" class="mono" fill="#475569" text-anchor="middle">ship candidate</text>
+
+  <!-- ============ RIGHT: Real Eval Set (locked) ============ -->
+  <rect x="700" y="150" width="236" height="340" rx="12" fill="#FEF2F2" stroke="#DC2626" stroke-width="3"/>
+
+  <!-- Lock icon (shackle + body) -->
+  <path d="M 800 176 a 18 18 0 0 1 36 0 v 14 h -6 v -14 a 12 12 0 0 0 -24 0 v 14 h -6 z" fill="#DC2626"/>
+  <rect x="792" y="190" width="52" height="38" rx="4" fill="#DC2626"/>
+  <circle cx="818" cy="208" r="3" fill="#FEF2F2"/>
+  <rect x="816" y="208" width="4" height="8" fill="#FEF2F2"/>
+
+  <text x="818" y="256" class="title" fill="#DC2626" text-anchor="middle">Real Eval Set</text>
+  <text x="818" y="274" class="mono" fill="#991B1B" text-anchor="middle">human-curated</text>
+  <text x="818" y="290" class="mono" fill="#991B1B" text-anchor="middle">slow · boring · real</text>
+
+  <!-- Separator line -->
+  <line x1="720" y1="306" x2="916" y2="306" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <text x="818" y="326" class="mono" fill="#DC2626" text-anchor="middle" font-weight="700">DO NOT</text>
+  <text x="728" y="346" class="mono" fill="#991B1B">✗ train on this set</text>
+  <text x="728" y="362" class="mono" fill="#991B1B">✗ LLM-judge against it</text>
+  <text x="728" y="378" class="mono" fill="#991B1B">✗ let sources overlap</text>
+  <text x="728" y="394" class="mono" fill="#991B1B">✗ regenerate from logs</text>
+
+  <line x1="720" y1="406" x2="916" y2="406" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <text x="818" y="426" class="mono" fill="#065F46" text-anchor="middle" font-weight="700">ONLY USE</text>
+  <text x="818" y="446" class="mono" fill="#065F46" text-anchor="middle">→ to score candidates</text>
+  <text x="818" y="462" class="mono" fill="#065F46" text-anchor="middle">→ to catch regressions</text>
+  <text x="818" y="478" class="mono" fill="#065F46" text-anchor="middle">→ to block bad ships</text>
+
+  <!-- Arrow FROM eval set TO fine-tuned model (only direction) -->
+  <path d="M 700 464 C 670 464, 668 464, 652 464" stroke="#DC2626" stroke-width="2" fill="none" marker-end="url(#arrow-red)"/>
+  <text x="676" y="454" class="mono" fill="#DC2626" text-anchor="middle">evaluated</text>
+  <text x="676" y="478" class="mono" fill="#DC2626" text-anchor="middle">against</text>
+
+  <!-- Footer caption -->
+  <text x="480" y="542" class="caption" text-anchor="middle" font-weight="600">Your eval set has to be real, even if your training set is entirely synthetic.</text>
+  <text x="480" y="562" class="caption" text-anchor="middle">The locked box is the non-negotiable part. Everything upstream of the filter stage is just engineering tradeoffs.</text>
+  <text x="480" y="582" class="caption" text-anchor="middle">Everything downstream is just the training loop running backwards.</text>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">LoRA decomposition. Full fine-tuning on the left touches every one of 17 million numbers in the W matrix. LoRA on the right freezes W entirely and trains two much smaller rectangles B and A that multiply together to form an adjustment added to W at inference time. Roughly 130,000 trainable numbers — 100 times fewer — and zero change to the inference shape.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#06B6D4"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B5CF6"/>
+    </marker>
+    <style>
+      .title { font-size: 13px; font-weight: 600; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; }
+      .label { font-size: 11px; }
+      .caption { font-size: 11px; fill: #475569; }
+      .big-mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 13px; }
+    </style>
+    <pattern id="diagW" patternUnits="userSpaceOnUse" width="6" height="6">
+      <path d="M 0 6 L 6 0" stroke="#CBD5E1" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="diagFrozen" patternUnits="userSpaceOnUse" width="6" height="6">
+      <path d="M 0 6 L 6 0" stroke="#334155" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <!-- Heading -->
+  <text x="480" y="28" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">LoRA: shrink what you train, leave inference alone</text>
+
+  <!-- ============ LEFT PANEL: Full fine-tune ============ -->
+  <rect x="32" y="60" width="420" height="340" rx="12" fill="#F8FAFC" stroke="#2563EB" stroke-width="2"/>
+  <text x="242" y="86" class="title" fill="#2563EB" text-anchor="middle">Full fine-tuning</text>
+  <text x="242" y="104" class="mono" fill="#475569" text-anchor="middle">nudge every number in W directly</text>
+
+  <!-- Big W square -->
+  <rect x="122" y="132" width="240" height="240" rx="4" fill="url(#diagW)" stroke="#2563EB" stroke-width="2"/>
+  <rect x="122" y="132" width="240" height="240" rx="4" fill="#2563EB" fill-opacity="0.12"/>
+  <text x="242" y="252" class="big-mono" fill="#1E3A8A" text-anchor="middle" font-weight="700">W</text>
+  <text x="242" y="272" class="mono" fill="#1E3A8A" text-anchor="middle">4,096 × 4,096</text>
+
+  <!-- W labels -->
+  <text x="242" y="124" class="mono" fill="#475569" text-anchor="middle">4,096 columns</text>
+  <text x="112" y="256" class="mono" fill="#475569" text-anchor="end">4,096</text>
+  <text x="112" y="268" class="mono" fill="#475569" text-anchor="end">rows</text>
+
+  <!-- Cost box -->
+  <rect x="62" y="388" width="360" height="0" />
+  <text x="242" y="394" class="label" fill="#0F172A" text-anchor="middle">~17 million trainable numbers per matrix</text>
+
+  <!-- ============ RIGHT PANEL: LoRA ============ -->
+  <rect x="492" y="60" width="436" height="340" rx="12" fill="#0F172A" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="710" y="86" class="title" fill="#8B5CF6" text-anchor="middle">LoRA fine-tuning</text>
+  <text x="710" y="104" class="mono" fill="#94A3B8" text-anchor="middle">freeze W · train a tiny adjustment on top</text>
+
+  <!-- Frozen W square -->
+  <rect x="520" y="132" width="200" height="200" rx="4" fill="url(#diagFrozen)" stroke="#64748B" stroke-width="2" stroke-dasharray="5,3"/>
+  <rect x="520" y="132" width="200" height="200" rx="4" fill="#64748B" fill-opacity="0.18"/>
+  <text x="620" y="228" class="big-mono" fill="#E2E8F0" text-anchor="middle" font-weight="700">W</text>
+  <text x="620" y="248" class="mono" fill="#94A3B8" text-anchor="middle">4,096 × 4,096</text>
+  <text x="620" y="266" class="mono" fill="#06B6D4" text-anchor="middle" font-weight="700">FROZEN</text>
+  <text x="620" y="282" class="mono" fill="#94A3B8" text-anchor="middle">not touched</text>
+
+  <!-- Plus sign -->
+  <text x="748" y="240" font-size="28" fill="#8B5CF6" font-weight="700" text-anchor="middle">+</text>
+
+  <!-- B rectangle (tall thin) -->
+  <rect x="774" y="132" width="28" height="200" rx="3" fill="#3B0764" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="788" y="240" class="mono" fill="#E9D5FF" text-anchor="middle" transform="rotate(-90 788 240)" font-weight="700">B  ·  4,096 × 16</text>
+
+  <!-- Multiply dot -->
+  <circle cx="820" cy="232" r="3" fill="#8B5CF6"/>
+
+  <!-- A rectangle (small square-ish wide) -->
+  <rect x="832" y="218" width="80" height="28" rx="3" fill="#3B0764" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="872" y="236" class="mono" fill="#E9D5FF" text-anchor="middle" font-weight="700">A · 16 × 4,096</text>
+
+  <!-- Annotation for BA -->
+  <text x="846" y="272" class="mono" fill="#A78BFA" text-anchor="middle">B · A = ΔW</text>
+  <text x="846" y="286" class="mono" fill="#94A3B8" text-anchor="middle">(the adjustment)</text>
+
+  <!-- Count box -->
+  <text x="710" y="358" class="label" fill="#A78BFA" text-anchor="middle" font-weight="700">~130,000 trainable numbers — 100× fewer than full fine-tune</text>
+  <text x="710" y="376" class="mono" fill="#64748B" text-anchor="middle">stack this trick across every layer → adapter on disk is tens of MB, not tens of GB</text>
+
+  <!-- ============ BOTTOM: inference shape unchanged ============ -->
+  <rect x="32" y="428" width="896" height="160" rx="12" fill="#F8FAFC" stroke="#06B6D4" stroke-width="2"/>
+  <text x="480" y="454" class="title" fill="#06B6D4" text-anchor="middle">At inference time · the forward pass from the previous post, unchanged</text>
+
+  <!-- Mini forward pass -->
+  <rect x="64" y="478" width="110" height="48" rx="6" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+  <text x="119" y="498" class="label" fill="#0F172A" text-anchor="middle">prompt in</text>
+  <text x="119" y="514" class="mono" fill="#475569" text-anchor="middle">tokens</text>
+  <line x1="174" y1="502" x2="202" y2="502" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="202" y="478" width="140" height="48" rx="6" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+  <text x="272" y="498" class="label" fill="#0F172A" text-anchor="middle">prefill pass</text>
+  <text x="272" y="514" class="mono" fill="#475569" text-anchor="middle">builds KV cache</text>
+  <line x1="342" y1="502" x2="370" y2="502" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="370" y="478" width="160" height="48" rx="6" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+  <text x="450" y="498" class="label" fill="#0F172A" text-anchor="middle">decode loop</text>
+  <text x="450" y="514" class="mono" fill="#475569" text-anchor="middle">one token per forward pass</text>
+  <line x1="530" y1="502" x2="558" y2="502" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="558" y="478" width="140" height="48" rx="6" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+  <text x="628" y="498" class="label" fill="#0F172A" text-anchor="middle">streamed tokens</text>
+  <text x="628" y="514" class="mono" fill="#475569" text-anchor="middle">back to client</text>
+
+  <!-- Inference note -->
+  <rect x="716" y="472" width="192" height="60" rx="8" fill="#ECFEFF" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="812" y="490" class="mono" fill="#0E7490" text-anchor="middle" font-weight="700">every matrix multiply</text>
+  <text x="812" y="506" class="mono" fill="#0E7490" text-anchor="middle">now uses W + BA</text>
+  <text x="812" y="522" class="mono" fill="#475569" text-anchor="middle">compute shape: identical</text>
+
+  <text x="480" y="552" class="mono" fill="#475569" text-anchor="middle">KV cache · continuous batching · prompt caching · all of it · unchanged</text>
+
+  <!-- Footer caption -->
+  <text x="480" y="580" class="caption" text-anchor="middle" font-weight="600">100× fewer numbers to train. Zero changes to what inference actually does.</text>
+</svg>
