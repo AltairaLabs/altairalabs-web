@@ -43,11 +43,11 @@ const softwareJsonLd = {
     <div class="hero-bg"></div>
     <canvas id="constellation" class="hero-canvas"></canvas>
     <div class="container hero-content">
-      <div class="hero-badge">Open-Core AgentOps for Kubernetes</div>
-      <h1 class="hero-title">Great Demo. Now What?</h1>
+      <div class="hero-badge">Open-Core · Kubernetes-Native · Beta</div>
+      <h1 class="hero-title">Boring AgentOps.</h1>
       <p class="hero-subtitle">
-        Omnia is a complete, self-hosted platform for deploying AI agents at scale.
-        Runtime, governance, testing, observability — all built on Kubernetes. Use our stack or bring your own.
+        Reliable. Predictable. Observable. The unglamorous platform layer your AI agents
+        need to survive production — open-core, Kubernetes-native.
       </p>
       <div class="hero-cta">
         <a href="https://omnia.altairalabs.ai/tutorials/getting-started/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
@@ -66,6 +66,23 @@ const softwareJsonLd = {
           <span class="code-title">terminal</span>
         </div>
         <pre class="code-content"><code id="typed-code"></code><span class="cursor">|</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Row -->
+  <section class="trust-row">
+    <div class="container">
+      <p class="trust-label">Backed by</p>
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <img src="/logos/aws.svg" alt="Amazon Web Services" />
+          <span>AWS Startups</span>
+        </div>
+        <div class="trust-badge">
+          <img src="/logos/gcp.svg" alt="Google Cloud" />
+          <span>Google for Startups</span>
+        </div>
       </div>
     </div>
   </section>
@@ -367,8 +384,8 @@ const softwareJsonLd = {
   <!-- Comparison Section -->
   <section class="comparison reveal">
     <div class="container">
-      <h2 class="section-title center">Batteries Included. Ready to Rock in Hours, Not Months.</h2>
-      <p class="section-subtitle center">Everything works out of the box. Already have a stack? Swap in what you use.</p>
+      <h2 class="section-title center">Everything you need. Nothing clever.</h2>
+      <p class="section-subtitle center">The production-boring stack, already wired up. Already have one of the pieces? Swap it in.</p>
       <div class="comparison-table-wrapper">
         <table class="comparison-table">
           <thead>
@@ -385,8 +402,8 @@ const softwareJsonLd = {
               <td><span class="tier-oss">OSS</span></td>
             </tr>
             <tr>
-              <td>Route between LLM providers</td>
-              <td class="highlight-col"><span class="capability">Automatic failover and cost-based routing across all major providers</span></td>
+              <td>Connect agents to internal systems</td>
+              <td class="highlight-col"><span class="capability">Agents reach your databases, APIs, and intranets directly — no SaaS middleman, no firewall holes, no data leaving your perimeter</span></td>
               <td><span class="tier-oss">OSS</span></td>
             </tr>
             <tr>
@@ -436,31 +453,108 @@ const softwareJsonLd = {
     </div>
   </section>
 
-  <!-- For Partners Section -->
+  <!-- Built in the Open (engineer audience hook) -->
+  <section class="oss-section reveal">
+    <div class="container">
+      <div class="oss-header">
+        <div class="oss-badge">For Platform Engineers</div>
+        <h2 class="section-title">Built in the open.</h2>
+        <p class="oss-lede">
+          Apache 2.0. Kubernetes-native. Written to be read. We'd rather hear about a bad
+          abstraction in a GitHub issue than discover it in someone's rollback.
+        </p>
+      </div>
+
+      <div class="oss-grid">
+        <a href="https://github.com/AltairaLabs" target="_blank" rel="noopener" class="oss-card">
+          <div class="oss-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.82 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.3-1.23 3.3-1.23.64 1.64.23 2.86.11 3.16.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.62-5.47 5.92.43.38.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/>
+            </svg>
+          </div>
+          <h3>Source</h3>
+          <p>All four projects — Omnia, PromptKit, PromptArena, PromptPack — on GitHub.</p>
+          <span class="oss-link">github.com/AltairaLabs →</span>
+        </a>
+
+        <a href="https://omnia.altairalabs.ai/" target="_blank" rel="noopener" class="oss-card">
+          <div class="oss-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <h3>Docs</h3>
+          <p>Architecture, tutorials, operator guides, CRD reference. Read before you install.</p>
+          <span class="oss-link">omnia.altairalabs.ai →</span>
+        </a>
+
+        <a href="https://github.com/AltairaLabs/Omnia/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" target="_blank" rel="noopener" class="oss-card">
+          <div class="oss-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="21.17" y1="8" x2="12" y2="8"/>
+              <line x1="3.95" y1="6.06" x2="8.54" y2="14"/>
+              <line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
+            </svg>
+          </div>
+          <h3>Good first issues</h3>
+          <p>Scoped work with context. Pair programming on hard ones if you want it.</p>
+          <span class="oss-link">Find one to pick up →</span>
+        </a>
+      </div>
+
+      <div class="oss-install">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-title">install in ~2 minutes</span>
+        </div>
+        <pre class="oss-code"><code><span class="oss-comment"># Clone the control plane</span>
+git clone https://github.com/AltairaLabs/Omnia
+<span class="oss-comment"># Install into your cluster</span>
+helm install omnia ./Omnia/deploy/helm
+<span class="oss-comment"># Deploy your first agent</span>
+kubectl apply -f examples/hello-agent.yaml</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Partner Program (exec audience hook) -->
   <section class="partners reveal">
     <div class="container">
       <div class="partners-content">
-        <div class="partners-badge">Enterprise & Partners</div>
-        <h2 class="section-title">Enterprise Support. Partner Programs. Hands-On Consulting.</h2>
+        <div class="partners-badge">For Project Sponsors</div>
+        <h2 class="section-title">Design Partner Program — open.</h2>
         <p class="partners-text">
-          The open-source platform gets you to production. Enterprise licensing adds the compliance, streaming, and evaluation features regulated industries need.
-          And if you want help getting there — or you're an SI building on Omnia for clients — we work with you directly.
+          We're pre-launch. No customer logos yet. Instead of a sales cycle, we're working
+          directly with 3–5 teams to build the production credibility together —
+          hands-on, preferential terms, founder on the line.
         </p>
         <div class="partners-benefits">
           <div class="partner-benefit">
-            <strong>Enterprise licensing</strong>
-            <span>Arena, audit, streaming, encryption</span>
+            <strong>Direct founder access</strong>
+            <span>No CSM tier, no sales filter</span>
           </div>
           <div class="partner-benefit">
-            <strong>Consulting & support</strong>
-            <span>Architecture review to production rollout</span>
+            <strong>Hands-on implementation</strong>
+            <span>We help ship your first production use case</span>
           </div>
           <div class="partner-benefit">
-            <strong>SI partner program</strong>
-            <span>Reusable platform across client engagements</span>
+            <strong>Roadmap influence</strong>
+            <span>Features shaped around your problem</span>
+          </div>
+          <div class="partner-benefit">
+            <strong>Preferential pricing</strong>
+            <span>Locked in through GA</span>
           </div>
         </div>
-        <a href="https://calendly.com/charlie-holland-activeware/altairalabs-how-can-i-help" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a Call</a>
+        <div class="partners-actions">
+          <a href="https://calendly.com/altairalabs-ai/altairalabs-how-can-i-help" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Apply to be a Design Partner</a>
+          <a href="/why" class="btn btn-ghost-white btn-lg">How it works</a>
+        </div>
       </div>
     </div>
   </section>
@@ -640,6 +734,65 @@ const softwareJsonLd = {
 
   .code-comment {
     color: var(--slate);
+  }
+
+  /* Trust Row */
+  .trust-row {
+    padding: var(--space-xl) 0;
+    background: white;
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .trust-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-md);
+  }
+
+  .trust-badges {
+    display: flex;
+    gap: var(--space-2xl);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    filter: grayscale(1) opacity(0.7);
+    transition: filter 0.2s;
+  }
+
+  .trust-badge:hover {
+    filter: grayscale(0) opacity(1);
+  }
+
+  .trust-badge img {
+    height: 28px;
+    width: auto;
+  }
+
+  .trust-badge span {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--onyx);
+    letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 640px) {
+    .trust-badges {
+      gap: var(--space-lg);
+    }
+    .trust-badge span {
+      font-size: 0.875rem;
+    }
   }
 
   /* Value Props */
@@ -1173,6 +1326,131 @@ const softwareJsonLd = {
     }
   }
 
+  /* Built in the Open (OSS / engineer audience) */
+  .oss-section {
+    padding: var(--space-4xl) 0;
+    background: var(--cloud-white);
+    border-top: 1px solid var(--mist);
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .oss-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .oss-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: var(--radius-full);
+    color: var(--altair-blue);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .oss-lede {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--slate);
+    margin-top: var(--space-md);
+  }
+
+  .oss-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .oss-card {
+    background: white;
+    border: 1px solid var(--mist);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .oss-card:hover {
+    border-color: var(--altair-blue);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .oss-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--altair-blue);
+    margin-bottom: var(--space-md);
+  }
+
+  .oss-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .oss-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--deep-space);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .oss-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--slate);
+    margin: 0 0 var(--space-md);
+  }
+
+  .oss-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--altair-blue);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .oss-install {
+    max-width: 680px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .oss-code {
+    background: var(--deep-space);
+    padding: var(--space-lg);
+    margin: 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: var(--mist);
+  }
+
+  .oss-code code {
+    font-family: inherit;
+  }
+
+  .oss-comment {
+    color: var(--slate);
+  }
+
+  @media (max-width: 900px) {
+    .oss-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* Partners */
   .partners {
     padding: var(--space-4xl) 0;
@@ -1210,9 +1488,16 @@ const softwareJsonLd = {
 
   .partners-benefits {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
     margin-bottom: var(--space-2xl);
+  }
+
+  .partners-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .partner-benefit {
@@ -1328,7 +1613,7 @@ const softwareJsonLd = {
     }
 
     .partners-benefits {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
     .partners-text {
