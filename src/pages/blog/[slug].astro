@@ -89,7 +89,11 @@ const jsonLd = {
     <div class="post-container">
       <div class="post-content">
         <div class="post-inline-image">
-          <PostHero title={post.data.title} tags={post.data.tags} />
+          {post.data.image ? (
+            <img src={post.data.image} alt={`Illustration for ${post.data.title}`} class="post-hero-img" />
+          ) : (
+            <PostHero title={post.data.title} tags={post.data.tags} />
+          )}
         </div>
         <Content />
       </div>

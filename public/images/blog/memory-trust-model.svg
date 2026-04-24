@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="Inter, system-ui, -apple-system, sans-serif" role="img" aria-labelledby="title">
+  <title id="title">The memory trust model. On the left, three tiers of memory stack from durable to ephemeral: institutional (workspace-scoped, operator-curated), agent or workspace (shared across sessions), and user or session (per-conversation). Each row written into a tier carries a consent category, a purpose tag, and a provenance tag. In the middle, a MemoryRetentionPolicy tick applies TTL, Decay, LRU or Composite modes, with a separate consent-revocation cascade that soft-deletes rows whose category the user has withdrawn, and a supersession branch that hard-deletes observations replaced by a summary past their grace period. On the right, a retrieval call filters by purposes, tier, workspace, and uses the redactor's trust model plus provenance to decide whether personal details are kept or scrubbed. The arrows make clear that purpose, consent category, and provenance travel with the row from write through retention to retrieval.</title>
+  <defs>
+    <style>
+      .hdr { font-size: 15px; font-weight: 700; fill: #0F172A; }
+      .col-hdr { font-size: 13px; font-weight: 700; }
+      .label { font-size: 11.5px; font-weight: 600; fill: #0F172A; }
+      .caption { font-size: 11px; fill: #475569; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: 10.5px; fill: #0F172A; }
+      .small { font-size: 10px; fill: #64748B; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="26" class="hdr" text-anchor="middle">The memory trust model: three tiers, one policy, one retrieval call</text>
+
+  <!-- LEFT: Tiers -->
+  <text x="160" y="64" class="col-hdr" fill="#2563EB" text-anchor="middle">Tiers &amp; writes</text>
+
+  <!-- Institutional -->
+  <rect x="40" y="88" width="240" height="78" rx="6" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="52" y="110" class="label" fill="#1D4ED8">Institutional</text>
+  <text x="52" y="128" class="caption">workspace-scoped, operator-curated</text>
+  <text x="52" y="145" class="mono">trust_model: curated</text>
+  <text x="52" y="160" class="mono">provenance: operator_curated</text>
+
+  <!-- Agent/Workspace -->
+  <rect x="40" y="178" width="240" height="78" rx="6" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="52" y="200" class="label" fill="#6D28D9">Agent / Workspace</text>
+  <text x="52" y="218" class="caption">shared across user sessions</text>
+  <text x="52" y="235" class="mono">trust_model: inferred</text>
+  <text x="52" y="250" class="mono">provenance: agent_inferred</text>
+
+  <!-- User/Session -->
+  <rect x="40" y="268" width="240" height="78" rx="6" fill="#FEF3F2" stroke="#F97316" stroke-width="1.5"/>
+  <text x="52" y="290" class="label" fill="#C2410C">User / Session</text>
+  <text x="52" y="308" class="caption">per-conversation, consent-scoped</text>
+  <text x="52" y="325" class="mono">trust_model: explicit | inferred</text>
+  <text x="52" y="340" class="mono">provenance: user_requested | ...</text>
+
+  <!-- Row footer showing the tag triple -->
+  <text x="160" y="378" class="small" text-anchor="middle">every row carries:</text>
+  <rect x="30" y="388" width="260" height="34" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="160" y="406" class="mono" text-anchor="middle">consent_category · purpose · provenance</text>
+  <text x="160" y="418" class="small" text-anchor="middle">(new column · activated this week · typed)</text>
+
+  <!-- Arrow left -> middle -->
+  <line x1="290" y1="217" x2="345" y2="217" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- MIDDLE: Policy tick -->
+  <text x="480" y="64" class="col-hdr" fill="#8B5CF6" text-anchor="middle">MemoryRetentionPolicy tick</text>
+
+  <rect x="355" y="88" width="250" height="320" rx="6" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <!-- Modes -->
+  <text x="480" y="112" class="label" text-anchor="middle" fill="#6D28D9">Modes (per tier, per category)</text>
+  <rect x="370" y="122" width="90" height="24" rx="4" fill="#EDE9FE"/>
+  <text x="415" y="138" class="mono" text-anchor="middle">Manual</text>
+  <rect x="466" y="122" width="60" height="24" rx="4" fill="#EDE9FE"/>
+  <text x="496" y="138" class="mono" text-anchor="middle">TTL</text>
+  <rect x="532" y="122" width="66" height="24" rx="4" fill="#EDE9FE"/>
+  <text x="565" y="138" class="mono" text-anchor="middle">Decay</text>
+  <rect x="370" y="152" width="60" height="24" rx="4" fill="#EDE9FE"/>
+  <text x="400" y="168" class="mono" text-anchor="middle">LRU</text>
+  <rect x="436" y="152" width="162" height="24" rx="4" fill="#DDD6FE"/>
+  <text x="517" y="168" class="mono" text-anchor="middle">Composite (weighted)</text>
+
+  <!-- Divider -->
+  <line x1="375" y1="186" x2="585" y2="186" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Consent cascade -->
+  <text x="480" y="206" class="label" text-anchor="middle" fill="#C2410C">Consent-revocation cascade</text>
+  <rect x="370" y="214" width="220" height="60" rx="4" fill="#FFF7ED" stroke="#FB923C"/>
+  <text x="480" y="230" class="small" text-anchor="middle">stateless join against user_privacy_preferences</text>
+  <text x="480" y="244" class="mono" text-anchor="middle">SoftDelete | HardDelete | Stop</text>
+  <text x="480" y="260" class="small" text-anchor="middle">missed revocation → picked up on next tick</text>
+
+  <!-- Supersession -->
+  <text x="480" y="294" class="label" text-anchor="middle" fill="#1D4ED8">Supersession cleanup</text>
+  <rect x="370" y="302" width="220" height="60" rx="4" fill="#EFF6FF" stroke="#2563EB"/>
+  <text x="480" y="318" class="small" text-anchor="middle">observations older than summary.graceDays</text>
+  <text x="480" y="332" class="mono" text-anchor="middle">superseded_by IS NOT NULL → hard delete</text>
+  <text x="480" y="348" class="small" text-anchor="middle">grace measured from summary, not source</text>
+
+  <!-- Accessed_at -->
+  <text x="480" y="382" class="label" text-anchor="middle" fill="#475569">read-path accessed_at update</text>
+  <text x="480" y="398" class="small" text-anchor="middle">fire-and-forget, detached ctx, 5s cap</text>
+
+  <!-- Arrow middle -> right -->
+  <line x1="615" y1="217" x2="670" y2="217" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- RIGHT: Retrieval -->
+  <text x="800" y="64" class="col-hdr" fill="#0F172A" text-anchor="middle">Retrieval call</text>
+
+  <rect x="680" y="88" width="240" height="320" rx="6" fill="#F8FAFC" stroke="#0F172A" stroke-width="1.5"/>
+
+  <text x="695" y="112" class="label">RetrieveMultiTier</text>
+  <text x="695" y="130" class="mono">tiers: [institutional, agent, user]</text>
+  <text x="695" y="148" class="mono">workspace: acme</text>
+  <text x="695" y="166" class="mono">purposes: [billing, support]</text>
+  <text x="695" y="184" class="mono">seedEntityIDs: [...]</text>
+  <text x="695" y="202" class="mono">maxGraphHops: 2</text>
+  <text x="695" y="220" class="mono">structuredLookups: [...]</text>
+
+  <line x1="695" y1="232" x2="905" y2="232" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <text x="695" y="252" class="label" fill="#6D28D9">filters</text>
+  <text x="695" y="270" class="small">· purpose ≠ requested purpose → row hidden</text>
+  <text x="695" y="286" class="small">· superseded_by IS NOT NULL → row hidden</text>
+  <text x="695" y="302" class="small">· forgotten=true → row hidden</text>
+
+  <text x="695" y="326" class="label" fill="#1D4ED8">redaction (write path)</text>
+  <text x="695" y="344" class="small">· TrustExplicit keeps email / phone</text>
+  <text x="695" y="360" class="small">· TrustInferred scrubs full PII set</text>
+  <text x="695" y="376" class="small">· structural (SSN, CC, IP) always scrubbed</text>
+  <text x="695" y="392" class="small">· custom: patterns always structural</text>
+
+  <!-- Bottom takeaway -->
+  <line x1="40" y1="448" x2="920" y2="448" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="480" y="476" class="label" text-anchor="middle">The through-line</text>
+  <text x="480" y="496" class="caption" text-anchor="middle">purpose · consent_category · provenance travel with the row from write → retention → retrieval.</text>
+  <text x="480" y="512" class="caption" text-anchor="middle">Revoke consent and the next tick removes the row. Ask for the wrong purpose and you don't see it.</text>
+  <text x="480" y="528" class="caption" text-anchor="middle">Write with user-stated provenance and the redactor keeps the email the user asked you to remember.</text>
+  <text x="480" y="548" class="small" text-anchor="middle" font-style="italic">Most "agent memory" systems ship none of these three axes. This week Omnia shipped all three.</text>
+</svg>
